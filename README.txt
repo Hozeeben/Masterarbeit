@@ -1,1 +1,1 @@
-For this Tool Visual C++ 2015 Build Tools are required.
+For this Tool Visual C++ 14.0 (Visual C++ 2015 Build Tools) are required.
