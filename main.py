@@ -2,6 +2,10 @@
 
 import sys, os.path
 from aubio import pvoc, source, float_type
+#! /usr/bin/env python
+
+import sys, os.path
+from aubio import pvoc, source, float_type
 from numpy import zeros, log10, vstack
 import matplotlib.pyplot as plt
 
@@ -15,17 +19,10 @@ def get_spectrogram(filename, samplerate=0):
     if samplerate == 0: samplerate = a.samplerate
     pv = pvoc(win_s, hop_s)  # phase vocoder
     specgram = zeros([0, fft_s], dtype=float_type)  # numpy array to store spectrogram
-    itterarion = 0
     # analysis
     while True:
         samples, read = a()  # read file
         specgram = vstack((specgram, pv(samples).norm))  # store new norm vector and append pv(samples).norm in dim (n+1) wenn dann hier Code ergänzen
-        #specgram[itterarion][0] = 0
-        for i in range (0, fft_s):
-            if specgram[itterarion][i] == 0: specgram[itterarion][i]=0
-            else: specgram[itterarion][i]=log10(specgram[itterarion][i])
-
-        itterarion += 1
         if read < a.hop_size: break
 
 
@@ -40,7 +37,7 @@ def get_spectrogram(filename, samplerate=0):
     outstr = "total time: %0.2fs" % total_time
     print(outstr + ", samplerate: %.2fkHz" % (samplerate / 1000.))
     n_xticks = 20
-    n_yticks = 20                                                       #ToDo: axen Log darstellen+alle werte darin darstellen(vllt get_rounded_ticks löschen)
+    n_yticks = 20
 
     def get_rounded_ticks(top_pos, step, n_ticks):                      #get nice axis
         top_label = top_pos * step
@@ -58,14 +55,14 @@ def get_spectrogram(filename, samplerate=0):
         return ticks_positions, ticks_labels
 
     # apply to the axis
-    x_ticks, x_labels = get_rounded_ticks(len(specgram), time_step, n_xticks)
+    #x_ticks, x_labels = get_rounded_ticks(len(specgram), time_step, n_xticks)
     print(len(specgram[0]))
     print((samplerate / 1000. / 2.) / len(specgram[0]))
-    y_ticks, y_labels = get_rounded_ticks(len(specgram[0]), (samplerate / 1000. / 2.) / len(specgram[0]), n_yticks)
-    ax.set_xticks(x_ticks)
-    ax.set_yticks(y_ticks)
-    ax.set_xticklabels(x_labels)
-    ax.set_yticklabels(y_labels)
+    #y_ticks, y_labels = get_rounded_ticks(len(specgram[0]), (samplerate / 1000. / 2.) / len(specgram[0]), n_yticks)
+    #ax.set_xticks(x_ticks)
+    #ax.set_yticks(y_ticks)
+    #ax.set_xticklabels(x_labels)
+    #ax.set_yticklabels(y_labels)
     ax.set_ylabel('Frequency (kHz)')
     ax.set_xlabel('Time (s)')
     ax.set_title(os.path.basename(filename))
