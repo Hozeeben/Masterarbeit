@@ -6,4 +6,5 @@ aubio (should also download NumPy. If not get it seperatly)
 
 Infos zu MAsterarbeit
 EInbinden der Audio Datei: https://holometer.fnal.gov/GH_FFT.pdf Seite 17-18
+Wie pvoc Funktioniert https://aubio.org/manual/latest/py_spectral.html#id3
 Frequenzen je Hop berechnen und die gewünschten Frequenzen auf 0 setzten danach wieder in Verlauf umwandeln und zurück in .wav schreiben
