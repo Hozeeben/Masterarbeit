@@ -25,7 +25,7 @@ while True:
     samples, read = original()  # read file
     #for i in range (0, hop_s):
     snk.do(aubio.fvec(samples),hop_s)                 #hop_s ist wieviel aus jedem sample geschrieben werden
-    #print(aubio.fvec(samples))
+    print(aubio.fvec(samples))
     if read < original.hop_size: break
 snk.close()
 sys.stdout=orig_stdout
