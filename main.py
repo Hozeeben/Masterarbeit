@@ -2,14 +2,11 @@
 
 import sys, os.path
 from aubio import pvoc, source, float_type
-#! /usr/bin/env python
-
-import sys, os.path
-from aubio import pvoc, source, float_type
 from numpy import zeros, log10, vstack
 import matplotlib.pyplot as plt
+import scipy
 
-
+def low_pass_filter()
 def get_spectrogram(filename, samplerate=0):
     win_s = 8192  # fft window size
     hop_s = win_s // 2  # hop size
@@ -56,8 +53,8 @@ def get_spectrogram(filename, samplerate=0):
 
     # apply to the axis
     #x_ticks, x_labels = get_rounded_ticks(len(specgram), time_step, n_xticks)
-    print(len(specgram[0]))
-    print((samplerate / 1000. / 2.) / len(specgram[0]))
+    #print(len(specgram[0]))
+    #print((samplerate / 1000. / 2.) / len(specgram[0]))
     #y_ticks, y_labels = get_rounded_ticks(len(specgram[0]), (samplerate / 1000. / 2.) / len(specgram[0]), n_yticks)
     #ax.set_xticks(x_ticks)
     #ax.set_yticks(y_ticks)
@@ -73,6 +70,9 @@ def get_spectrogram(filename, samplerate=0):
 
 
 if __name__ == '__main__':
+    fig1 = lowpass()
+    fig2 = bandpass()
+    fig3 = highpass()
     fig = get_spectrogram('KIRA New World.wav')
     # display graph
     plt.show()
