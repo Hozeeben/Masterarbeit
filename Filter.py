@@ -19,7 +19,7 @@ def lowpassfilter(inputfile, outputlow):
 
     while True:
         samples, read = original()
-        writetofile(calculatefilter(samples), read)                      # Calculate the filter and write it back to the file test
+        writetofile(calculatefilter(samples), read)                      # Calculate the filter and write it back to the file
         if read < original.hop_size:
             break
 
