@@ -30,16 +30,24 @@ def bandpassfilter(inputfile, outputlow):
     samplerate=original.samplerate                              # get samplerate for output file
     writetofile = aubio.sink(outputlow, samplerate)            # Create Output sink
 
-    # Biquad Filter as Band-Pass-Filter
-    # Center Frequency 150
+    # Biquad Filter as Band-Pass-Filter (Combined Low-Pass-Filter and High-Pass-Filter for a better function
+    # Low-Pass-Filter
+    # Center Frequency 6000
     # Samplerate 41000
-    # Q 0.75
-    calculatefilter = aubio.digital_filter(3)
-    calculatefilter.set_biquad(1.30104102 * 10 ** -4, 2.60208205 * 10 ** -4, 1.30104102 * 10 ** -4, -1.96929513, 0.96981555)
+    # Q 0.7
+    # High-Pass-Filter
+    # Center Frequency 200
+    # Samplerate 41000
+    # Q 0.7
+    calculatelowfilter = aubio.digital_filter(3)
+    calculatelowfilter.set_biquad(0.12556056, 0.25112113, 0.12556056, -0.77321399, 0.27545624)
+    calculatehighfilter = aubio.digital_filter(3)
+    calculatehighfilter.set_biquad(0.97834987, -1.95669974, 0.97834987, -1.95624013, 0.95715934)
 
     while True:
         samples, read = original()
-        writetofile(calculatefilter(samples), read)                      # Calculate the filter and write it back to the file
+        lowresult = calculatelowfilter(samples)                                # Calculate the Low-Pass-Filter
+        writetofile(calculatehighfilter(lowresult), read)                      # Calculate the High-Pass-Filter and write it back to the file
         if read < original.hop_size:
             break
 
@@ -51,11 +59,11 @@ def highpassfilter(inputfile, outputlow):
     writetofile = aubio.sink(outputlow, samplerate)            # Create Output sink
 
     # Biquad Filter as high-Pass-Filter
-    # Center Frequency 150
+    # Center Frequency 6000
     # Samplerate 41000
-    # Q 0.75
+    # Q 0.7
     calculatefilter = aubio.digital_filter(3)
-    calculatefilter.set_biquad(1.30104102 * 10 ** -4, 2.60208205 * 10 ** -4, 1.30104102 * 10 ** -4, -1.96929513, 0.96981555)
+    calculatefilter.set_biquad(0.51216756, -1.02433511, 0.51216756, -0.77321399, 0.27545624)
 
     while True:
         samples, read = original()
