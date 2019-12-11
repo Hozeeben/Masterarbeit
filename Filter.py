@@ -5,6 +5,8 @@ import aubio
 from numpy import zeros, log10, vstack
 import matplotlib.pyplot as plt
 
+def bpmdetection(inputfile):
+    print('Hello Function')
 def lowpassfilter(inputfile, outputlow):
     original = aubio.source(inputfile)                          # Open the original file
     samplerate=original.samplerate                              # get samplerate for output file
@@ -86,7 +88,7 @@ if __name__ == '__main__':
     outputhighpasstemp1 = 'KIRA New World highpasstemp1.wav'
     outputhighpasstemp2 = 'KIRA New World highpasstemp2.wav'
 
-
+    bpmdetection(inputfile)
     lowpassfilter(inputfile, outputlowpass)                                 # Cascading 4 Biquad Low-Pass-Filter to get a sharp cut
     lowpassfilter(outputlowpass, outputlowpasstemp1)
     lowpassfilter(outputlowpasstemp1, outputlowpasstemp2)
