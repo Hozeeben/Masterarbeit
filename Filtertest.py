@@ -70,7 +70,8 @@ def apply_filter(path, target):
 
 
 if __name__ == '__main__':
-    input_path='KIRA New World.wav'
-    output_path= 'KIRA New World Filtered.wav'
-    apply_filter(input_path, output_path)
-    #apply_filter2('Temp.wav', output_path)
+    outputlow = 'Test'
+    writelowpass = aubio.sink(outputlow, samplerate)
+    #input_path='KIRA New World.wav'
+    #output_path= 'KIRA New World Filtered.wav'
+    #apply_filter(input_path, output_path)
