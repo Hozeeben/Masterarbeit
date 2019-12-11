@@ -75,7 +75,7 @@ def highpassfilter(inputfile, outputlow):
 
 
 if __name__ == '__main__':
-    inputfile = 'KIRA New World.wav'
+    inputfile = 'KIRA New World.wav'                                        # ToDo: Variabel gestalten
     outputlowpass = 'KIRA New World lowpass.wav'
     outputlowpasstemp1 = 'KIRA New World lowpasstemp1.wav'
     outputlowpasstemp2 = 'KIRA New World lowpasstemp2.wav'
@@ -106,4 +106,4 @@ if __name__ == '__main__':
     highpassfilter(outputhighpasstemp1, outputhighpasstemp2)
     highpassfilter(outputhighpasstemp2, outputhighpass)
     os.remove('KIRA New World highpasstemp1.wav')
-    os.remove('KIRA New World highpasstemp2.wav')
+    os.remove('KIRA New World highpasstemp2.wav')                            #Todo: Schöner machen
