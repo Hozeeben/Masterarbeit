@@ -2,12 +2,35 @@
 
 import sys, os.path
 import aubio
-from numpy import zeros, log10, vstack
+import numpy as np
 import matplotlib.pyplot as plt
 
 def bpmdetection(inputfile):
     print('Hello Function')
     # in aubio.tempo
+    win_s=8192
+    hop_s=256
+    original = aubio.source(inputfile, hop_size=hop_s)
+    #aubio.source()
+    samplerate= original.samplerate
+    beats =[]
+    temp = aubio.tempo("specdiff", win_s, hop_s, samplerate)
+    while True:
+        samples, read = original()
+        beat = temp(samples)                      # Calculate the filter and write it back to the file
+        if temp:
+            bpm =temp.get_bpm()
+            beats.append(bpm)
+        #print(bpm)
+        if read < original.hop_size:
+            break
+
+    calculatebpm=0
+    #print(np.median(beats))
+    for i in range(0, beats.__len__()):
+        beats.sort()
+        print(beats[i])
+
 def lowpassfilter(inputfile, outputlow):
     original = aubio.source(inputfile)                          # Open the original file
     samplerate=original.samplerate                              # get samplerate for output file
