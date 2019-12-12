@@ -1,0 +1,6 @@
+Order of an Filter: stepness of the slope
+
+
+
+
+BiQuadFilter:https://arachnoid.com/BiQuadDesigner/index.html

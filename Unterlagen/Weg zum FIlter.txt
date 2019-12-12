@@ -1,0 +1,12 @@
+Implementieren und auslesen von Informationen aus .wav Dateien+Berechnung und Plot
+https://stackoverflow.com/questions/54612204/trying-to-get-the-frequencies-of-a-wav-file-in-python
+https://stackoverflow.com/questions/23377665/python-scipy-fft-wav-files
+
+Berechnung Für Low/Middle/High-Pass-Filter
+
+
+Schreiben einer .flac Datei (vielleicht auch .wav oder .mp3)
+https://pypi.org/project/SoundFile/
+
+Konvertierung in MIDI-File
+https://pypi.org/project/audio-to-midi/									Evaluieren ob Midis korrekt sind

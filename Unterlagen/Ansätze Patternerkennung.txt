@@ -1,0 +1,12 @@
+unter Umständen davor Low-Pass-Filter
+Melodic Spectrum: 	
+Bass:			Auflösung=32768 und 8x RawBassverlauf zu sehen=Pattern Nummer 1
+Soft Bass:		Auflösung=8192 und 8x Bassverlauf
+Kick Drums:		Auflösung=8192 und 8x
+
+
+High-Pass-Filter
+Peak Frequenzy Spectrum
+Clap:			Auflösung=4096 8x 
+
+Band-Pass-Filter vllt der Rest

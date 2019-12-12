@@ -1,0 +1,47 @@
+Fourieranalyse
+Audacity
+
+Ideen:
+Mittelwert der Zeitspannen
+WEnn Delta = 0 dann selbes Pattern (fall das zwei unterschiedliche Pattern selbes Delta haben abfangen)
+Sonst Neues Pattern und mit anderen PAttern vergleichen
+Wenn ein Delta gefunden wird ist es dieses Pattern sonst einzelne Instrumente abziehen
+
+
+Nur einfache Fourieranalyse laufen lassen und Spektralbereiche vergleichen
+Pro Sekunde eine und mit den folgenden 4 Vergleichen
+
+Zeitbereiche Vergleichen (Bilder vergleichen)
+Bei keinem Match einzelne Instrumente Abziehen bis Match
+
+Amplituden der einzelnen Instrumente pro Sekunde aufzählen und danach vergleichen ->keine Oktavenübergänge sichtbar, keine schnellen Schläge und dann 
+Pause sichtbar(innerhalb einer Sek)
+Weiterentwicklung mit Timestamps
+
+
+
+https://de.wikipedia.org/wiki/Fourier-Analysis#Abstrakte_harmonische_Analyse
+Für den Anfang gut danach Fachliteratur
+
+Gute Quellen:
+http://drops.dagstuhl.de/opus/volltexte/2006/652/pdf/06171.MeredithDavid.Paper.652.pdf
+Art Pattern zu Erkennen
+
+http://hss.ulb.uni-bonn.de/2013/3271/3271.pdf
+DOktorarbeit
+
+https://www.researchgate.net/profile/Jia_Lien_Hsu/publication/221615538_Efficient_Repeating_Pattern_Finding_in_Music_Databases/links/54e614280cf2bff5a4f29302.pdf
+Paper
+
+https://books.google.de/books?hl=de&lr=&id=CIFqbWcjfHEC&oi=fnd&pg=PA82&dq=music+pattern&ots=Mp5AGEI7AQ&sig=w2XPcuuqDchI6TmdnxDhCxOztuc#v=onepage&q=music%20pattern&f=false
+womöglich ein Buch
+
+https://www.tandfonline.com/doi/abs/10.1076/jnmr.32.2.153.16738?tab=permissions&scroll=top
+Buch (Bib Viktor)
+
+Visual pattern discovery and recognition
+Buch Unibib
+
+OK Quelle:
+http://pdfs.semanticscholar.org/f6ce/8e49f1987d927be91c99e82458c415266c89.pdf
+Paper

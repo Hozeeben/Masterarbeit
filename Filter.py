@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 
 def bpmdetection(inputfile):
     print('Hello Function')
+    # in aubio.tempo
 def lowpassfilter(inputfile, outputlow):
     original = aubio.source(inputfile)                          # Open the original file
     samplerate=original.samplerate                              # get samplerate for output file
