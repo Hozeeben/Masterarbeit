@@ -35,31 +35,39 @@ def apply_filter(path, target):
 
 def bpmdetection(inputfile):
     print('Hello Function')
+    orig_stdout = sys.stdout
+    f = open('bpm.txt', 'w')
+    sys.stdout = f
     # in aubio.tempo
     win_s=8192
     hop_s=256
     original = aubio.source(inputfile, hop_size=hop_s)
-    #aubio.source()
     samplerate= original.samplerate
     beats =[]
-    temp = aubio.tempo("specdiff", win_s, hop_s, samplerate)
+    beatdetection = aubio.tempo("specdiff", win_s, hop_s, samplerate)
+
+    total_Frames=0
     while True:
         samples, read = original()
-        beat = temp(samples)                      # Calculate the filter and write it back to the file
-        if temp:
-            bpm =temp.get_bpm()
+        beatdetection(samples)                      # Calculate the filter and write it back to the file
+        if beatdetection:
+            bpm = beatdetection.get_bpm()
             beats.append(bpm)
-        #print(bpm)
+            #print(temp.get_last_s())               # Write Timestamp of the beat onto console
+            print(bpm)                              # Write bpm on console
+            total_Frames += read
         if read < original.hop_size:
             break
 
-    calculatebpm=0
-    print(np.min(beats))
-    print(np.median(beats))
-    print(np.max(beats))
-    #for i in range(0, beats.__len__()):
-    #    beats.sort()
-    #    print(beats[i])                            #ToDO: Überlegen wie BPM richtig berechnet werden können (mehr Tests machen mit anderen Tracks)
+    sys.stdout = orig_stdout
+    calculatebpm = 0
+    for i in range(0, beats.__len__()):
+        calculatebpm += beats[i]
+    calculatebpm = calculatebpm/(beats.__len__()*5) # BPM in in 5 unit interval
+    calculatebpm = np.round(calculatebpm)           # round the value to an integer
+    calculatebpm = calculatebpm*5                   # get back the old but rounded value
+    print(calculatebpm)
+    print(total_Frames)
 
 if __name__ == '__main__':
     outputlow = 'Test'
@@ -68,5 +76,7 @@ if __name__ == '__main__':
     input_path2 = 'KIRA New World.wav'
     #output_path= 'KIRA New World Filtered.wav'
     #apply_filter(input_path, output_path)
+    print('NIVIRO - Flashes.wav')
     bpmdetection(input_path)
-    bpmdetection(input_path2)
+    #print('KIRA New World.wav')
+    #bpmdetection(input_path2)
