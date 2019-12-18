@@ -10,3 +10,11 @@ Peak Frequenzy Spectrum
 Clap:			Auflösung=4096 8x 
 
 Band-Pass-Filter vllt der Rest
+Einstellungen:
+Frequency Peak
+Colour:			Sunset Threshould voll aufdrehen
+Scale:			Linear Hybrid
+Wondowsize:		4096(kann auch kleiner falls Linien schwer erkennbar sind was aber nicht der fall sein sollte)
+			93.75 überlappung für bessere kurvenverläufe
+			1x
+Bins:			All Bins Log

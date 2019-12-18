@@ -10,11 +10,11 @@ def bpmdetection(inputfile):
     orig_stdout = sys.stdout
     f = open('bpm.txt', 'w')
     sys.stdout = f
-    win_s=8192
-    hop_s=256
+    win_s = 8192
+    hop_s = 256
     original = aubio.source(inputfile, hop_size=hop_s)
-    samplerate= original.samplerate
-    beats =[]
+    samplerate = original.samplerate
+    beats = []
     beatdetection = aubio.tempo("specdiff", win_s, hop_s, samplerate)
 
     total_Frames=0
@@ -42,7 +42,7 @@ def bpmdetection(inputfile):
 
 def lowpassfilter(inputfile, outputlow):
     original = aubio.source(inputfile)                          # Open the original file
-    samplerate=original.samplerate                              # get samplerate for output file
+    samplerate = original.samplerate                              # get samplerate for output file
     writetofile = aubio.sink(outputlow, samplerate)            # Create Output sink
 
     # Biquad Filter as Low-Pass-Filter
@@ -62,7 +62,7 @@ def lowpassfilter(inputfile, outputlow):
 
 def bandpassfilter(inputfile, outputlow):
     original = aubio.source(inputfile)                          # Open the original file
-    samplerate=original.samplerate                              # get samplerate for output file
+    samplerate = original.samplerate                              # get samplerate for output file
     writetofile = aubio.sink(outputlow, samplerate)            # Create Output sink
 
     # Biquad Filter as Band-Pass-Filter (Combined Low-Pass-Filter and High-Pass-Filter for a better function
@@ -90,7 +90,7 @@ def bandpassfilter(inputfile, outputlow):
 
 def highpassfilter(inputfile, outputlow):
     original = aubio.source(inputfile)                          # Open the original file
-    samplerate=original.samplerate                              # get samplerate for output file
+    samplerate = original.samplerate                              # get samplerate for output file
     writetofile = aubio.sink(outputlow, samplerate)            # Create Output sink
 
     # Biquad Filter as high-Pass-Filter
@@ -110,11 +110,11 @@ def highpassfilter(inputfile, outputlow):
 
 
 if __name__ == '__main__':
-    inputfile = 'KIRA New World.wav'                                        # ToDo: Variabel gestalten
+    inputfile = 'NIVIRO - Time for Polka [NCS Release].wav'                                        # ToDo: Variabel gestalten
     outputlowpass = 'KIRA New World lowpass.wav'
     outputlowpasstemp1 = 'KIRA New World lowpasstemp1.wav'
     outputlowpasstemp2 = 'KIRA New World lowpasstemp2.wav'
-    outputbandpass = 'KIRA New World bandpass.wav'
+    outputbandpass = 'NIVIRO - Time for Polka [NCS Release] bandpass.wav'
     outputbandpasstemp1 = 'KIRA New World bandpasstemp1.wav'
     outputbandpasstemp2 = 'KIRA New World bandpasstemp2.wav'
     outputhighpass = 'KIRA New World highpass.wav'
