@@ -4,6 +4,7 @@ import sys, os.path
 import aubio
 import numpy as np
 import matplotlib.pyplot as plt
+import shutil
 
 
 def bpmdetection(inputfile):
@@ -110,19 +111,19 @@ def highpassfilter(inputfile, outputlow):
 
 
 if __name__ == '__main__':
-    musicpath="C:\\Users\\Nichtsan\\Desktop\\Masterarbeit\\Masterarbeit\\Musik"
+    musicpath=os.getcwd()+"\\Musik"                         #Set Path to musicfiles
 
-    orig_stdout = sys.stdout
+    orig_stdout = sys.stdout                                #List all Songs from folder Musik
     f = open('Song.txt', 'w')
     sys.stdout = f
-    print(os.listdir(musicpath))
+    print(os.listdir(musicpath))                            #Write it into Song.txt
     sys.stdout = orig_stdout
     f = open('Song.txt', 'r')
     txt = f.readline()
     txtcontent=""
     f.close()
     for i in range(0, len(txt)):
-        if i!=0 and i!=len(txt)-1 and i!=len(txt)-2:
+        if i!=0 and i!=len(txt)-2:
             txtcontent=txtcontent+txt[i]
     os.remove('Song.txt')
     txtcontent=txtcontent.replace("'", "")
@@ -132,9 +133,16 @@ if __name__ == '__main__':
     p.close()
     p = open('Songs.txt', 'r')
 
-    while p.readline()!="":
-        musicname=p.readline()
-        inputfile = musicname+'.wav'                                        # ToDo: Variabel gestalten
+    os.chdir(musicpath)                                     #Change working directory for filters
+    while True:
+        musicnametemp=p.readline()                          #Read lines in Songs.txt
+        if musicnametemp=="":                               #If p.readline is empty exit while
+            break
+        musicname=""
+        for i in range(0, len(musicnametemp)):
+            if i<len(musicnametemp)-5:
+                musicname=musicname+musicnametemp[i]
+        inputfile = musicname+'.wav'
         outputlowpass = musicname+' lowpass.wav'
         outputlowpasstemp1 = musicname+' lowpasstemp1.wav'
         outputlowpasstemp2 = musicname+' lowpasstemp2.wav'
@@ -166,3 +174,11 @@ if __name__ == '__main__':
         highpassfilter(outputhighpasstemp2, outputhighpass)
         os.remove(musicname+' highpasstemp1.wav')
         os.remove(musicname+' highpasstemp2.wav')                            #Todo: Schöner machen
+
+        shutil.move(outputlowpass, '../Musikgefiltert')                         #Move filtered files to folder Musikgefiltert
+        shutil.move(outputbandpass, '../Musikgefiltert')
+        shutil.move(outputhighpass, '../Musikgefiltert')
+
+    p.close()
+    os.chdir('../')                                                             #Change directory back to the old folder
+    os.remove('Songs.txt')                                                      #Clean environment
