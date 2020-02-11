@@ -110,35 +110,59 @@ def highpassfilter(inputfile, outputlow):
 
 
 if __name__ == '__main__':
-    inputfile = 'NIVIRO - Time for Polka [NCS Release].wav'                                        # ToDo: Variabel gestalten
-    outputlowpass = 'KIRA New World lowpass.wav'
-    outputlowpasstemp1 = 'KIRA New World lowpasstemp1.wav'
-    outputlowpasstemp2 = 'KIRA New World lowpasstemp2.wav'
-    outputbandpass = 'NIVIRO - Time for Polka [NCS Release] bandpass.wav'
-    outputbandpasstemp1 = 'KIRA New World bandpasstemp1.wav'
-    outputbandpasstemp2 = 'KIRA New World bandpasstemp2.wav'
-    outputhighpass = 'KIRA New World highpass.wav'
-    outputhighpasstemp1 = 'KIRA New World highpasstemp1.wav'
-    outputhighpasstemp2 = 'KIRA New World highpasstemp2.wav'
+    musicpath="C:\\Users\\Nichtsan\\Desktop\\Masterarbeit\\Masterarbeit\\Musik"
 
-    bpmdetection(inputfile)
-    lowpassfilter(inputfile, outputlowpass)                                 # Cascading 4 Biquad Low-Pass-Filter to get a sharp cut
-    lowpassfilter(outputlowpass, outputlowpasstemp1)
-    lowpassfilter(outputlowpasstemp1, outputlowpasstemp2)
-    lowpassfilter(outputlowpasstemp2, outputlowpass)
-    os.remove('KIRA New World lowpasstemp1.wav')
-    os.remove('KIRA New World lowpasstemp2.wav')
+    orig_stdout = sys.stdout
+    f = open('Song.txt', 'w')
+    sys.stdout = f
+    print(os.listdir(musicpath))
+    sys.stdout = orig_stdout
+    f = open('Song.txt', 'r')
+    txt = f.readline()
+    txtcontent=""
+    f.close()
+    for i in range(0, len(txt)):
+        if i!=0 and i!=len(txt)-1 and i!=len(txt)-2:
+            txtcontent=txtcontent+txt[i]
+    os.remove('Song.txt')
+    txtcontent=txtcontent.replace("'", "")
+    txtcontent=txtcontent.replace(", ","\n")
+    p = open('Songs.txt', 'w')
+    p.write(txtcontent)
+    p.close()
+    p = open('Songs.txt', 'r')
 
-    bandpassfilter(inputfile, outputbandpass)                               # Cascading 4 Biquad Band-Pass-Filter to get a sharp cut
-    bandpassfilter(outputbandpass, outputbandpasstemp1)
-    bandpassfilter(outputbandpasstemp1, outputbandpasstemp2)
-    bandpassfilter(outputbandpasstemp2, outputbandpass)
-    os.remove('KIRA New World bandpasstemp1.wav')
-    os.remove('KIRA New World bandpasstemp2.wav')
+    while p.readline()!="":
+        musicname=p.readline()
+        inputfile = musicname+'.wav'                                        # ToDo: Variabel gestalten
+        outputlowpass = musicname+' lowpass.wav'
+        outputlowpasstemp1 = musicname+' lowpasstemp1.wav'
+        outputlowpasstemp2 = musicname+' lowpasstemp2.wav'
+        outputbandpass = musicname+' bandpass.wav'
+        outputbandpasstemp1 = musicname+' bandpasstemp1.wav'
+        outputbandpasstemp2 = musicname+' bandpasstemp2.wav'
+        outputhighpass = musicname+' highpass.wav'
+        outputhighpasstemp1 = musicname+' highpasstemp1.wav'
+        outputhighpasstemp2 = musicname+' highpasstemp2.wav'
 
-    highpassfilter(inputfile, outputhighpass)                                # Cascading 4 Biquad High-Pass-Filter to get a sharp cut
-    highpassfilter(outputhighpass, outputhighpasstemp1)
-    highpassfilter(outputhighpasstemp1, outputhighpasstemp2)
-    highpassfilter(outputhighpasstemp2, outputhighpass)
-    os.remove('KIRA New World highpasstemp1.wav')
-    os.remove('KIRA New World highpasstemp2.wav')                            #Todo: Schöner machen
+        #bpmdetection(inputfile)
+        lowpassfilter(inputfile, outputlowpass)                                 # Cascading 4 Biquad Low-Pass-Filter to get a sharp cut
+        lowpassfilter(outputlowpass, outputlowpasstemp1)
+        lowpassfilter(outputlowpasstemp1, outputlowpasstemp2)
+        lowpassfilter(outputlowpasstemp2, outputlowpass)
+        os.remove(musicname+' lowpasstemp1.wav')
+        os.remove(musicname+' lowpasstemp2.wav')
+
+        bandpassfilter(inputfile, outputbandpass)                               # Cascading 4 Biquad Band-Pass-Filter to get a sharp cut
+        bandpassfilter(outputbandpass, outputbandpasstemp1)
+        bandpassfilter(outputbandpasstemp1, outputbandpasstemp2)
+        bandpassfilter(outputbandpasstemp2, outputbandpass)
+        os.remove(musicname+' bandpasstemp1.wav')
+        os.remove(musicname+' bandpasstemp2.wav')
+
+        highpassfilter(inputfile, outputhighpass)                                # Cascading 4 Biquad High-Pass-Filter to get a sharp cut
+        highpassfilter(outputhighpass, outputhighpasstemp1)
+        highpassfilter(outputhighpasstemp1, outputhighpasstemp2)
+        highpassfilter(outputhighpasstemp2, outputhighpass)
+        os.remove(musicname+' highpasstemp1.wav')
+        os.remove(musicname+' highpasstemp2.wav')                            #Todo: Schöner machen
