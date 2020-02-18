@@ -20,24 +20,39 @@ if __name__ == '__main__':
     f.close()
     f=open('MIDI.txt','r')
     p=open('Musikstück.txt', 'w')
+    writenote=''
     while True:                                                             #Create .txt with only Notenr. and Time its played
         nextline=f.readline()
         if nextline=="":
             break
-        #print(nextline.find('<message note on'))
+        if nextline.find('<meta message end_of_track')!=-1:
+            if writenote!='':
+                p.write(writenote+'\n')
+                writenote=''
+            #p.write(writetime + '\n')
         if nextline.find('<message note_on')!=-1:
             startnote=nextline.find('note=')
-            starttime=nextline.find('time=')
-            writenote=''
-            writetime=''
+            #starttime=nextline.find('time=')
             for i in range(0,2):
                 if nextline[startnote+stringlength+i]==' ':
                     break
                 writenote=writenote+nextline[startnote+stringlength+i]
-            for i in range(0,6):
-                if nextline[starttime + stringlength + i] == '>':
-                    break
-                writetime = writetime + nextline[starttime + stringlength + i]
-            p.write(writenote + ' ')
-            p.write(writetime + '\n')
-    p.close
+            writenote = writenote + ' '
+            #for i in range(0,6):
+            #    if nextline[starttime + stringlength + i] == '>':
+            #        break
+            #    writetime = writetime + nextline[starttime + stringlength + i]
+
+    p.close()
+    f.close()
+    p=open('Musikstück.txt', 'r')
+    i=1
+    while True:
+        if p.readline()!='':
+           print(i)
+           i=i+1
+        else:
+            break
+
+    # ToDo: Jeden Track einzeln aus Datei lesen und verarbeiten
+    # ToDo: Index von Anfang der Pattern ausgeben
