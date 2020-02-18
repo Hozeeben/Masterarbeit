@@ -22,12 +22,10 @@ if __name__ == '__main__':
     p=open('Musikstück.txt', 'w')
     while True:                                                             #Create .txt with only Notenr. and Time its played
         nextline=f.readline()
-        #print('Hallo?')
         if nextline=="":
             break
         #print(nextline.find('<message note on'))
         if nextline.find('<message note_on')!=-1:
-            print('Hallo?')
             startnote=nextline.find('note=')
             starttime=nextline.find('time=')
             writenote=''
