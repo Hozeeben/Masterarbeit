@@ -2,6 +2,33 @@ import sys
 import os.path
 from mido import MidiFile
 
+def normalpatternsearchpreperation(Inputfile):
+    patternlist = []
+    f=open(Inputfile, 'r')
+
+    while True:
+        track=f.readline()
+        if track=='':
+            break
+        maxpatternlength=0
+        for i in range(0, len(track)):                      #Get longest possible repetetive pattern
+            if track[i]==' ':
+                maxpatternlength=maxpatternlength+1
+        maxpatternlength=maxpatternlength//2
+        for i in range(1,j):
+    patternsearch(track, 1, maxpatternlength, patternlist)
+
+def patternsearch(track, patternlength, maxpatternlength, patternlist):
+    if patternlength >= maxpatternlength:
+        return patternlist
+    else:
+        patternlengthtemp=patternlength
+        for i in range(0, len(track)):
+
+
+
+
+
 if __name__ == '__main__':
     tempsting = 'note='
     stringlength = len(tempsting)
@@ -45,14 +72,7 @@ if __name__ == '__main__':
 
     p.close()
     f.close()
-    p=open('Musikstück.txt', 'r')
-    i=1
-    while True:
-        if p.readline()!='':
-           print(i)
-           i=i+1
-        else:
-            break
+    normalpatternsearchpreperation('Musikstück.txt')
 
     # ToDo: Jeden Track einzeln aus Datei lesen und verarbeiten
     # ToDo: Index von Anfang der Pattern ausgeben
