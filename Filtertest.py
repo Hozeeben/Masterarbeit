@@ -4,6 +4,7 @@ import sys
 import os.path
 import aubio
 import numpy as np
+from mido import MidiFile
 
 
 def apply_filter(path, target):
@@ -77,6 +78,8 @@ if __name__ == '__main__':
     #output_path= 'KIRA New World Filtered.wav'
     #apply_filter(input_path, output_path)
     print('NIVIRO - Flashes.wav')
-    bpmdetection(input_path)
+    #bpmdetection(input_path)
     #print('KIRA New World.wav')
     #bpmdetection(input_path2)
+    teststring='<message note_on channel=0 note=64 velocity=71 time=1624>'
+    teststring.find('message note_on')
