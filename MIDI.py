@@ -4,6 +4,8 @@ from mido import MidiFile
 
 def normalpatternsearchpreperation(Inputfile):
     patternlist = []
+    positionofpattern = []
+    patternlengthinnumber = []
     f=open(Inputfile, 'r')
 
     while True:
@@ -15,15 +17,36 @@ def normalpatternsearchpreperation(Inputfile):
             if track[i]==' ':
                 maxpatternlength=maxpatternlength+1
         maxpatternlength=maxpatternlength//2
-        for i in range(1,j):
-    patternsearch(track, 1, maxpatternlength, patternlist)
+        for j in range(0, len(track)-1):
+            patternsearch(track, 1, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, j)
 
-def patternsearch(track, patternlength, maxpatternlength, patternlist):
-    if patternlength >= maxpatternlength:
+def patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, position):
+    if patternlength > maxpatternlength:
+        return patternlist
+    elif position+patternlength>len(track):
         return patternlist
     else:
+        stringlength=len(track)
         patternlengthtemp=patternlength
-        for i in range(0, len(track)):
+        patternstring = ''
+        whitespaces = 0
+        itteration = 0
+        occurence = 0
+        while True:
+            if track[position+itteration] == ' ':                                    # Write Patternstring into variable
+                whitespaces += 1
+            if whitespaces == patternlength:
+                break
+            patternstring = patternstring+track[position+itteration]
+
+        while occurence != -1:                                                      # Write all patterns in a list
+            occurence = track.find(patternstring, occurence+1, stringlength)        # List is splitted into patternstring,
+            if occurence != -1:                                                     # position of the pattern and length in int
+                # An dieser Stelle ganzen Voraussetzungen wann PAttern NICHT aufgenommen werden müssen
+                patternlist.append(patternstring)
+                positionofpattern.append(occurence)
+                patternlengthinnumber.append(patternlength)
+
 
 
 
