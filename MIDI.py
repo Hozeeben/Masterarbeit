@@ -19,13 +19,16 @@ def normalpatternsearchpreperation(Inputfile):
         maxpatternlength=maxpatternlength//2
         for j in range(0, len(track)-1):
             patternsearch(track, 1, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, j)
+    return patternlist
 
 def patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, position):
+    print('Called Patternsearch')
     if patternlength > maxpatternlength:
         return patternlist
     elif position+patternlength>len(track):
-        return patternlist
+        return patternlist, positionofpattern
     else:
+        #print('In Else')
         stringlength=len(track)
         patternlengthtemp=patternlength
         patternstring = ''
@@ -38,7 +41,8 @@ def patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
             if whitespaces == patternlength:
                 break
             patternstring = patternstring+track[position+itteration]
-
+            itteration += 1
+        #print('Nach Patternstring')
         while occurence != -1:                                                      # Write all patterns in a list
             occurence = track.find(patternstring, occurence+1, stringlength)        # List is splitted into patternstring,
             write = True                                                            # position of the pattern and length in int
@@ -53,7 +57,12 @@ def patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
                     patternlist.append(patternstring)
                     positionofpattern.append(occurence)
                     patternlengthinnumber.append(patternlength)
-
+            #print('In While')
+        patternlength += 1
+        patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber,
+                      position)
+        print('Finished Patternsearch')
+        return patternlist, positionofpattern
 
 
 
@@ -103,7 +112,8 @@ if __name__ == '__main__':
 
     p.close()
     f.close()
-    normalpatternsearchpreperation('Musikstück.txt')
-
+    finalpattern = normalpatternsearchpreperation('Musikstück.txt')
+    print(finalpattern)
     # ToDo: Jeden Track einzeln aus Datei lesen und verarbeiten
     # ToDo: Index von Anfang der Pattern ausgeben
+    # ToDo: Für jeden Track eigene Liste
