@@ -41,11 +41,19 @@ def patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
 
         while occurence != -1:                                                      # Write all patterns in a list
             occurence = track.find(patternstring, occurence+1, stringlength)        # List is splitted into patternstring,
-            if occurence != -1:                                                     # position of the pattern and length in int
-                # An dieser Stelle ganzen Voraussetzungen wann PAttern NICHT aufgenommen werden müssen
-                patternlist.append(patternstring)
-                positionofpattern.append(occurence)
-                patternlengthinnumber.append(patternlength)
+            write = True                                                            # position of the pattern and length in int
+            if occurence != -1:
+                for i in range(occurence, occurence+patternlength):
+                    for j in range(0,len(positionofpattern)):
+                        if positionofpattern[j]==i:
+                            write = False
+                            break
+
+                if write:
+                    patternlist.append(patternstring)
+                    positionofpattern.append(occurence)
+                    patternlengthinnumber.append(patternlength)
+
 
 
 
