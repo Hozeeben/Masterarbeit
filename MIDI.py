@@ -19,24 +19,20 @@ def normalpatternsearchpreperation(Inputfile):
         maxpatternlength=maxpatternlength//2
         print(maxpatternlength)
         nextnote = 0
-        start = 1
-        for j in range(0, len(track)-1):
-            print(j)
+        for j in range(0, len(track)-1):                                        #-1 because last sign is a ' '
+            print('Momentan an Pos ',j)
             itteration = 0
-            while True:
-                itteration += 1
-                if start==1:
-                    start = 0
-                    break
-                if track[j+itteration]==' ':
-                    nextnote += 1
-                    break
-                nextnote += 1
             if nextnote > 0:
                 nextnote -= 1
                 continue
             else:
                 patternsearch(track, 1, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, j)
+            while True:
+                itteration += 1
+                if track[j+itteration] == ' ':
+                    nextnote += 1
+                    break
+                nextnote += 1
     return patternlist
 
 def patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, position):
@@ -50,7 +46,6 @@ def patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
     else:
         patternsearch(track, patternlength+1, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber,
                       position)
-        #print('In Else')
         stringlength=len(track)
         patternlengthtemp=patternlength
         patternstring = ''
@@ -59,19 +54,20 @@ def patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
         occurence = 0
         while True:
             if len(track) <= position+itteration:
-                break
+                return patternlist, positionofpattern, patternlengthinnumber
             if track[position+itteration] == ' ':                                    # Write Patternstring into variable
                 whitespaces += 1
             if whitespaces == patternlength:
                 break
             patternstring = patternstring+track[position+itteration]
             itteration += 1
-        print(patternstring)
+        print('Patternstring:',patternstring)
         write = True
+        stop = 0
         writefirstoccurence = True
         while True:                                                                 # Write all patterns in a list
             occurence = track.find(patternstring, occurence, stringlength)          # List is splitted into patternstring,
-            print(occurence)
+            print('Occurence:',occurence)
             if occurence == -1:                                                     # position of the pattern and length in int
                 break
             if occurence != -1:
@@ -81,15 +77,22 @@ def patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
                         print('Case 4')
                         break
                     for j in range(0, len(positionofpattern)):
-                        print(positionofpattern[j])
-                        print(i)
-                        if positionofpattern[j]==i:
+                        print('Patternposition:',positionofpattern[j])
+                        print('i:',i)
+                        print('Max Ausbreitung:',positionofpattern[j]+patternlengthinnumber[j])
+                        if i in range (positionofpattern[j], positionofpattern[j]+patternlengthinnumber[j]):
+            # ToDo: patternlengthinnumber wird nicht in Anzahl Stringposition gerechnet->Zwischenpattern werden erkannt
+                        #if positionofpattern[j]==i:
                             write = False
                             print('case 1')
+                            stop = 1
                             break
                         else:
                             write = True
                             print('case 2')
+                    if stop == 1:
+                        stop = 0
+                        break
             if occurence == position:
                 write = False
                 print('case 3')
@@ -103,7 +106,7 @@ def patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
                 positionofpattern.append(occurence)
                 patternlengthinnumber.append(patternlength)
             occurence += 1
-            print('In While')
+            print(patternlist)
         print('Finished Patternsearch normaly')
         return patternlist, positionofpattern, patternlengthinnumber
 
@@ -155,7 +158,7 @@ if __name__ == '__main__':
 
     p.close()
     f.close()
-    finalpattern = normalpatternsearchpreperation('Musikstücktemp.txt')
+    finalpattern = normalpatternsearchpreperation('Musikstücktemp2.txt')
     print(finalpattern)
     # ToDo: Jeden Track einzeln aus Datei lesen und verarbeiten
     # ToDo: Index von Anfang der Pattern ausgeben
