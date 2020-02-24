@@ -2,7 +2,7 @@ import sys
 import os.path
 from mido import MidiFile
 
-def patternsearchpreperation(track):
+def Patternsearchpreperation(track):
     patternlist = []
     positionofpattern = []
     patternlengthinnumber = []
@@ -27,7 +27,7 @@ def patternsearchpreperation(track):
             nextnote -= 1
             continue
         else:
-            patternsearch(track, 1, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters, j)
+            Patternsearch(track, 1, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters, j)
         while True:
             itteration += 1
             if track[j+itteration] == ' ':
@@ -40,9 +40,10 @@ def patternsearchpreperation(track):
             if track[j] == ' ':
                 position += 1
         positionofpattern[i] = position+1
+    ChangeNumbersToNotes(patternlist)
     return patternlist, patternlengthinnumber, positionofpattern
 
-def patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters, position):
+def Patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters, position):
     #print('Called Patternsearch')
     if patternlength > maxpatternlength:
         #print('Finished Patternsearch patternlength>maxlength')
@@ -51,7 +52,7 @@ def patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
         #print('Finished Patternsearch because String would go out of bound')
         return patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters
     else:
-        patternsearch(track, patternlength+1, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters,
+        Patternsearch(track, patternlength + 1, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters,
                       position)
         stringlength = len(track)
         patternstring = ''
@@ -117,6 +118,53 @@ def patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
         #print('Finished Patternsearch normaly')
         return patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters
 
+def ChangeNumbersToNotes(patternlist):
+    for i in range(0, len(patternlist)):
+        pattern = patternlist[i]
+        itteration = 0
+        notestemp = ''
+        noteswrite = ''
+        while itteration < len(pattern):
+            if pattern[itteration] != ' ':
+                notestemp = notestemp + pattern[itteration]
+            if pattern[itteration] == ' ' or itteration == len(pattern)-1:
+                noteinint = int(notestemp)
+                notestemp = ''
+                oktave = (noteinint//12)-1
+                note = noteinint%12
+                oktave = str(oktave)
+                if note == 0:
+                    noteswrite = noteswrite + 'C' + oktave + ' '
+                elif note == 1:
+                    noteswrite = noteswrite + 'CIS' + oktave + ' '
+                elif note == 2:
+                    noteswrite = noteswrite + 'D' + oktave + ' '
+                elif note == 3:
+                    noteswrite = noteswrite + 'DIS' + oktave + ' '
+                elif note == 4:
+                    noteswrite = noteswrite + 'E' + oktave + ' '
+                elif note == 5:
+                    noteswrite = noteswrite + 'F' + oktave + ' '
+                elif note == 6:
+                    noteswrite = noteswrite + 'FIS' + oktave + ' '
+                elif note == 7:
+                    noteswrite = noteswrite + 'G' + oktave + ' '
+                elif note == 8:
+                    noteswrite = noteswrite + 'GIS' + oktave + ' '
+                elif note == 9:
+                    noteswrite = noteswrite + 'A' + oktave + ' '
+                elif note == 10:
+                    noteswrite = noteswrite + 'AIS' + oktave + ' '
+                elif note == 11:
+                    noteswrite = noteswrite + 'B' + oktave + ' '
+
+            patternlist[i] = noteswrite
+            itteration += 1
+    return patternlist
+
+
+
+
 
 
 
@@ -126,9 +174,9 @@ if __name__ == '__main__':
     tempsting = 'note='
     stringlength = len(tempsting)
     normalstdout = sys.stdout
-    f = open('MIDI.txt', 'w')                                         # ToDo: Variabel machen
+    f = open('MIDI.txt', 'w')
     sys.stdout = f
-    filename = 'bach.mid'
+    filename = 'bach.mid'                                   # ToDo: Variabel machen
     midi_file = MidiFile(filename)
 
     for i, track in enumerate(midi_file.tracks):
@@ -167,18 +215,19 @@ if __name__ == '__main__':
     p = open('Musikstücktemp2.txt', 'r')
     e = open('Ergebnis Patternsuche.txt', 'w')
     nroftracks = 1
-    sys.stdout = e
+    #sys.stdout = e
     while True:
         tracks = p.readline()
         if tracks == '':
             break
+        sys.stdout = e
         print('===Track Nr. ', nroftracks, '===')
-        pattern, length, noteintrack = patternsearchpreperation(tracks)
+        pattern, length, noteintrack = Patternsearchpreperation(tracks)
         itterations = 0
         while itterations < len(pattern):
             print('Pattern: ',pattern[itterations],'\nLänge des gefundenen Pattern: ', length[itterations], '\nStelle im Musikstück: ', noteintrack[itterations],'\n')
             itterations +=1
         nroftracks += 1
-    sys.stdout = normalstdout
+        sys.stdout = normalstdout
     e.close()
     # ToDO: Wenn korrekt auskommentierte prints entfehrnen
