@@ -215,12 +215,11 @@ if __name__ == '__main__':
     p = open('Musikstücktemp2.txt', 'r')
     e = open('Ergebnis Patternsuche.txt', 'w')
     nroftracks = 1
-    #sys.stdout = e
+    sys.stdout = e
     while True:
         tracks = p.readline()
         if tracks == '':
             break
-        sys.stdout = e
         print('===Track Nr. ', nroftracks, '===')
         pattern, length, noteintrack = Patternsearchpreperation(tracks)
         itterations = 0
@@ -228,6 +227,6 @@ if __name__ == '__main__':
             print('Pattern: ',pattern[itterations],'\nLänge des gefundenen Pattern: ', length[itterations], '\nStelle im Musikstück: ', noteintrack[itterations],'\n')
             itterations +=1
         nroftracks += 1
-        sys.stdout = normalstdout
+    sys.stdout = normalstdout
     e.close()
     # ToDO: Wenn korrekt auskommentierte prints entfehrnen
