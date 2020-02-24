@@ -7,12 +7,6 @@ def Patternsearchpreperation(track):
     positionofpattern = []
     patternlengthinnumber = []
     patternlengthinletters = []
-    #f = open(Inputfile, 'r')
-
-    #while True:
-    #    track = f.readline()
-    #    if track == '':
-    #        break
     maxpatternlength = 0
     for i in range(0, len(track)):                                          #Get longest possible repetetive pattern
         if track[i] == ' ':
@@ -161,13 +155,6 @@ def ChangeNumbersToNotes(patternlist):
             patternlist[i] = noteswrite
             itteration += 1
     return patternlist
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
