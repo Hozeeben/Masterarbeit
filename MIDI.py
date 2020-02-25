@@ -10,24 +10,24 @@ def Patternsearchpreperation(track):
     maxpatternlength = 0
     for i in range(0, len(track)):                                          #Get longest possible repetetive pattern
         if track[i] == ' ':
-            maxpatternlength = maxpatternlength+1
+            maxpatternlength += 1
     maxpatternlength = maxpatternlength//2
     #print(maxpatternlength)
     nextnote = 0
-    for j in range(0, len(track)-1):                                        #-1 because last sign is a ' '
+    for j in range(maxpatternlength, 1, -1):                                        #-1 because last sign is a ' '
         #print('Momentan an Pos ',j)
         itteration = 0
-        if nextnote > 0:
-            nextnote -= 1
-            continue
-        else:
-            Patternsearch(track, 2, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters, j)
-        while True:
-            itteration += 1
-            if track[j+itteration] == ' ':
-                nextnote += 1
-                break
-            nextnote += 1
+        #if nextnote > 0:
+        #    nextnote -= 1
+        #    continue
+        #else:
+        Patternsearch(track, j, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters, 0)
+        #while True:
+        #    itteration += 1
+        #    if track[j+itteration] == ' ':
+        #        nextnote += 1
+        #        break
+        #    nextnote += 1
     for i in range(0, len(positionofpattern)):
         position = 0
         for j in range(0, positionofpattern[i]):
@@ -39,39 +39,35 @@ def Patternsearchpreperation(track):
 
 def Patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters, position):
     #print('Called Patternsearch')
-    if patternlength > maxpatternlength:
-        #print('Finished Patternsearch patternlength>maxlength')
-        return patternlist
-    elif position+patternlength*3 > len(track):
+    patternstring = ''
+    whitespaces = 0
+    itteration = 0
+    while True:  # Write Patternstring into variable
+        if len(track) <= position + itteration:
+            return patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters
+        if track[position + itteration] == ' ':
+            whitespaces += 1
+        if whitespaces == patternlength:
+            break
+        patternstring = patternstring + track[position + itteration]
+        itteration += 1
+    if position+len(patternstring) > len(track):
         #print('Finished Patternsearch because String would go out of bound')
-        return patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters
+        return patternlist
     else:
-        Patternsearch(track, patternlength + 1, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters,
-                      position)
         stringlength = len(track)
-        patternstring = ''
-        whitespaces = 0
-        itteration = 0
         occurence = 0
-        while True:                                                                                     # Write Patternstring into variable
-            if len(track) <= position+itteration:
-                return patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters
-            if track[position+itteration] == ' ':
-                whitespaces += 1
-            if whitespaces == patternlength:
-                break
-            patternstring = patternstring+track[position+itteration]
-            itteration += 1
         #print('Patternstring:',patternstring)
         write = True
         stop = 0
         writefirstoccurence = True
+        positiontemp = position
         while True:                                                                 # Write all patterns in a list
-            occurence = track.find(patternstring, occurence, stringlength)          # List is splitted into patternstring,
-            #print('Occurence:',occurence)
+            occurence = track.find(patternstring, positiontemp, stringlength)          # List is splitted into patternstring,
+            #print('Occurence:',occurence, ' From Patternstring:', patternstring)
             if occurence == -1:                                                     # position of the pattern and length in int
                 break
-            if occurence != -1:
+            if occurence != -1 and occurence != position:
                 for i in range(occurence, occurence+len(patternstring)):
                     if len(positionofpattern) == 0:
                         write = True
@@ -106,9 +102,21 @@ def Patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
                 positionofpattern.append(occurence)
                 patternlengthinnumber.append(patternlength)
                 patternlengthinletters.append(len(patternstring))
-            occurence += 1
+            positiontemp += 1
             #print(patternlist)
         #print('Finished Patternsearch normaly')
+        itteration2 = 0
+        nextnote = 0
+        while True:
+            itteration2 += 1
+            if track[position + itteration2] == ' ':
+                nextnote += 1
+                break
+            nextnote += 1
+        nextnote += 1
+        Patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber,
+                      patternlengthinletters,
+                      position + nextnote)
         return patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters
 
 def ChangeNumbersToNotes(patternlist):
