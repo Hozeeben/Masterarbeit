@@ -21,7 +21,7 @@ def Patternsearchpreperation(track):
             nextnote -= 1
             continue
         else:
-            Patternsearch(track, 1, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters, j)
+            Patternsearch(track, 2, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters, j)
         while True:
             itteration += 1
             if track[j+itteration] == ' ':
@@ -81,7 +81,7 @@ def Patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
                         #print('Patternposition:',positionofpattern[j])
                         #print('i:',i)
                         #print('Max Ausbreitung:',positionofpattern[j]+patternlengthinnumber[j])
-                        if i in range (positionofpattern[j], positionofpattern[j]+patternlengthinletters[j]):
+                        if positionofpattern[j] <= i <= positionofpattern[j]+patternlengthinletters[j] or positionofpattern[j] <= position <= positionofpattern[j]+patternlengthinletters[j]:
                         #if positionofpattern[j]==i:
                             write = False
                             #print('case 1')
@@ -89,7 +89,6 @@ def Patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
                             break
                         else:
                             write = True
-                            #print('case 2')
                     if stop == 1:
                         stop = 0
                         break
@@ -163,7 +162,7 @@ if __name__ == '__main__':
     normalstdout = sys.stdout
     f = open('MIDI.txt', 'w')
     sys.stdout = f
-    filename = 'bach.mid'                                   # ToDo: Variabel machen
+    filename = 'beethoven_ode_to_joy.mid'                                   # ToDo: Variabel machen
     midi_file = MidiFile(filename)
 
     for i, track in enumerate(midi_file.tracks):
@@ -199,7 +198,7 @@ if __name__ == '__main__':
             #    writetime = writetime + nextline[starttime + stringlength + i]
     p.close()
     f.close()
-    p = open('Musikstücktemp2.txt', 'r')
+    p = open('Musikstück.txt', 'r')
     e = open('Ergebnis Patternsuche.txt', 'w')
     nroftracks = 1
     sys.stdout = e
