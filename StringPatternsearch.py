@@ -168,7 +168,7 @@ if __name__ == '__main__':
     tempsting = 'note='
     stringlength = len(tempsting)
     normalstdout = sys.stdout
-    f = open('MIDI.txt', 'w')
+    f = open('MIDIString.txt', 'w')
     sys.stdout = f
     filename = 'beethoven_ode_to_joy.mid'                                   # ToDo: Variabel machen
     midi_file = MidiFile(filename)
@@ -180,8 +180,8 @@ if __name__ == '__main__':
 
     sys.stdout = normalstdout
     f.close()
-    f = open('MIDI.txt', 'r')
-    p = open('Musikstück.txt', 'w')
+    f = open('MIDIString.txt', 'r')
+    p = open('MusikstückString.txt', 'w')
     writenote = ''
     while True:                                                             #Create .txt with only Notenr. and Time its played
         nextline = f.readline()
@@ -206,8 +206,8 @@ if __name__ == '__main__':
             #    writetime = writetime + nextline[starttime + stringlength + i]
     p.close()
     f.close()
-    p = open('Musikstück.txt', 'r')
-    e = open('Ergebnis Patternsuche.txt', 'w')
+    p = open('MusikstückString.txt', 'r')
+    e = open('Ergebnis Patternsuche String.txt', 'w')
     nroftracks = 1
     sys.stdout = e
     while True:
