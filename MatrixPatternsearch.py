@@ -24,7 +24,28 @@ def PatternsearchPreperation(track):
             tempnote = ''
         tempnote = tempnote + track[itteration]
         itteration += 1
-    print(notematrix)
+    PatternSearch(notematrix, matrixindize)
+    return notematrix
+
+def PatternSearch(notematrix, matrixindize):
+    xindize = 1
+    yindize = 1
+    print(matrixindize)
+    while True:
+        if yindize == matrixindize:
+            break
+        if notematrix[0][yindize] == notematrix[xindize][0]:
+            if yindize != 1:
+                notematrix[xindize][yindize] = notematrix[xindize-1][yindize-1] + 1
+            else:
+                notematrix[xindize][yindize] = 1
+        xindize += 1
+        #print(xindize)
+        if xindize == matrixindize:
+            yindize += 1
+            xindize = yindize
+    return notematrix
+
 
 if __name__ == '__main__':
     tempsting = 'note='
@@ -64,10 +85,28 @@ if __name__ == '__main__':
     f.close()
 
     f = open('MusikstückMatrix.txt', 'r')
+    e = open('Ergebnis Patternsuche Matrix.txt', 'w')
+    nroftracks = 1
+    sys.stdout = e
+    write = 0
+    x = 0
+    y = 0
+    zeilenstring = ''
     while True:
         track = f.readline()
         if track == '':
             break
-        PatternsearchPreperation(track)
+        print('===Track Nr. ', nroftracks, '===')
+        notematrix = PatternsearchPreperation(track)
+        for y in range(0, np.size(notematrix,0)):
+            for x in range(0, np.size(notematrix, 1)):
+                if x == y:
+                    zeilenstring = zeilenstring + ' ' + '0'
+                else:
+                    zeilenstring=zeilenstring + ' ' + str(notematrix[y][x])
+            print(zeilenstring)
 
+        #print(notematrix)
+        nroftracks += 1
     f.close()
+    # ToDO: Ansicht in .txt verbessern um zu Kontrollieren ob Korrekt berechnet
