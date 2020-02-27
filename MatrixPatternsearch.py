@@ -97,43 +97,40 @@ if __name__ == '__main__':
             break
         print('===Track Nr. ', nroftracks, '===')
         notematrix, matrixindize = PatternsearchPreperation(track)
-        for y in range(0, np.size(notematrix, 0)):
+        for y in range(1, np.size(notematrix, 0)):
             patternstring = ''
-            for x in range(0, np.size(notematrix, 1)):
+            for x in range(1, np.size(notematrix, 1)):
                 if x < y:
-                    break
+                    continue
                 elif x == y:
                     notematrix[y, x] = 0
-
-                patternstring = patternstring + ' ' + str(notematrix[y, x])
+                else:
+                    if notematrix[y, x] > 1:
+                        xtemp = x
+                        ytemp = y
+                        patternlength = 0
+                        while True:
+                            if notematrix[ytemp, xtemp] < 2 or xtemp == matrixindize-1 or ytemp == matrixindize-1:
+                                break
+                            patternlength = int(notematrix[ytemp, xtemp])
+                            xtemp += 1
+                            ytemp += 1
+                        yxtemp = str(ytemp) + ' ' + str(xtemp)
+                        if yxtemp not in foundpatternindize:
+                            foundpatternlength.append(int(patternlength))
+                            foundpatternindize.append(yxtemp)
+        #patternstring = patternstring + ' ' + str(notematrix[y, x]) #ToDo: hier weiter, Zeile noch löschen
+        #print(patternstring)
+        for i in range(0, len(foundpatternlength)):
+            patternstring = ''
+            indize = foundpatternindize[i]
+            tempstr = indize.split()
+            ytemp = int(tempstr[0])
+            xtemp = int(tempstr[1])
+            patternlength = foundpatternlength[i]
+            for j in range(0, patternlength):
+                patternstring = patternstring + ' ' + str(notematrix[ytemp - patternlength+j, 0])
             print(patternstring)
-        #        else:      ToDo: hier weiter oberen 2 Zeilen noch löschen
-        #            if notematrix[y, x] > 1:
-        #                xtemp = x
-        #                ytemp = y
-        #                patternlength = 0
-        #                while True:
-        #                    if notematrix[ytemp, xtemp] < 2 or xtemp == matrixindize-1 or ytemp == matrixindize-1:
-        #                        break
-        #                    patternlength = notematrix[ytemp, xtemp]
-        #                    xtemp += 1
-        #                    ytemp += 1
-        #                    print(patternlength)
-        #                xytemp = str(xtemp) + ' ' + str(ytemp)
-        #                if xytemp not in foundpatternindize:
-        #                    foundpatternlength.append(patternlength)
-        #                    foundpatternindize.append(xytemp)
-        #indize = ''
-        #for i in range(0, len(foundpatternlength)):
-        #    patternstring = ''
-        #    indize = foundpatternindize[i]
-        #    tempstr = indize.split()
-        #    xtemp = int(tempstr[0])
-        #    ytemp = int(tempstr[1])
-        #    patternlength = int(foundpatternlength[i])
-        #    for j in range(0, patternlength):
-        #        patternstring = patternstring + ' ' + str(notematrix[ytemp - patternlength, xtemp - patternlength])
-        #    print(patternstring)
         nroftracks += 1
 
     f.close()
