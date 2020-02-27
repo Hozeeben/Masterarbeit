@@ -18,29 +18,27 @@ def PatternsearchPreperation(track):
     while itteration < len(track):
         if track[itteration] == ' ':
             x = int(tempnote)
-            notematrix[0][matrixindize] = x
-            notematrix[matrixindize][0] = x
+            notematrix[0, matrixindize] = x
+            notematrix[matrixindize, 0] = x
             matrixindize += 1
             tempnote = ''
         tempnote = tempnote + track[itteration]
         itteration += 1
     PatternSearch(notematrix, matrixindize)
-    return notematrix
+    return notematrix, matrixindize
 
 def PatternSearch(notematrix, matrixindize):
     xindize = 1
     yindize = 1
-    print(matrixindize)
     while True:
         if yindize == matrixindize:
             break
-        if notematrix[0][yindize] == notematrix[xindize][0]:
+        if notematrix[0, xindize] == notematrix[yindize, 0]:
             if yindize != 1:
-                notematrix[xindize][yindize] = notematrix[xindize-1][yindize-1] + 1
+                notematrix[yindize, xindize] = notematrix[yindize-1, xindize-1] + 1
             else:
-                notematrix[xindize][yindize] = 1
+                notematrix[yindize, xindize] = 1
         xindize += 1
-        #print(xindize)
         if xindize == matrixindize:
             yindize += 1
             xindize = yindize
@@ -91,22 +89,54 @@ if __name__ == '__main__':
     write = 0
     x = 0
     y = 0
-    zeilenstring = ''
+    foundpatternlength = []
+    foundpatternindize = []
     while True:
         track = f.readline()
         if track == '':
             break
         print('===Track Nr. ', nroftracks, '===')
-        notematrix = PatternsearchPreperation(track)
-        for y in range(0, np.size(notematrix,0)):
+        notematrix, matrixindize = PatternsearchPreperation(track)
+        for y in range(0, np.size(notematrix, 0)):
+            patternstring = ''
             for x in range(0, np.size(notematrix, 1)):
-                if x == y:
-                    zeilenstring = zeilenstring + ' ' + '0'
-                else:
-                    zeilenstring=zeilenstring + ' ' + str(notematrix[y][x])
-            print(zeilenstring)
+                if x < y:
+                    break
+                elif x == y:
+                    notematrix[y, x] = 0
 
-        #print(notematrix)
+                patternstring = patternstring + ' ' + str(notematrix[y, x])
+            print(patternstring)
+        #        else:      ToDo: hier weiter oberen 2 Zeilen noch löschen
+        #            if notematrix[y, x] > 1:
+        #                xtemp = x
+        #                ytemp = y
+        #                patternlength = 0
+        #                while True:
+        #                    if notematrix[ytemp, xtemp] < 2 or xtemp == matrixindize-1 or ytemp == matrixindize-1:
+        #                        break
+        #                    patternlength = notematrix[ytemp, xtemp]
+        #                    xtemp += 1
+        #                    ytemp += 1
+        #                    print(patternlength)
+        #                xytemp = str(xtemp) + ' ' + str(ytemp)
+        #                if xytemp not in foundpatternindize:
+        #                    foundpatternlength.append(patternlength)
+        #                    foundpatternindize.append(xytemp)
+        #indize = ''
+        #for i in range(0, len(foundpatternlength)):
+        #    patternstring = ''
+        #    indize = foundpatternindize[i]
+        #    tempstr = indize.split()
+        #    xtemp = int(tempstr[0])
+        #    ytemp = int(tempstr[1])
+        #    patternlength = int(foundpatternlength[i])
+        #    for j in range(0, patternlength):
+        #        patternstring = patternstring + ' ' + str(notematrix[ytemp - patternlength, xtemp - patternlength])
+        #    print(patternstring)
         nroftracks += 1
+
     f.close()
+    e.close()
+    sys.stdout = normalstdout
     # ToDO: Ansicht in .txt verbessern um zu Kontrollieren ob Korrekt berechnet
