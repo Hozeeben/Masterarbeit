@@ -136,4 +136,5 @@ if __name__ == '__main__':
     f.close()
     e.close()
     sys.stdout = normalstdout
+    # ToDo: Check ob Indize schon vergeben
     # ToDO: Ansicht in .txt verbessern um zu Kontrollieren ob Korrekt berechnet
