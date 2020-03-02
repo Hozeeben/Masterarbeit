@@ -3,6 +3,15 @@ import os.path
 import numpy as np
 from mido import MidiFile
 
+def SIATEC(track):
+    itteration = 0
+    note = 0
+    while itteration < len(track):
+        if track[itteration] == ' ':
+            note += 1
+
+    # ToDo: ab hier dann mit plt und meshgrid rummspielen
+
 
 if __name__ == '__main__':
     tempsting = 'note='
@@ -43,5 +52,11 @@ if __name__ == '__main__':
 
     f = open('MusikstückSIATEC.txt', 'r')
     e = open('Ergebnis Patternsuche SIATEC.txt', 'w')
+    while True:
+        track = f.readline()
+        if track == '':
+            break
+        SIATEC(track)
 
-    # ToDo: ab hier dann mit plt rummspielen
+    f.close()
+    e.close()
