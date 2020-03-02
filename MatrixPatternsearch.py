@@ -27,13 +27,13 @@ def PatternsearchPreperation(track):
     PatternSearch(notematrix, matrixindize)
     return notematrix, matrixindize
 
-def PatternSearch(notematrix, matrixindize):
-    xindize = 1
+def PatternSearch(notematrix, matrixindize):                                        # Init from Matrix
+    xindize = 1                                                                     # ToDo: Maybe for each Pattern one Matrix
     yindize = 1
-    while True:
+    while True:                                                                     # Add Patterns here
         if yindize == matrixindize:
             break
-        if notematrix[0, xindize] == notematrix[yindize, 0]:
+        if notematrix[0, xindize] == notematrix[yindize, 0]:                        # Patternclass=same
             if yindize != 1:
                 notematrix[yindize, xindize] = notematrix[yindize-1, xindize-1] + 1
             else:
@@ -74,7 +74,7 @@ if __name__ == '__main__':
                 writenote = ''
         if nextline.find('<message note_on') != -1:
             startnote = nextline.find('note=')
-            for i in range(0, 2):
+            for i in range(0, 3):
                 if nextline[startnote + stringlength + i] == ' ':
                     break
                 writenote = writenote + nextline[startnote + stringlength + i]
@@ -91,6 +91,7 @@ if __name__ == '__main__':
     y = 0
     foundpatternlength = []
     foundpatternindize = []
+    patternstart = []
     while True:
         track = f.readline()
         if track == '':
@@ -117,11 +118,9 @@ if __name__ == '__main__':
                             ytemp += 1
                         yxtemp = str(ytemp) + ' ' + str(xtemp)
                         if yxtemp not in foundpatternindize:
-                            foundpatternlength.append(int(patternlength))
+                            foundpatternlength.append(patternlength)
                             foundpatternindize.append(yxtemp)
-        #patternstring = patternstring + ' ' + str(notematrix[y, x]) #ToDo: hier weiter, Zeile noch löschen
-        #print(patternstring)
-        for i in range(0, len(foundpatternlength)):
+        for i in range(0, len(foundpatternlength)):                                                     # ToDo: nicht alle Patternergebnisse mit in .txt übernehmen
             patternstring = ''
             indize = foundpatternindize[i]
             tempstr = indize.split()
@@ -138,3 +137,4 @@ if __name__ == '__main__':
     sys.stdout = normalstdout
     # ToDo: Check ob Indize schon vergeben
     # ToDO: Ansicht in .txt verbessern um zu Kontrollieren ob Korrekt berechnet
+    # ToDo: MIDI Notennummern zu Noten machen
