@@ -4,6 +4,7 @@ import sys
 import os.path
 import aubio
 import numpy as np
+import matplotlib.pyplot as plt
 from mido import MidiFile
 
 
@@ -81,5 +82,10 @@ if __name__ == '__main__':
     #bpmdetection(input_path)
     #print('KIRA New World.wav')
     #bpmdetection(input_path2)
-    teststring='<message note_on channel=0 note=64 velocity=71 time=1624>'
-    teststring.find('message note_on')
+    #teststring='<message note_on channel=0 note=64 velocity=71 time=1624>'
+    #teststring.find('message note_on')
+    N = 50
+
+
+    plt.scatter(x, y)
+    plt.show()

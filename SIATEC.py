@@ -1,6 +1,7 @@
 import sys
 import os.path
 import numpy as np
+import matplotlib.pyplot as plt
 from mido import MidiFile
 
 def SIATEC(track):
@@ -21,7 +22,6 @@ if __name__ == '__main__':
     sys.stdout = f
     filename = 'beethoven_ode_to_joy.mid'                                   # ToDo: Variabel machen
     midi_file = MidiFile(filename)
-
     for i, track in enumerate(midi_file.tracks):
         sys.stdout.write('=== Track {}\n'.format(i))
         for message in track:
@@ -29,9 +29,14 @@ if __name__ == '__main__':
 
     sys.stdout = normalstdout
     f.close()
-    f = open('MIDIMatrix.txt', 'r')
+    f = open('SIATEC.txt', 'r')
     p = open('MusikstückSIATEC.txt', 'w')
     writenote = ''
+    notecount = 1
+    yy = []
+    xx = []
+    yystring = ''
+    sametime = False
     while True:                                                                     # Create .txt with only Notenr.
         nextline = f.readline()
         if nextline == "":
@@ -40,23 +45,34 @@ if __name__ == '__main__':
             if writenote != '':
                 p.write(writenote + '\n')
                 writenote = ''
+        if nextline.find('<message note_off') != -1:
+            sametime = False
         if nextline.find('<message note_on') != -1:
             startnote = nextline.find('note=')
             for i in range(0, 3):
                 if nextline[startnote + stringlength + i] == ' ':
                     break
+                yystring = yystring + nextline[startnote + stringlength + i]
                 writenote = writenote + nextline[startnote + stringlength + i]
+            yy.append(int(yystring))
+            xx.append(notecount)
+            yystring = ''
             writenote = writenote + ' '
+            sametime = True
+            if sametime == False:
+                notecount += 1
     p.close()
     f.close()
+    plt.scatter(xx,yy)
+    plt.show()
 
     f = open('MusikstückSIATEC.txt', 'r')
     e = open('Ergebnis Patternsuche SIATEC.txt', 'w')
-    while True:
-        track = f.readline()
-        if track == '':
-            break
-        SIATEC(track)
+    #while True:
+    #    track = f.readline()
+    #    if track == '':
+    #        break
+    #    SIATEC(track)
 
     f.close()
     e.close()
