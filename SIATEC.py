@@ -76,3 +76,4 @@ if __name__ == '__main__':
 
     f.close()
     e.close()
+    #am schluss sauber machen
