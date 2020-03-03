@@ -76,4 +76,4 @@ if __name__ == '__main__':
 
     f.close()
     e.close()
-    #am schluss sauber machen
+    # Mit Programm Midicomp die txt bekommen
