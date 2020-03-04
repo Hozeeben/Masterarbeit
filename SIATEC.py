@@ -16,7 +16,7 @@ if __name__ == '__main__':
     stringlength = len(tempsting)
     normalstdout = sys.stdout
     filename = 'beethoven_ode_to_joy.mid'                                   # ToDo: Variabel machen
-    f = open('Queen.txt', 'r')
+    f = open('Queen(2).txt', 'r')
     p = open('MusikstückSIATEC.txt', 'w')
     notestring = ''
     timestring = ''
@@ -25,9 +25,11 @@ if __name__ == '__main__':
     while True:                                                                     # Create .txt with only Notenr.
         nextline = f.readline()
         if nextline == '':
-            SIATEC(notey, timex)
             break
-        #if nextline.find('TrkEnd') != -1:                                                 # Class SIATEC
+        if nextline.find('TrkEnd') == 0:                                            # Everything is made here
+            SIATEC(notey, timex)
+            timex = []
+            notey = []
         if nextline.find(' On ') != -1:                                             # Prepare everything vor SIATEC
             for i in range(0, len(nextline)):
                 if nextline[i] == ' ':
@@ -60,3 +62,9 @@ if __name__ == '__main__':
     f.close()
     e.close()
     # Mit Programm Midicomp die txt bekommen mit -t für absolute Zeit
+
+
+    # Fragen Rapha:
+    # Tick oder totale Zeit in MIDI's
+    # Welche Art von Patterns sind sinnvoll zu erkennen
+    # über die Spektren schauen lassen
