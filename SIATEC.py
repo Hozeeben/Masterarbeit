@@ -18,18 +18,8 @@ if __name__ == '__main__':
     tempsting = 'note='
     stringlength = len(tempsting)
     normalstdout = sys.stdout
-    f = open('SIATEC.txt', 'w')
-    sys.stdout = f
     filename = 'beethoven_ode_to_joy.mid'                                   # ToDo: Variabel machen
-    midi_file = MidiFile(filename)
-    for i, track in enumerate(midi_file.tracks):
-        sys.stdout.write('=== Track {}\n'.format(i))
-        for message in track:
-            sys.stdout.write('  {!r}\n'.format(message))
-
-    sys.stdout = normalstdout
-    f.close()
-    f = open('SIATEC.txt', 'r')
+    f = open('Queen.txt', 'r')
     p = open('MusikstückSIATEC.txt', 'w')
     writenote = ''
     notecount = 1
