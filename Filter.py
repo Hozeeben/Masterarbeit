@@ -111,7 +111,7 @@ def highpassfilter(inputfile, outputlow):
 
 
 if __name__ == '__main__':
-    musicpath=os.getcwd()+"\\Musik"                         #Set Path to musicfiles
+    musicpath = os.getcwd()+"\\Musik"                         #Set Path to musicfiles
 
     orig_stdout = sys.stdout                                #List all Songs from folder Musik
     f = open('Song.txt', 'w')
@@ -120,14 +120,14 @@ if __name__ == '__main__':
     sys.stdout = orig_stdout
     f = open('Song.txt', 'r')
     txt = f.readline()
-    txtcontent=""
+    txtcontent = ""
     f.close()
     for i in range(0, len(txt)):
-        if i!=0 and i!=len(txt)-2:
-            txtcontent=txtcontent+txt[i]
+        if i != 0 and i != len(txt)-2:
+            txtcontent = txtcontent+txt[i]
     os.remove('Song.txt')
-    txtcontent=txtcontent.replace("'", "")
-    txtcontent=txtcontent.replace(", ","\n")
+    txtcontent = txtcontent.replace("'", "")
+    txtcontent = txtcontent.replace(", ","\n")
     p = open('Songs.txt', 'w')
     p.write(txtcontent)
     p.close()
@@ -135,13 +135,13 @@ if __name__ == '__main__':
 
     os.chdir(musicpath)                                     #Change working directory for filters
     while True:
-        musicnametemp=p.readline()                          #Read lines in Songs.txt
-        if musicnametemp=="":                               #If p.readline is empty exit while
+        musicnametemp = p.readline()                          #Read lines in Songs.txt
+        if musicnametemp == "":                               #If p.readline is empty exit while
             break
-        musicname=""
+        musicname = ""
         for i in range(0, len(musicnametemp)):
-            if i<len(musicnametemp)-5:
-                musicname=musicname+musicnametemp[i]
+            if i < len(musicnametemp)-5:
+                musicname = musicname+musicnametemp[i]
         inputfile = musicname+'.wav'
         outputlowpass = musicname+' lowpass.wav'
         outputlowpasstemp1 = musicname+' lowpasstemp1.wav'
