@@ -6,10 +6,7 @@ def Patternsearchpreperation(track):
     patternlist = []
     positionofpattern = []
     patternlengthinnumber = []
-    patternlengthinletters = []
     maxpatternlength = len(track)//2                                                #Get longest possible repetetive pattern
-    #print(maxpatternlength)
-    nextnote = 0
     for j in range(maxpatternlength, 1, -1):                                        #-1 because last sign is a ' '
         Patternsearch(track, j, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, 0)
 
@@ -23,7 +20,6 @@ def Patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
     else:
         write = True
         writefirstoccurence = False
-        foundpattern = ''
         for k in range(position+patternlength+1, len(track)-(patternlength-1)):                                     #Same Pattern is Found
             if track[position] != track[k]:
                 continue
