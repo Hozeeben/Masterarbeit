@@ -7,117 +7,53 @@ def Patternsearchpreperation(track):
     positionofpattern = []
     patternlengthinnumber = []
     patternlengthinletters = []
-    maxpatternlength = 0
-    for i in range(0, len(track)):                                          #Get longest possible repetetive pattern
-        if track[i] == ' ':
-            maxpatternlength += 1
-    maxpatternlength = maxpatternlength//2
+    maxpatternlength = len(track)//2                                                #Get longest possible repetetive pattern
     #print(maxpatternlength)
     nextnote = 0
     for j in range(maxpatternlength, 1, -1):                                        #-1 because last sign is a ' '
-        #print('Momentan an Pos ',j)
-        itteration = 0
-        #if nextnote > 0:
-        #    nextnote -= 1
-        #    continue
-        #else:
-        Patternsearch(track, j, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters, 0)
-        #while True:
-        #    itteration += 1
-        #    if track[j+itteration] == ' ':
-        #        nextnote += 1
-        #        break
-        #    nextnote += 1
-    for i in range(0, len(positionofpattern)):
-        position = 0
-        for j in range(0, positionofpattern[i]):
-            if track[j] == ' ':
-                position += 1
-        positionofpattern[i] = position+1
+        Patternsearch(track, j, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, 0)
+
+
     ChangeNumbersToNotes(patternlist)
     return patternlist, patternlengthinnumber, positionofpattern
 
-def Patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters, position):
-    #print('Called Patternsearch')
-    patternstring = ''
-    whitespaces = 0
-    itteration = 0
-    while True:  # Write Patternstring into variable
-        if len(track) <= position + itteration:
-            return patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters
-        if track[position + itteration] == ' ':
-            whitespaces += 1
-        if whitespaces == patternlength:
-            break
-        patternstring = patternstring + track[position + itteration]
-        itteration += 1
-    if position+len(patternstring) > len(track):
-        #print('Finished Patternsearch because String would go out of bound')
+def Patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, position):
+    if position+patternlength > len(track):
         return patternlist
     else:
-        stringlength = len(track)
-        occurence = 0
-        #print('Patternstring:',patternstring)
         write = True
-        stop = 0
-        writefirstoccurence = True
-        positiontemp = position
-        while True:                                                                 # Write all patterns in a list
-            occurence = track.find(patternstring, positiontemp, stringlength)          # List is splitted into patternstring,
-            #print('Occurence:',occurence, ' From Patternstring:', patternstring)
-            if occurence == -1:                                                     # position of the pattern and length in int
-                break
-            if occurence != -1 and occurence != position:
-                for i in range(occurence, occurence+len(patternstring)):
-                    if len(positionofpattern) == 0:
-                        write = True
-                        #print('Case 4')
+        writefirstoccurence = False
+        foundpattern = ''
+        for k in range(position+patternlength+1, len(track)-(patternlength-1)):                                     #Same Pattern is Found
+            if track[position] != track[k]:
+                continue
+            else:
+                for a in range(0, len(patternlist)):
+                    if position+k in range(positionofpattern[a], positionofpattern[a]+patternlengthinnumber[a]):
+                        write = False
+                if write is False:
+                    write = True
+                    continue
+                foundpattern = str(track[k])
+                for length in range(1, patternlength):
+                    if track[position+length] != track[k+length]:
+                        foundpattern = ''
                         break
-                    for j in range(0, len(positionofpattern)):
-                        #print('Patternposition:',positionofpattern[j])
-                        #print('i:',i)
-                        #print('Max Ausbreitung:',positionofpattern[j]+patternlengthinnumber[j])
-                        if positionofpattern[j] <= i <= positionofpattern[j]+patternlengthinletters[j] or positionofpattern[j] <= position <= positionofpattern[j]+patternlengthinletters[j]:
-                        #if positionofpattern[j]==i:
-                            write = False
-                            #print('case 1')
-                            stop = 1
-                            break
-                        else:
-                            write = True
-                    if stop == 1:
-                        stop = 0
-                        break
-            if occurence == position:
-                write = False
-                #print('case 3')
-            if write:
-                if writefirstoccurence:
-                    patternlist.append(patternstring)
-                    positionofpattern.append(position)
-                    patternlengthinnumber.append(patternlength)
-                    patternlengthinletters.append(len(patternstring))
-                    writefirstoccurence = False
-                patternlist.append(patternstring)
-                positionofpattern.append(occurence)
-                patternlengthinnumber.append(patternlength)
-                patternlengthinletters.append(len(patternstring))
-            positiontemp += 1
-            #print(patternlist)
-        #print('Finished Patternsearch normaly')
-        itteration2 = 0
-        nextnote = 0
-        while True:
-            itteration2 += 1
-            if track[position + itteration2] == ' ':
-                nextnote += 1
-                break
-            nextnote += 1
-        nextnote += 1
-        Patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber,
-                      patternlengthinletters,
-                      position + nextnote)
-        return patternlist, positionofpattern, patternlengthinnumber, patternlengthinletters
+                    if track[position+length] == track[k+length]:
+                        foundpattern = foundpattern + ' ' + str(track[k+length])
+                        if length+1 == patternlength:
+                            if writefirstoccurence is False or len(patternlist) == 0:
+                                patternlist.append(foundpattern)
+                                positionofpattern.append(position)
+                                patternlengthinnumber.append(patternlength)
+                                writefirstoccurence = True
+                            patternlist.append(foundpattern)
+                            positionofpattern.append(position+k)
+                            patternlengthinnumber.append(patternlength)
+                            k = k+patternlength
+                            foundpattern = ''
+        Patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, position + 1)
+        return patternlist, positionofpattern, patternlengthinnumber
 
 def ChangeNumbersToNotes(patternlist):
     for i in range(0, len(patternlist)):
@@ -183,44 +119,33 @@ if __name__ == '__main__':
     f = open('MIDIString.txt', 'r')
     p = open('MusikstückString.txt', 'w')
     writenote = ''
+    track = []
+    nroftracks = 1
     while True:                                                             #Create .txt with only Notenr. and Time its played
         nextline = f.readline()
         if nextline == "":
             break
         if nextline.find('<meta message end_of_track') != -1:
-            if writenote != '':
-                p.write(writenote+'\n')
-                writenote = ''
-            #p.write(writetime + '\n')
+            if len(track) > 0:
+                pattern, length, noteintrack = Patternsearchpreperation(track)
+                e = open('Ergebnis Patternsuche String.txt', 'w')
+                sys.stdout = e
+                print('===Track Nr. ', nroftracks, '===')
+                for itteration in range(0, len(pattern)):
+                    print('Pattern: ', pattern[itteration], '\nLänge des gefundenen Pattern: ',
+                          length[itteration], '\nStelle im Musikstück: ', noteintrack[itteration], '\n')
+                nroftracks += 1
+                sys.stdout = normalstdout
+                e.close()
         if nextline.find('<message note_on') != -1:
             startnote = nextline.find('note=')
-            #starttime=nextline.find('time=')
             for i in range(0, 2):
                 if nextline[startnote+stringlength+i] == ' ':
                     break
                 writenote = writenote+nextline[startnote+stringlength+i]
-            writenote = writenote + ' '
-            #for i in range(0,6):
-            #    if nextline[starttime + stringlength + i] == '>':
-            #        break
-            #    writetime = writetime + nextline[starttime + stringlength + i]
+            track.append(int(writenote))
+            writenote = ''
     p.close()
     f.close()
-    p = open('MusikstückString.txt', 'r')
-    e = open('Ergebnis Patternsuche String.txt', 'w')
-    nroftracks = 1
-    sys.stdout = e
-    while True:
-        tracks = p.readline()
-        if tracks == '':
-            break
-        print('===Track Nr. ', nroftracks, '===')
-        pattern, length, noteintrack = Patternsearchpreperation(tracks)
-        itterations = 0
-        while itterations < len(pattern):
-            print('Pattern: ',pattern[itterations],'\nLänge des gefundenen Pattern: ', length[itterations], '\nStelle im Musikstück: ', noteintrack[itterations],'\n')
-            itterations +=1
-        nroftracks += 1
-    sys.stdout = normalstdout
     e.close()
     # ToDO: Wenn korrekt auskommentierte prints entfehrnen
