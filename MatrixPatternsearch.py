@@ -34,12 +34,12 @@ def PatternSearch(track):
                     continue
                 elif x == y:
                     notematrix[y, x] = 0
-                elif notematrix[y, x] > 2:
+                elif notematrix[y, x] == 1:
                     xtemp = x
                     ytemp = y
                     patternlength = 0
                     while True:
-                        if notematrix[ytemp, xtemp] < 2 or xtemp == len(track) or ytemp == len(track):
+                        if notematrix[ytemp, xtemp] == 0 or xtemp == np.size(notematrix, 1)-1 or ytemp == np.size(notematrix, 0)-1:
                             break
                         patternlength = int(notematrix[ytemp, xtemp])
                         xtemp += 1
@@ -47,8 +47,9 @@ def PatternSearch(track):
                     yxtemp = str(ytemp) + ' ' + str(xtemp)
                     if yxtemp not in foundpatternindize:
                         foundpatternlength.append(patternlength)
-                    foundpatternindize.append(yxtemp)
-
+                        foundpatternindize.append(yxtemp)
+    print(foundpatternindize)
+    print(foundpatternlength)
     return notematrix, foundpatternlength, foundpatternindize
 
 
@@ -72,12 +73,33 @@ if __name__ == '__main__':
     f = open('MIDIMatrix.txt', 'r')
     writenote = ''
     track = []
+    nroftracks = 1
     while True:                                                                     # Create .txt with only Notenr.
         nextline = f.readline()
         if nextline == "":
             break
         if nextline.find('<meta message end_of_track') != -1:
-            notematrix, patternlength, indize = PatternSearch(track)
+            if len(track) != 0:
+                notematrix, patternlength, indize = PatternSearch(track)
+                e = open('Ergebnis Patternsuche Matrix.txt', 'w')
+                sys.stdout = e
+                print('===Track Nr. ', nroftracks, '===')
+                for i in range(0, len(indize)):  # ToDo: nicht alle Patternergebnisse mit in .txt übernehmen
+                    patternstring = ''
+                    indizes = indize[i]
+                    tempstr = indizes.split()
+                    ytemp = int(tempstr[0])
+                    xtemp = int(tempstr[1])
+                    patternlengthtmp = patternlength[i]
+                    if patternlengthtmp < 3:
+                        continue
+                    for j in range(0, patternlengthtmp):
+                        patternstring = patternstring + ' ' + str(notematrix[ytemp - patternlengthtmp + j, 0])
+                    print('Gefundenes Pattern: ' + patternstring + '\nNote im Lied: ' + str(ytemp - patternlengthtmp)
+                          + '\nLänge des Patterns: ' + str(patternlengthtmp))
+                e.close()
+                sys.stdout = normalstdout
+                nroftracks += 1
         if nextline.find('<message note_on') != -1:
             startnote = nextline.find('note=')
             for i in range(0, 3):
@@ -85,35 +107,10 @@ if __name__ == '__main__':
                     break
                 writenote = writenote + nextline[startnote + stringlength + i]
             track.append(int(writenote))
+            writenote = ''
     f.close()
 
-    e = open('Ergebnis Patternsuche Matrix.txt', 'w')
-    nroftracks = 1
-    #sys.stdout = e
-    write = 0
-    x = 0
-    y = 0
-
-    #while True:
-    #    track = f.readline()
-    #    if track == '':
-    #        break
-    #    print('===Track Nr. ', nroftracks, '===')
-
-    for i in range(0, len(patternlength)):  # ToDo: nicht alle Patternergebnisse mit in .txt übernehmen
-        patternstring = ''
-        indize = indize[i]
-        tempstr = indize.split()
-        ytemp = int(tempstr[0])
-        xtemp = int(tempstr[1])
-        patternlength = patternlength[i]
-        for j in range(0, patternlength):
-            patternstring = patternstring + ' ' + str(notematrix[ytemp - patternlength + j, 0])
-        print(patternstring)
-    nroftracks += 1
-
-    e.close()
-    #sys.stdout = normalstdout
+    # ToDo: Prints im nachhinein checken
     # ToDo: Check ob Indize schon vergeben
     # ToDO: Ansicht in .txt verbessern um zu Kontrollieren ob Korrekt berechnet
     # ToDo: MIDI Notennummern zu Noten machen
