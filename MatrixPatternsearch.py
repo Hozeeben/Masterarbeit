@@ -40,27 +40,11 @@ def PatternSearch(track):
                 patternlength = notematrix[y, x]
                 xtemp = xtemp-(patternlength-1)
                 ytemp = ytemp-(patternlength-1)
-                #while True:
-                #    if notematrix[ytemp, xtemp] == 0 or xtemp == np.size(notematrix, 1)-1 or ytemp == np.size(notematrix, 0)-1:
-                #        break
-                #    patternlength = int(notematrix[ytemp, xtemp])
-                #    xtemp += 1
-                #    ytemp += 1
                 yxtemp = str(ytemp) + ' ' + str(xtemp)
                 if yxtemp not in foundpatternindize:
                     foundpatternlength.append(patternlength)
                     foundpatternindize.append(yxtemp)
                     patternlength = 0
-    k = open('Temp.txt', 'w')
-    sys.stdout = k
-    for y in range(0, notematrix.shape[0]):
-        for x in range(0, notematrix.shape[0]):
-            if x == notematrix.shape[0]-1:
-                print(notematrix[y, x])
-            print(notematrix[y, x], end=' ')
-    sys.stdout=normalstdout
-    print(foundpatternindize)
-    print(foundpatternlength)
     return notematrix, foundpatternlength, foundpatternindize
 
 
@@ -71,7 +55,7 @@ if __name__ == '__main__':
     normalstdout = sys.stdout
     f = open('MIDIMatrix.txt', 'w')
     sys.stdout = f
-    filename = 'beethoven_ode_to_joy.mid'                                   # ToDo: Variabel machen
+    filename = 'darude-sandstorm.mid'                                   # ToDo: Variabel machen
     midi_file = MidiFile(filename)
 
     for i, track in enumerate(midi_file.tracks):
@@ -82,6 +66,7 @@ if __name__ == '__main__':
     sys.stdout = normalstdout
     f.close()
     f = open('MIDIMatrix.txt', 'r')
+    e = open('Ergebnis Patternsuche Matrix.txt', 'w')
     writenote = ''
     track = []
     nroftracks = 1
@@ -92,7 +77,6 @@ if __name__ == '__main__':
         if nextline.find('<meta message end_of_track') != -1:
             if len(track) != 0:
                 notematrix, patternlength, indize = PatternSearch(track)
-                e = open('Ergebnis Patternsuche Matrix.txt', 'w')
                 sys.stdout = e
                 print('===Track Nr. ', nroftracks, '===')
                 for i in range(0, len(indize)):  # ToDo: nicht alle Patternergebnisse mit in .txt übernehmen
@@ -109,9 +93,9 @@ if __name__ == '__main__':
                     print('')
                     print('Gefundenes Pattern: ' + patternstring + '\nNoten im Lied: ' + str(ytemp) + ', ' + str(xtemp)
                           + '\nLänge des Patterns: ' + str(patternlengthtmp))
-                e.close()
                 sys.stdout = normalstdout
                 nroftracks += 1
+                track = []
         if nextline.find('<message note_on') != -1:
             startnote = nextline.find('note=')
             for i in range(0, 3):
@@ -121,6 +105,7 @@ if __name__ == '__main__':
             track.append(int(writenote))
             writenote = ''
     f.close()
+    e.close()
 
     # ToDo: Prints im nachhinein checken
     # ToDo: Check ob Indize schon vergeben
