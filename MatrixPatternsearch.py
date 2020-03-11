@@ -27,27 +27,38 @@ def PatternSearch(track):
             xindize = yindize
 
 
-        for y in range(1, np.size(notematrix, 0)):
-            patternstring = ''
-            for x in range(1, np.size(notematrix, 1)):
-                if x < y:
-                    continue
-                elif x == y:
-                    notematrix[y, x] = 0
-                elif notematrix[y, x] == 1:
-                    xtemp = x
-                    ytemp = y
+    for y in range(np.size(notematrix, 0)-1, 0, -1):
+        patternstring = ''
+        for x in range(np.size(notematrix, 1)-1, 0, -1):
+            if x < y:
+                continue
+            elif x == y:
+                notematrix[y, x] = 0
+            elif notematrix[y, x] > 1:
+                xtemp = x
+                ytemp = y
+                patternlength = notematrix[y, x]
+                xtemp = xtemp-(patternlength-1)
+                ytemp = ytemp-(patternlength-1)
+                #while True:
+                #    if notematrix[ytemp, xtemp] == 0 or xtemp == np.size(notematrix, 1)-1 or ytemp == np.size(notematrix, 0)-1:
+                #        break
+                #    patternlength = int(notematrix[ytemp, xtemp])
+                #    xtemp += 1
+                #    ytemp += 1
+                yxtemp = str(ytemp) + ' ' + str(xtemp)
+                if yxtemp not in foundpatternindize:
+                    foundpatternlength.append(patternlength)
+                    foundpatternindize.append(yxtemp)
                     patternlength = 0
-                    while True:
-                        if notematrix[ytemp, xtemp] == 0 or xtemp == np.size(notematrix, 1)-1 or ytemp == np.size(notematrix, 0)-1:
-                            break
-                        patternlength = int(notematrix[ytemp, xtemp])
-                        xtemp += 1
-                        ytemp += 1
-                    yxtemp = str(ytemp) + ' ' + str(xtemp)
-                    if yxtemp not in foundpatternindize:
-                        foundpatternlength.append(patternlength)
-                        foundpatternindize.append(yxtemp)
+    k = open('Temp.txt', 'w')
+    sys.stdout = k
+    for y in range(0, notematrix.shape[0]):
+        for x in range(0, notematrix.shape[0]):
+            if x == notematrix.shape[0]-1:
+                print(notematrix[y, x])
+            print(notematrix[y, x], end=' ')
+    sys.stdout=normalstdout
     print(foundpatternindize)
     print(foundpatternlength)
     return notematrix, foundpatternlength, foundpatternindize
@@ -88,14 +99,15 @@ if __name__ == '__main__':
                     patternstring = ''
                     indizes = indize[i]
                     tempstr = indizes.split()
-                    ytemp = int(tempstr[0])
-                    xtemp = int(tempstr[1])
-                    patternlengthtmp = patternlength[i]
+                    ytemp = int(float(tempstr[0]))
+                    xtemp = int(float(tempstr[1]))
+                    patternlengthtmp = int(patternlength[i])
                     if patternlengthtmp < 3:
                         continue
                     for j in range(0, patternlengthtmp):
-                        patternstring = patternstring + ' ' + str(notematrix[ytemp - patternlengthtmp + j, 0])
-                    print('Gefundenes Pattern: ' + patternstring + '\nNote im Lied: ' + str(ytemp - patternlengthtmp)
+                        patternstring = patternstring + ' ' + str(notematrix[ytemp + j, 0])
+                    print('')
+                    print('Gefundenes Pattern: ' + patternstring + '\nNoten im Lied: ' + str(ytemp) + ', ' + str(xtemp)
                           + '\nLänge des Patterns: ' + str(patternlengthtmp))
                 e.close()
                 sys.stdout = normalstdout
