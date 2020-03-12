@@ -67,4 +67,4 @@ if __name__ == '__main__':
     # Fragen Rapha:
     # Tick oder totale Zeit in MIDI's -> Whatsapp chat Rapha
     # Welche Art von Patterns sind sinnvoll zu erkennen
-    # über die Spektren schauen lassen
+    # über die Spektren schauen lassen-
