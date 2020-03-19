@@ -7,10 +7,8 @@ def Patternsearchpreperation(track):
     positionofpattern = []
     patternlengthinnumber = []
     maxpatternlength = len(track)//2                                                #Get longest possible repetetive pattern
-    for j in range(maxpatternlength, 1, -1):                                        #-1 because last sign is a ' '
+    for j in range(maxpatternlength, 2, -1):                                        #-1 because last sign is a ' '
         Patternsearch(track, j, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, 0)
-
-
     ChangeNumbersToNotes(patternlist)
     return patternlist, patternlengthinnumber, positionofpattern
 
@@ -20,12 +18,12 @@ def Patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
     else:
         write = True
         writefirstoccurence = False
-        for k in range(position+patternlength+1, len(track)-(patternlength-1)):                                     #Same Pattern is Found
+        for k in range(position + patternlength + 1, len(track) - (patternlength - 1)):                                     #Same Pattern is Found
             if track[position] != track[k]:
                 continue
             else:
                 for a in range(0, len(patternlist)):
-                    if position+k in range(positionofpattern[a], positionofpattern[a]+patternlengthinnumber[a]):
+                    if position+k in range(positionofpattern[a], positionofpattern[a] + patternlengthinnumber[a]):    # If startpoint of found pattern is in range of the original pattern
                         write = False
                 if write is False:
                     write = True
@@ -124,7 +122,7 @@ if __name__ == '__main__':
         if nextline.find('<meta message end_of_track') != -1:
             if len(track) > 0:
                 pattern, length, noteintrack = Patternsearchpreperation(track)
-                e = open('Ergebnis Patternsuche String.txt', 'w')
+                e = open('Ergebnis Patternsuche String OLD.txt', 'w')
                 sys.stdout = e
                 print('===Track Nr. ', nroftracks, '===')
                 for itteration in range(0, len(pattern)):
