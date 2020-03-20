@@ -9,6 +9,8 @@ def Patternsearchpreperation(track):
     maxpatternlength = len(track)//2                                                #Get longest possible repetetive pattern
     for j in range(maxpatternlength, 2, -1):                                        #-1 because last sign is a ' '
         Patternsearch(track, j, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, 0)
+    for i in range(0, len(positionofpattern)):
+        positionofpattern[i] += 1
     #ChangeNumbersToNotes(patternlist)
     return patternlist, patternlengthinnumber, positionofpattern
 
@@ -23,40 +25,46 @@ def Patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
         foundpatternlength = 0
         originalpattern = ''
         startindex = 0
-        for k in range(position + patternlength + 1, len(track) - (patternlength - 1)):                                     #Same Pattern is Found
-            x = track[position + foundpatternlength] - track[k]
-            y = track[position + 1 + foundpatternlength] - track[k+1]
-            z = track[position + 2 + foundpatternlength] - track[k+2]
-            if x == y and x == z:
-                difference = x
+        for k in range(position + patternlength, len(track)):                                     #Same Pattern is Found
+            if k  + patternlength - foundpatternlength > len(track):
+                break
+            if k + 2 < len(track):
+                x = track[position + foundpatternlength] - track[k]
+                y = track[position + 1 + foundpatternlength] - track[k+1]
+                z = track[position + 2 + foundpatternlength] - track[k+2]
+                if x == y and x == z:
+                    difference = x
             if track[position + foundpatternlength] == track[k]:
                 foundpattern = foundpattern + ' ' + str(track[k])
+                originalpattern = originalpattern + ' ' + str(track[position+foundpatternlength])
                 foundpatternlength += 1
                 startindex = k - foundpatternlength
             elif track[position + foundpatternlength] - track[k] == difference:
                 foundpattern = foundpattern + ' ' + str(track[k])
+                originalpattern = originalpattern + ' ' + str(track[position+foundpatternlength])
                 foundpatternlength += 1
                 startindex = k - foundpatternlength
             else:
                 foundpatternlength = 0
                 foundpattern = ''
+                originalpattern = ''
             if foundpatternlength == patternlength:
+                startindex += 1
                 if len(patternlist) != 0:
                     for a in range(0, len(patternlist)):
-                        if startindex or startindex + patternlength in range(positionofpattern[a], positionofpattern[a] + patternlengthinnumber[a]):
+                        if startindex in range(positionofpattern[a], positionofpattern[a] + patternlengthinnumber[a]-1) or startindex + patternlength - 1 in range(positionofpattern[a], positionofpattern[a] + patternlengthinnumber[a]-1):
                             write = False
                             break
                 if write == False:
                     write = True
                     continue
                 else:                               # ToDo: überarbeiten da nochnicht richtig funktioniert
-                    patternlist.append(foundpattern)
-                    positionofpattern.append(position+1)
+                    patternlist.append(originalpattern)
+                    positionofpattern.append(position)
                     patternlengthinnumber.append(patternlength)
                     patternlist.append(foundpattern)
-                    positionofpattern.append(k - patternlength+1)
+                    positionofpattern.append(k - patternlength + 1)
                     patternlengthinnumber.append(patternlength)
-
                     originalpattern = ''
                     foundpattern = ''
                     difference = 0
