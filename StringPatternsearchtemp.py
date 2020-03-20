@@ -11,7 +11,7 @@ def Patternsearchpreperation(track):
         Patternsearch(track, j, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, 0)
     for i in range(0, len(positionofpattern)):
         positionofpattern[i] += 1
-    #ChangeNumbersToNotes(patternlist)
+    ChangeNumbersToNotes(patternlist)
     return patternlist, patternlengthinnumber, positionofpattern
 
 def Patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, position):
@@ -19,7 +19,6 @@ def Patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
         return patternlist
     else:
         write = True
-        writefirstoccurence = False
         difference = 0
         foundpattern = ''
         foundpatternlength = 0
@@ -58,7 +57,7 @@ def Patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
                 if write == False:
                     write = True
                     continue
-                else:                               # ToDo: überarbeiten da nochnicht richtig funktioniert
+                else:
                     patternlist.append(originalpattern)
                     positionofpattern.append(position)
                     patternlengthinnumber.append(patternlength)
@@ -69,103 +68,13 @@ def Patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
                     foundpattern = ''
                     difference = 0
                     foundpatternlength = 0
-
-            #if track[position + foundpatternlength] != track[k] and track[position + foundpatternlength] - track[k] != difference:
-            #    foundpattern =''
-            #    difference = 0
-            #    foundpatternlength = 0
-            #    continue
-            #if track[position + foundpatternlength] == track[k] or track[position + foundpatternlength] - track[k] == difference:
-            #    foundpatternlength += 1
-            #    foundpattern = foundpattern + ' ' + str(track[k])
-            #    if foundpatternlength == patternlength:
-            #        for i in range(0, patternlength):
-            #            originalpattern = originalpattern + ' ' + str(track[position + i])
-            #        if len(patternlist) != 0:
-            #            for a in range(0, len(patternlist)):
-            #                if k-patternlength in range(positionofpattern[a], positionofpattern[a] + patternlengthinnumber[a]) or k in range(positionofpattern[a], positionofpattern[a] + patternlengthinnumber[a]):    # If startpoint of found pattern is in range of the original pattern
-            #                    write = False
-            #                if write == False:
-            #                    break
-            #        if write == False:
-            #            write = True
-            #            continue
-            #        patternlist.append(foundpattern)
-            #        positionofpattern.append(position+1)
-            #        patternlengthinnumber.append(patternlength)
-            #        patternlist.append(foundpattern)
-            #        positionofpattern.append(k - patternlength+1)
-            #        patternlengthinnumber.append(patternlength)#
-
-            #        originalpattern = ''
-            #        foundpattern = ''
-            #        difference = 0
-            #        foundpatternlength = 0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            #if track[position] != track[k] and track[position] - track[k] != difference:
-            #    difference = 0
-            #    continue
-            #if track[position] == track[k] or track[position] - track[k] == difference:
-            #    for a in range(0, len(patternlist)):
-            #        if position + k in range(positionofpattern[a], positionofpattern[a] + patternlengthinnumber[a]):    # If startpoint of found pattern is in range of the original pattern
-            #            write = False
-            #    if write is False:
-            #        write = True
-            #        continue
-            #    foundpattern = str(track[k])
-            #    for length in range(1, patternlength):
-            #        if track[position+length] != track[k + length] and track[position + length] - track[k + length] != difference:
-            #            if length > patternlength-3:
-            #                foundpattern = ''
-            #                break
-            #            x = track[position + length] - track[k + length]
-            #            y = track[position + length] - track[k + length]
-            #            z = track[position + length] - track[k + length]
-            #            if x == y and x == z:
-            #                difference = x
-            #            else:
-            #                break
-            #        if track[position+length] == track[k+length] or track[position + length] - track[k + length] == difference:
-            #            foundpattern = foundpattern + ' ' + str(track[k+length])
-            #            if length + 1 == patternlength:
-            #                #if writefirstoccurence is False or len(patternlist) == 0:
-            #                patternlist.append(foundpattern)
-            #                positionofpattern.append(position)
-            #                patternlengthinnumber.append(patternlength)
-            #                writefirstoccurence = True
-            #                patternlist.append(foundpattern)
-            #                positionofpattern.append(position+k)
-            #                patternlengthinnumber.append(patternlength)
-            #                k = k+patternlength
-            #                foundpattern = ''
         Patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, position + 1)
     return patternlist, positionofpattern, patternlengthinnumber
 
 def ChangeNumbersToNotes(patternlist):
     for i in range(0, len(patternlist)):
         pattern = patternlist[i]
-        itteration = 0
+        itteration = 1
         notestemp = ''
         noteswrite = ''
         while itteration < len(pattern):
@@ -255,4 +164,3 @@ if __name__ == '__main__':
     p.close()
     f.close()
     e.close()
-    # ToDO: Wenn korrekt auskommentierte prints entfehrnen
