@@ -24,25 +24,48 @@ def Patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
         foundpatternlength = 0
         originalpattern = ''
         startindex = 0
-        for k in range(position + patternlength, len(track)):                                     #Same Pattern is Found
-            if k  + patternlength - foundpatternlength > len(track):
+        vertical = 0
+        verticalaxis = 0
+        for k in range(position + patternlength, len(track)):
+            if k + patternlength - foundpatternlength > len(track):
                 break
             if k + 2 < len(track):
-                x = track[position + foundpatternlength] - track[k]
+                x = track[position + foundpatternlength] - track[k]                                 #Check if difference is correct for the next 3 notes (Keychange)
                 y = track[position + 1 + foundpatternlength] - track[k+1]
                 z = track[position + 2 + foundpatternlength] - track[k+2]
                 if x == y and x == z:
                     difference = x
-            if track[position + foundpatternlength] == track[k]:
+
+
+                verticalaxis = int(abs((track[position + foundpatternlength] - track[k])/2))                           # Check if difference is correct for the next 3 notes (vertical change)
+                verticalaxisnextnote = int(abs((track[position + foundpatternlength + 1] - track[k + 1])/2))
+                verticalaxisnextnextnote = int(abs((track[position + foundpatternlength + 2] - track[k + 2])/2))
+                if track[position + foundpatternlength] < track[k]:
+                    verticalaxis = track[position + foundpatternlength] + verticalaxis
+                    verticalaxisnextnote = track[position + foundpatternlength + 1] + verticalaxisnextnote
+                    verticalaxisnextnextnote = track[position + foundpatternlength + 2] + verticalaxisnextnextnote
+                else:
+                    verticalaxis = track[k] + verticalaxis
+                    verticalaxisnextnote = track[k + 1] + verticalaxisnextnote
+                    verticalaxisnextnextnote = track[k + 2] + verticalaxisnextnextnote
+                if verticalaxis == verticalaxisnextnote and verticalaxis == verticalaxisnextnextnote:
+                    vertical = 3
+            if track[position + foundpatternlength] == track[k]:                                    #Same Pattern
                 foundpattern = foundpattern + ' ' + str(track[k])
                 originalpattern = originalpattern + ' ' + str(track[position+foundpatternlength])
                 foundpatternlength += 1
                 startindex = k - foundpatternlength
-            elif track[position + foundpatternlength] - track[k] == difference:
+            elif track[position + foundpatternlength] - track[k] == difference:                     #Keychange
                 foundpattern = foundpattern + ' ' + str(track[k])
                 originalpattern = originalpattern + ' ' + str(track[position+foundpatternlength])
                 foundpatternlength += 1
                 startindex = k - foundpatternlength
+            elif vertical > 0:                                                                      #verticalChange
+                foundpattern = foundpattern + ' ' + str(track[k])
+                originalpattern = originalpattern + ' ' + str(track[position + foundpatternlength])
+                foundpatternlength += 1
+                startindex = k - foundpatternlength
+                vertical -= 1
             else:
                 foundpatternlength = 0
                 foundpattern = ''

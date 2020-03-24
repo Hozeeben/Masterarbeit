@@ -13,18 +13,36 @@ def PatternSearch(track):
     foundpatternindize = []                                                         # ToDo: Unterteilung der Algorithmen mit Switch Case
     xindize = 1                                                                     # ToDo: Maybe for each Pattern one Matrix (maybe for each one Function)
     yindize = 1
+    difference = []
+    for i in range(0, len(track)-1):
+        difference.append(track[i]-track[i+1])
     while True:                                                                     # Add Patterns here
-        if yindize == len(track)+1:
+        if yindize >= len(track)+1:                                                 # In-Range checks
             break
-        if notematrix[0, xindize] == notematrix[yindize, 0]:                        # Patternclass=same
+        if xindize >= len(track)+1:
+            yindize += 1
+            xindize = yindize
+            continue
+        if xindize <= yindize:
+            xindize += 1
+            continue
+        if notematrix[yindize, xindize] == -1:
+            notematrix[yindize, xindize] = notematrix[yindize - 1, xindize - 1] + 1
+        if notematrix[0, xindize] == notematrix[yindize, 0]:                        #Patternclass=same
             if yindize != 1:
                 notematrix[yindize, xindize] = notematrix[yindize-1, xindize-1] + 1
             else:
                 notematrix[yindize, xindize] = 1
+            xindize += 1
+            continue
+        if xindize + 1 < np.size(notematrix, 1):                                    #Patternclass=Keychange
+            if difference[yindize-1] == notematrix[0, xindize] - notematrix[0, xindize + 1]:
+                if yindize != 1:
+                    notematrix[yindize, xindize] = notematrix[yindize - 1, xindize - 1] + 1
+                else:
+                    notematrix[yindize, xindize] = 1
+                notematrix[yindize + 1, xindize + 1] = -1
         xindize += 1
-        if xindize == len(track)+1:
-            yindize += 1
-            xindize = yindize
 
 
     for y in range(np.size(notematrix, 0)-1, 0, -1):
@@ -34,7 +52,7 @@ def PatternSearch(track):
                 continue
             elif x == y:
                 notematrix[y, x] = 0
-            elif notematrix[y, x] > 1:
+            elif notematrix[y, x] > 2:
                 xtemp = x
                 ytemp = y
                 patternlength = notematrix[y, x]
@@ -55,7 +73,7 @@ if __name__ == '__main__':
     normalstdout = sys.stdout
     f = open('MIDIMatrix.txt', 'w')
     sys.stdout = f
-    filename = 'darude-sandstorm.mid'                                   # ToDo: Variabel machen
+    filename = 'beethoven_ode_to_joy.mid'                                   # ToDo: Variabel machen
     midi_file = MidiFile(filename)
 
     for i, track in enumerate(midi_file.tracks):
@@ -65,7 +83,7 @@ if __name__ == '__main__':
 
     sys.stdout = normalstdout
     f.close()
-    f = open('MIDIMatrix.txt', 'r')
+    f = open('MIDIMatrixTemp.txt', 'r')
     e = open('Ergebnis Patternsuche Matrix.txt', 'w')
     writenote = ''
     track = []
@@ -80,18 +98,19 @@ if __name__ == '__main__':
                 sys.stdout = e
                 print('===Track Nr. ', nroftracks, '===')
                 for i in range(0, len(indize)):  # ToDo: nicht alle Patternergebnisse mit in .txt übernehmen
-                    patternstring = ''
+                    patternstring1 = ''
+                    patternstring2 = ''
                     indizes = indize[i]
                     tempstr = indizes.split()
                     ytemp = int(float(tempstr[0]))
                     xtemp = int(float(tempstr[1]))
                     patternlengthtmp = int(patternlength[i])
-                    if patternlengthtmp < 3:
+                    if ytemp + patternlengthtmp > xtemp:
                         continue
                     for j in range(0, patternlengthtmp):
-                        patternstring = patternstring + ' ' + str(notematrix[ytemp + j, 0])
-                    print('')
-                    print('Gefundenes Pattern: ' + patternstring + '\nNoten im Lied: ' + str(ytemp) + ', ' + str(xtemp)
+                        patternstring1 = patternstring1 + ' ' + str(notematrix[ytemp + j, 0])
+                        patternstring2 = patternstring2 + ' ' + str(notematrix[xtemp + j, 0])
+                    print('\nGefundene Pattern: ' + patternstring1 + ', ' + patternstring2 + '\nNoten im Lied: ' + str(ytemp) + ', ' + str(xtemp)
                           + '\nLänge des Patterns: ' + str(patternlengthtmp))
                 sys.stdout = normalstdout
                 nroftracks += 1
