@@ -182,8 +182,3 @@ if __name__ == '__main__':
             writenote = ''
     f.close()
     e.close()
-
-    # ToDo: Prints im nachhinein checken
-    # ToDo: Check ob Indize schon vergeben
-    # ToDO: Ansicht in .txt verbessern um zu Kontrollieren ob Korrekt berechnet
-    # ToDo: MIDI Notennummern zu Noten machen
