@@ -140,7 +140,7 @@ if __name__ == '__main__':
 
     sys.stdout = normalstdout
     f.close()
-    f = open('MIDIMatrixTemp.txt', 'r')
+    f = open('MIDIMatrix.txt', 'r')
     e = open('Ergebnis Patternsuche Matrix.txt', 'w')
     writenote = ''
     track = []

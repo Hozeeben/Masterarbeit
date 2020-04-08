@@ -5,66 +5,64 @@ import matplotlib.pyplot as plt
 from mido import MidiFile
 
 def SIATEC(notey, timex):
+    notematrix = [[]]                                  # 3 dimensions because Python sucks
+    temparray = []
+    vektorinformation = [0]
+    vektorinformation.append(0)
+    for fromnote in range(0, len(notey)-1):
+        for tonote in range(0, len(notey)-1):
+            if fromnote <= tonote:
+                while len(temparray) < len(notey) - 1:
+                    temparray.append('0')
+                notematrix.append(temparray)
+                temparray = []
+                break
+            else:
+                vektorinformation[0] = int(notey[fromnote] - notey[tonote])
+                vektorinformation[1] = int(timex[fromnote] - timex[tonote])
+                temparray.append(', '.join(str(x) for x in vektorinformation))
+    notematrix.pop(0)
+
+    # Sortieren und dann noch Pattern auslesen
+
     plt.scatter(timex, notey)
     plt.show()
+    return
 
     # ToDo: ab hier dann mit plt und meshgrid rummspielen
 
 
 if __name__ == '__main__':
-    tempsting = 'note='
-    stringlength = len(tempsting)
     normalstdout = sys.stdout
-    filename = 'beethoven_ode_to_joy.mid'                                   # ToDo: Variabel machen
-    f = open('Queen(2).txt', 'r')
-    p = open('MusikstückSIATEC.txt', 'w')
+    #filename = 'beethoven_ode_to_joy.mid'                                   # ToDo: Variabel machen
+    f = open('OneRepublic - If I Lose Myself.txt', 'r')
     notestring = ''
     timestring = ''
     timex = []
     notey = []
-    while True:                                                                     # Create .txt with only Notenr.
+    track = 1
+    trackstr = '1'
+    while True:
         nextline = f.readline()
-        if nextline == '':
-            break
-        if nextline.find('TrkEnd') == 0:                                            # Everything is made here
-            SIATEC(notey, timex)
-            timex = []
-            notey = []
-        if nextline.find(' On ') != -1:                                             # Prepare everything vor SIATEC
-            for i in range(0, len(nextline)):
-                if nextline[i] == ' ':
-                    notestart = nextline.find('n=') + 2
-                    timex.append(int(int(timestring)//100))
-                    timestring = ''
-                    for j in range(0, 3):
-                        if nextline[notestart+j] == ' ':
-                            notey.append(int(notestring))
-                            notestring = ''
-                            break
-                        notestring = notestring + nextline[notestart+j]
-                    break
-                else:
-                    timestring = timestring + nextline[i]
-
-    p.close()
-    f.close()
-    #plt.scatter(xx,yy)
-    #plt.show()
-
-    f = open('MusikstückSIATEC.txt', 'r')
-    e = open('Ergebnis Patternsuche SIATEC.txt', 'w')
-    #while True:
-    #    track = f.readline()
-    #    if track == '':
-    #        break
-    #    SIATEC(track)
+        nextline = nextline[:-1]
+        if nextline == "":
+            track += 1
+            trackstr = str(track)
+            if len(timex) > 0:
+                SIATEC(notey, timex)
+                f.seek(0)
+                timex = []
+                notey = []
+            else:
+                break
+        else:
+            tempstring = nextline.split(',')
+            if tempstring[2] == trackstr:
+                timex.append(int(tempstring[0]))
+                notey.append(int(tempstring[1]))
 
     f.close()
-    e.close()
-    # Mit Programm Midicomp die txt bekommen mit -t für absolute Zeit
-
-
-    # Fragen Rapha:
-    # Tick oder totale Zeit in MIDI's -> Whatsapp chat Rapha
-    # Welche Art von Patterns sind sinnvoll zu erkennen
-    # über die Spektren schauen lassen-
+    # LittleTranscriptor nehmen
+    # https://www.youtube.com/watch?v=7K4hBdokhbE
+    # nochmal mit 2ten monitor
+    # jeder strich sind 2 sek keine 4
