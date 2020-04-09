@@ -4,8 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mido import MidiFile
 
-def SIATEC(notey, timex):
-    notematrix = [[[]]]                                  # 3 dimensions because Python sucks
+def SIATECOLD(notey, timex):
+    notematrix = [[[]]]                                  # weird Array because Python sucks
     temparray = [[]]
     vektor = []
     vektorinformation = [0]
@@ -34,12 +34,36 @@ def SIATEC(notey, timex):
     #       zu Note            = 1,47
     #       Ermittelter Vektor = 1,7
     # print(notematrix[5][3])   Erste Element Zeile, zweite Element Spalte
-
+    InitQuicksort(notematrix)
     plt.scatter(timex, notey)
     plt.show()
     return
 
+def SIATEC(notey, timex):
+    notearray = []
+    position = []
+    tracklen = len(notey)
+    Gausssum = 1
+    zaehler = 0
+    vektorinformation = [0]
+    vektorinformation.append(0)
+    while len(notearray) < ((tracklen*(tracklen+1)/2)-tracklen):
+        vektorinformation[0] = int(notey[Gausssum] - notey[zaehler])
+        vektorinformation[1] = int(timex[Gausssum] - timex[zaehler])
+        notearray.append(', '.join(str(x) for x in vektorinformation))
+        position.append(str(Gausssum) + ',' + str(zaehler))
+        if len(notearray) == (Gausssum*(Gausssum+1)/2):
+            Gausssum += 1
+            zaehler = 0
+        else:
+            zaehler += 1
+    print(notearray)
+    print(position)
+    return
     # ToDo: ab hier dann mit plt und meshgrid rummspielen
+
+#def InitQuicksort(notematrix):
+
 
 
 if __name__ == '__main__':
