@@ -34,7 +34,6 @@ def SIATECOLD(notey, timex):
     #       zu Note            = 1,47
     #       Ermittelter Vektor = 1,7
     # print(notematrix[5][3])   Erste Element Zeile, zweite Element Spalte
-    InitQuicksort(notematrix)
     plt.scatter(timex, notey)
     plt.show()
     return
@@ -57,19 +56,75 @@ def SIATEC(notey, timex):
             zaehler = 0
         else:
             zaehler += 1
-    print(notearray)
-    print(position)
+    notearray, position = Quicksort(0, len(notearray)-1, notearray, position)
+    for i in range(0, len(notearray)-1):
+        print(notearray[i])
+    #print(position)
     return
     # ToDo: ab hier dann mit plt und meshgrid rummspielen
 
-#def InitQuicksort(notematrix):
+def Quicksort(left, right, notearray, position):
+    if len(notearray) <= 1:
+        return notearray, position
+    smallernote = []
+    biggernote = []
+    smallerposition = []
+    biggerposition = []
+    informationleft = []
+    informationright = []
+    informationpivot = []
+    informationpivot = notearray[right].split(',')
+    informationpivot[0], informationpivot[1] = int(informationpivot[0]), int(informationpivot[1])
+    while True:
+        informationleft = notearray[left].split(',')
+        informationleft[0], informationleft[1] = int(informationleft[0]), int(informationleft[1])
+        informationright = notearray[right].split(',')
+        informationright[0], informationright[1] = int(informationright[0]), int(informationright[1])
+        if informationleft[0] < informationpivot[0]:                    # left is smaller than pivot -> index + 1
+            smallernote.append(notearray[left])
+            smallerposition.append(position[left])
+            left += 1
+            if left > right:
+                notearrayleft, positionleft = Quicksort(0, len(smallernote) - 1, smallernote, smallerposition)
+                notearrayright, positionright = Quicksort(0, len(biggerposition) - 1, biggernote, biggerposition)
+                break
+        else:
+            if informationleft[0] > informationpivot[0] or informationleft[0] == informationpivot[0] and informationleft[1] >= informationpivot[1]:     # left is bigger than pivot -> beginn search for bigger element
+                if informationright[0] > informationpivot[0]:
+                    biggernote.insert(0, notearray[right])
+                    biggerposition.insert(0, position[right])
+                    right -= 1
+                elif informationright[0] < informationpivot[0] or informationright[0] == informationpivot[0] and informationright[1] <= informationpivot[1]:
+                    if right == left:
+                        biggernote.insert(0, notearray[left])
+                        biggerposition.insert(0, position[left])
+                    else:
+                        smallernote.append(notearray[right])
+                        smallerposition.append(position[right])
+                        biggernote.insert(0, notearray[left])
+                        biggerposition.insert(0, position[left])
+                    left += 1
+                    right -= 1
+                    if left > right:
+                        notearrayleft, positionleft = Quicksort(0, len(smallernote) - 1, smallernote, smallerposition)
+                        notearrayright, positionright = Quicksort(0, len(biggerposition) - 1, biggernote, biggerposition)
+                        break
+                else:
+                    biggernote.insert(0, notearray[right])
+                    biggerposition.insert(0, position[right])
+                    right -= 1
+            else:
+                left += 1
+    notearray = notearrayleft+notearrayright
+    position = positionleft+positionright
 
+    return notearray, position
 
 
 if __name__ == '__main__':
     normalstdout = sys.stdout
     #filename = 'beethoven_ode_to_joy.mid'                                   # ToDo: Variabel machen
-    f = open('OneRepublic - If I Lose Myself.txt', 'r')
+    f = open('OneRepublic - If I Lose Myself(original).txt', 'r')
     notestring = ''
     timestring = ''
     timex = []
