@@ -39,6 +39,7 @@ def SIATECOLD(notey, timex):
     return
 
 def SIATEC(notey, timex):
+    plt.scatter(timex, notey)
     notearray = []
     position = []
     tracklen = len(notey)
@@ -57,9 +58,11 @@ def SIATEC(notey, timex):
         else:
             zaehler += 1
     notearray, position = Quicksort(0, len(notearray)-1, notearray, position)
-    for i in range(0, len(notearray)-1):
-        print(notearray[i])
-    #print(position)
+    #for i in range(0, len(notearray)-1):
+    #    print(notearray[i])
+    #for i in range(0, len(notearray) - 1):
+    #    print(position[i])
+    plt.show()
     return
     # ToDo: ab hier dann mit plt und meshgrid rummspielen
 
@@ -94,10 +97,19 @@ def Quicksort(left, right, notearray, position):
                     biggernote.insert(0, notearray[right])
                     biggerposition.insert(0, position[right])
                     right -= 1
+                    if left > right:
+                        notearrayleft, positionleft = Quicksort(0, len(smallernote) - 1, smallernote, smallerposition)
+                        notearrayright, positionright = Quicksort(0, len(biggerposition) - 1, biggernote, biggerposition)
+                        break
                 elif informationright[0] < informationpivot[0] or informationright[0] == informationpivot[0] and informationright[1] <= informationpivot[1]:
                     if right == left:
                         biggernote.insert(0, notearray[left])
                         biggerposition.insert(0, position[left])
+                        left += 1
+                        if left > right:
+                            notearrayleft, positionleft = Quicksort(0, len(smallernote) - 1, smallernote, smallerposition)
+                            notearrayright, positionright = Quicksort(0, len(biggerposition) - 1, biggernote, biggerposition)
+                            break
                     else:
                         smallernote.append(notearray[right])
                         smallerposition.append(position[right])
@@ -113,8 +125,18 @@ def Quicksort(left, right, notearray, position):
                     biggernote.insert(0, notearray[right])
                     biggerposition.insert(0, position[right])
                     right -= 1
+                    if left > right:
+                        notearrayleft, positionleft = Quicksort(0, len(smallernote) - 1, smallernote, smallerposition)
+                        notearrayright, positionright = Quicksort(0, len(biggerposition) - 1, biggernote, biggerposition)
+                        break
             else:
+                smallernote.append(notearray[left])
+                smallerposition.append(position[left])
                 left += 1
+                if left > right:
+                    notearrayleft, positionleft = Quicksort(0, len(smallernote) - 1, smallernote, smallerposition)
+                    notearrayright, positionright = Quicksort(0, len(biggerposition) - 1, biggernote, biggerposition)
+                    break
     notearray = notearrayleft+notearrayright
     position = positionleft+positionright
 
