@@ -51,19 +51,15 @@ def SIATEC(notey, timex):
         vektorinformation[0] = int(notey[Gausssum] - notey[zaehler])
         vektorinformation[1] = int(timex[Gausssum] - timex[zaehler])
         notearray.append(', '.join(str(x) for x in vektorinformation))
-        position.append(str(Gausssum) + ',' + str(zaehler))
+        position.append(str(Gausssum + 1) + ',' + str(zaehler + 1))
         if len(notearray) == (Gausssum*(Gausssum+1)/2):
             Gausssum += 1
             zaehler = 0
         else:
             zaehler += 1
     notearray, position = Quicksort(0, len(notearray)-1, notearray, position)
-    #for i in range(0, len(notearray)-1):
-    #    print(notearray[i])
-    #for i in range(0, len(notearray) - 1):
-    #    print(position[i])
     plt.show()
-    return
+    return notearray, position
     # ToDo: ab hier dann mit plt und meshgrid rummspielen
 
 def Quicksort(left, right, notearray, position):
@@ -73,9 +69,6 @@ def Quicksort(left, right, notearray, position):
     biggernote = []
     smallerposition = []
     biggerposition = []
-    informationleft = []
-    informationright = []
-    informationpivot = []
     informationpivot = notearray[right].split(',')
     informationpivot[0], informationpivot[1] = int(informationpivot[0]), int(informationpivot[1])
     while True:
@@ -147,6 +140,8 @@ if __name__ == '__main__':
     normalstdout = sys.stdout
     #filename = 'beethoven_ode_to_joy.mid'                                   # ToDo: Variabel machen
     f = open('OneRepublic - If I Lose Myself(original).txt', 'r')
+    p = open('Ergebnis Patternsuche SIATEC.txt', 'w')
+    sys.stdout = p
     notestring = ''
     timestring = ''
     timex = []
@@ -160,7 +155,44 @@ if __name__ == '__main__':
             track += 1
             trackstr = str(track)
             if len(timex) > 0:
-                SIATEC(notey, timex)
+                print('===Track ' + str(track-1) + '===\n')
+                notearray, positionsolution = SIATEC(notey, timex)
+                difference = []
+                positiontemp = []
+                position = []
+                itterator = 0
+                patternlength = 0
+                patternstart = []
+                patternend = []
+                same = False
+                while itterator < len(notearray) - 1:
+                    patterninformation = notearray[itterator].split(', ')
+                    nextpatterninformation = notearray[itterator + 1].split(', ')
+                    if nextpatterninformation[0] == patterninformation[0] and nextpatterninformation[1] == patterninformation[1]:
+                        same = True
+                        positiontemp.append(positionsolution[itterator])
+                    elif (nextpatterninformation[0] != patterninformation[0] or nextpatterninformation[1] != patterninformation[1]) and same:
+                        same = False
+                        positiontemp.append(positionsolution[itterator])
+                        positiontemp.sort()
+                        position.append(positiontemp)
+                        positiontemp = []
+                    elif (nextpatterninformation[0] != patterninformation[0] or nextpatterninformation[1] != patterninformation[1]) and same is False:
+                        del notearray[itterator]
+                        del positionsolution[itterator]
+                        if len(positiontemp) != 0:
+                            positiontemp.sort()
+                            position.append(positiontemp)
+                            positiontemp = []
+                        continue
+                    itterator += 1
+                if nextpatterninformation[0] != patterninformation[0] or nextpatterninformation[1] != patterninformation[1]:
+                    del notearray[len(notearray) - 1]
+                notearray = list(set(notearray))
+                notearray.sort()
+                for i in range(0, len(notearray)):
+                    print('Differenz Note/Zeit:\t\t' + notearray[i])
+                    print('Zu Position, von Position:\t' + str(position[i]) + '\n')
                 f.seek(0)
                 timex = []
                 notey = []
@@ -173,6 +205,7 @@ if __name__ == '__main__':
                 notey.append(int(tempstring[1]))
 
     f.close()
+    p.close()
     # LittleTranscriptor nehmen
     # https://www.youtube.com/watch?v=7K4hBdokhbE
     # nochmal mit 2ten monitor
