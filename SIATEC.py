@@ -4,40 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mido import MidiFile
 
-def SIATECOLD(notey, timex):
-    notematrix = [[[]]]                                  # weird Array because Python sucks
-    temparray = [[]]
-    vektor = []
-    vektorinformation = [0]
-    vektorinformation.append(0)
-    for tonote in range(0, len(notey)-1):
-        for fromnote in range(0, len(notey)-1):
-            if tonote <= fromnote:
-                while len(temparray) < len(notey) - 1:
-                    vektor.append('0, 0')
-                    temparray.append(vektor)
-                    vektor = []
-                notematrix.append(temparray)
-                temparray = []
-                break
-            else:
-                vektorinformation[0] = int(notey[tonote] - notey[fromnote])
-                vektorinformation[1] = int(timex[tonote] - timex[fromnote])
-                vektor.append(', '.join(str(x) for x in vektorinformation))
-                temparray.append(vektor)
-                vektor = []
-    notematrix.pop(0)
-    notematrix.pop(0)
-
-    # Sortieren und dann noch Pattern auslesen x-Achse ist welche Note gerade betrachtet wird und y-Achse zu welcher Note gegangen wird
-    # Bsp.: momentane Note     = 0,40
-    #       zu Note            = 1,47
-    #       Ermittelter Vektor = 1,7
-    # print(notematrix[5][3])   Erste Element Zeile, zweite Element Spalte
-    plt.scatter(timex, notey)
-    plt.show()
-    return
-
 def SIATEC(notey, timex):
     plt.scatter(timex, notey)
     notearray = []
@@ -186,10 +152,28 @@ if __name__ == '__main__':
                             positiontemp = []
                         continue
                     itterator += 1
-                if nextpatterninformation[0] != patterninformation[0] or nextpatterninformation[1] != patterninformation[1]:
+                if nextpatterninformation[0] != patterninformation[0] or nextpatterninformation[1] != patterninformation[1]:        # Sort out some results
                     del notearray[len(notearray) - 1]
-                notearray = list(set(notearray))
-                notearray.sort()
+                    itterator = 0
+                while itterator < len(notearray) - 1:
+                    sort1 = notearray[itterator].split(', ')
+                    sort1[0], sort1[1] = int(sort1[0]), int(sort1[1])
+                    sort2 = notearray[itterator + 1].split(', ')
+                    sort2[0], sort2[1] = int(sort2[0]), int(sort2[1])
+                    if sort1[0] == sort2[0] and sort1[1] == sort2[1]:
+                        del notearray[itterator+1]
+                        continue
+                    itterator += 1
+
+                itterator = 0
+                while itterator < len(position):
+                    sort1 = str(position[itterator]).split(', ')
+                    if len(sort1) < 3:
+                        del position[itterator]
+                        del notearray[itterator]
+                        continue
+                    itterator += 1
+
                 for i in range(0, len(notearray)):
                     print('Differenz Note/Zeit:\t\t' + notearray[i])
                     print('Zu Position, von Position:\t' + str(position[i]) + '\n')
@@ -203,10 +187,11 @@ if __name__ == '__main__':
             if tempstring[2] == trackstr:
                 timex.append(int(tempstring[0]))
                 notey.append(int(tempstring[1]))
-
+    sys.stdout = normalstdout
     f.close()
     p.close()
     # LittleTranscriptor nehmen
     # https://www.youtube.com/watch?v=7K4hBdokhbE
     # nochmal mit 2ten monitor
     # jeder strich sind 2 sek keine 4
+    # jede Hand neue Nummerierung
