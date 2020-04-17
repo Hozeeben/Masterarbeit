@@ -111,6 +111,7 @@ def highpassfilter(inputfile, outputlow):
 
 
 if __name__ == '__main__':
+    os.makedirs('Musikgefiltert')
     musicpath = os.getcwd()+"\\Musik"                         #Set Path to musicfiles
 
     orig_stdout = sys.stdout                                #List all Songs from folder Musik
