@@ -28,7 +28,6 @@ def SIATEC(notey, timex):
     notearray, position = Quicksort(0, len(notearray)-1, notearray, position)
     plt.show()
     return notearray, position
-    # ToDo: ab hier dann mit plt und meshgrid rummspielen
 
 def Quicksort(left, right, notearray, position):
     if len(notearray) <= 1:
