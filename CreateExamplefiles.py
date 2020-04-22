@@ -45,7 +45,6 @@ if __name__ == '__main__':
         plt.xlabel('Note in Track')
         plt.ylabel('Notepitch')
         plt.savefig('Example'+str(i)+'.png', dpi=200)
-        #plt.show()
         p.close()
 
 
