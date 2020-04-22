@@ -11,21 +11,26 @@ if __name__ == '__main__':
         print("Folder ExampleYOLO already exists.\n Proceed to creating examples.")
     os.chdir(os.getcwd()+'/ExamplesYOLO')
     song = []
+    done = False
     for i in range(1, 501):
         p = open('Example' + str(i) + '.txt', 'w')
         for j in range(0, 200):
-            if j > 60:
-                if random.random() <= 0.025:
-                    patternlength = random.randint(10,60)
-                    patternposition = random.randint (0, j-61)
-                    for k in range(0, patternlength):
-                        song.append(song[patternposition + k])
-                        p.write(str(j+k) + ',' + str(song[patternposition + k]) + ',1\n')
-                    j = j + k
-            note = random.randint(0, 128)
-            p.write(str(j) + ',' + str(note) + ',1\n')
-            song.append(note)
-            j += 1
+            if random.random() <= 0.025 and j > 60:
+                done = True
+                patternlength = random.randint(10,60)
+                patternposition = random.randint (0, j-61)
+                for k in range(0, patternlength):
+                    song.append(song[patternposition + k])
+                    p.write(str(j+k) + ',' + str(song[patternposition + k]) + ',1\n')
+            else:
+                note = random.randint(0, 128)
+                p.write(str(j) + ',' + str(note) + ',1\n')
+                song.append(note)
+            if done:
+                done = False
+                j = j + patternlength
+                if j >= 200:
+                    break
         p.close()
     for i in range(1, 501):
         p = open('Example' + str(i) + '.txt', 'r')
