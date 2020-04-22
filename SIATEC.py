@@ -6,6 +6,8 @@ from mido import MidiFile
 
 def SIATEC(notey, timex):
     plt.scatter(timex, notey)
+    plt.xlabel('Note in Track')
+    plt.ylabel('Notepitch')
     notearray = []
     position = []
     tracklen = len(notey)
@@ -105,7 +107,7 @@ def Quicksort(left, right, notearray, position):
 if __name__ == '__main__':
     normalstdout = sys.stdout
     #filename = 'beethoven_ode_to_joy.mid'                                   # ToDo: Variabel machen
-    f = open('OneRepublic - If I Lose Myself(original).txt', 'r')
+    f = open('OneRepublic - If I Lose Myself.txt', 'r')
     p = open('Ergebnis Patternsuche SIATEC.txt', 'w')
     sys.stdout = p
     notestring = ''
