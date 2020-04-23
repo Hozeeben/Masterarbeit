@@ -156,34 +156,26 @@ if __name__ == '__main__':
     sys.stdout = normalstdout
     f.close()
     f = open('MIDIString.txt', 'r')
-    p = open('MusikstückString.txt', 'w')
     writenote = ''
     track = []
     nroftracks = 1
+    os.chdir()
     while True:                                                             #Create .txt with only Notenr. and Time its played
         nextline = f.readline()
         if nextline == "":
-            break
-        if nextline.find('<meta message end_of_track') != -1:
-            if len(track) > 0:
-                pattern, length, noteintrack = Patternsearchpreperation(track)
-                e = open('Ergebnis Patternsuche String.txt', 'w')
-                sys.stdout = e
-                print('===Track Nr. ', nroftracks, '===')
-                for itteration in range(0, len(pattern)):
-                    print('Pattern: ', pattern[itteration], '\nLänge des gefundenen Pattern: ',
-                          length[itteration], '\nStelle im Musikstück: ', noteintrack[itteration], '\n')
-                nroftracks += 1
-                sys.stdout = normalstdout
-                e.close()
-        if nextline.find('<message note_on') != -1:
-            startnote = nextline.find('note=')
-            for i in range(0, 2):
-                if nextline[startnote+stringlength+i] == ' ':
-                    break
-                writenote = writenote+nextline[startnote+stringlength+i]
-            track.append(int(writenote))
-            writenote = ''
+            pattern, length, noteintrack = Patternsearchpreperation(track)
+            e = open('Ergebnis Patternsuche String.txt', 'w')
+            sys.stdout = e
+            print('===Track Nr. ', nroftracks, '===')
+            for itteration in range(0, len(pattern)):
+                print('Pattern: ', pattern[itteration], '\nLänge des gefundenen Pattern: ',
+                      length[itteration], '\nStelle im Musikstück: ', noteintrack[itteration], '\n')
+            nroftracks += 1
+            sys.stdout = normalstdout
+            e.close()
+        else:
+            informations = nextline.split(',')
+            track.append(informations[1])
     p.close()
     f.close()
     e.close()
