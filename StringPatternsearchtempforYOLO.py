@@ -11,7 +11,7 @@ def Patternsearchpreperation(track):
         Patternsearch(track, j, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, 0)
     for i in range(0, len(positionofpattern)):
         positionofpattern[i] += 1
-    ChangeNumbersToNotes(patternlist)
+    #ChangeNumbersToNotes(patternlist)
     return patternlist, patternlengthinnumber, positionofpattern
 
 def Patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, position):
@@ -44,12 +44,16 @@ def Patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
                     verticalaxis = track[position + foundpatternlength] + verticalaxis
                     verticalaxisnextnote = track[position + foundpatternlength + 1] + verticalaxisnextnote
                     verticalaxisnextnextnote = track[position + foundpatternlength + 2] + verticalaxisnextnextnote
+                    if track[k] >= verticalaxis and track[k+1] >= verticalaxisnextnote and track[k+2] >= verticalaxisnextnextnote:  #Bugfix where Axis could be over both Notes
+                        if verticalaxis == verticalaxisnextnote and verticalaxis == verticalaxisnextnextnote:
+                            vertical = 3
                 else:
                     verticalaxis = track[k] + verticalaxis
                     verticalaxisnextnote = track[k + 1] + verticalaxisnextnote
                     verticalaxisnextnextnote = track[k + 2] + verticalaxisnextnextnote
-                if verticalaxis == verticalaxisnextnote and verticalaxis == verticalaxisnextnextnote:
-                    vertical = 3
+                    if track[position + foundpatternlength] >= verticalaxis and track[position + foundpatternlength + 1] >= verticalaxisnextnote and track[position + foundpatternlength + 2] >= verticalaxisnextnextnote:
+                        if verticalaxis == verticalaxisnextnote and verticalaxis == verticalaxisnextnextnote:
+                            vertical = 3
             if track[position + foundpatternlength] == track[k]:                                    #Same Pattern
                 foundpattern = foundpattern + ' ' + str(track[k])
                 originalpattern = originalpattern + ' ' + str(track[position+foundpatternlength])
@@ -140,42 +144,31 @@ def ChangeNumbersToNotes(patternlist):
 
 
 if __name__ == '__main__':
+    os.chdir(os.getcwd() + '/ExamplesYOLO')
     tempsting = 'note='
     stringlength = len(tempsting)
     normalstdout = sys.stdout
-    f = open('MIDIString.txt', 'w')
-    sys.stdout = f
-    filename = 'beethoven_ode_to_joy.mid'                                   # ToDo: Variabel machen
-    midi_file = MidiFile(filename)
-
-    for i, track in enumerate(midi_file.tracks):
-        sys.stdout.write('=== Track {}\n'.format(i))
-        for message in track:
-            sys.stdout.write('  {!r}\n'.format(message))
-
     sys.stdout = normalstdout
-    f.close()
-    f = open('MIDIString.txt', 'r')
-    writenote = ''
-    track = []
-    nroftracks = 1
-    os.chdir()
-    while True:                                                             #Create .txt with only Notenr. and Time its played
-        nextline = f.readline()
-        if nextline == "":
-            pattern, length, noteintrack = Patternsearchpreperation(track)
-            e = open('Ergebnis Patternsuche String.txt', 'w')
-            sys.stdout = e
-            print('===Track Nr. ', nroftracks, '===')
-            for itteration in range(0, len(pattern)):
-                print('Pattern: ', pattern[itteration], '\nLänge des gefundenen Pattern: ',
-                      length[itteration], '\nStelle im Musikstück: ', noteintrack[itteration], '\n')
-            nroftracks += 1
-            sys.stdout = normalstdout
-            e.close()
-        else:
-            informations = nextline.split(',')
-            track.append(informations[1])
-    p.close()
-    f.close()
-    e.close()
+    for i in range(1,501):
+        f = open('Example' + str(i) + '.txt', 'r')
+        writenote = ''
+        track = []
+        nroftracks = 1
+        while True:                                                             #Create .txt with only Notenr. and Time its played
+            nextline = f.readline()
+            if nextline == "":
+                pattern, length, noteintrack = Patternsearchpreperation(track)
+                e = open('Ergebnis Example' + str(i) + '.txt', 'w')
+                sys.stdout = e
+                print('===Track Nr. ', nroftracks, '===')
+                for itteration in range(0, len(pattern)):
+                    print('Pattern: ', pattern[itteration], '\nLänge des gefundenen Pattern: ',
+                          length[itteration], '\nStelle im Musikstück: ', noteintrack[itteration], '\n')
+                nroftracks += 1
+                sys.stdout = normalstdout
+                e.close()
+                break
+            else:
+                informations = nextline.split(',')
+                track.append(int(informations[1]))
+        f.close()
