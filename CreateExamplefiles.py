@@ -14,23 +14,23 @@ if __name__ == '__main__':
     done = False
     for i in range(1, 501):
         p = open('Example' + str(i) + '.txt', 'w')
-        for j in range(0, 200):
-            if random.random() <= 0.025 and j > 60:
+        itteration = 1
+        while itteration <= 200:
+            if random.random() <= 0.025 and itteration > 60:
                 done = True
                 patternlength = random.randint(10,60)
-                patternposition = random.randint (0, j-61)
+                patternposition = random.randint (0, itteration-61)
                 for k in range(0, patternlength):
                     song.append(song[patternposition + k])
-                    p.write(str(j+k) + ',' + str(song[patternposition + k]) + ',1\n')
+                    p.write(str(itteration+k) + ',' + str(song[patternposition + k]) + ',1\n')
             else:
                 note = random.randint(0, 128)
-                p.write(str(j) + ',' + str(note) + ',1\n')
+                p.write(str(itteration) + ',' + str(note) + ',1\n')
                 song.append(note)
+                itteration += 1
             if done:
                 done = False
-                j = j + patternlength
-                if j >= 200:
-                    break
+                itteration = itteration + patternlength
         p.close()
     for i in range(1, 501):
         p = open('Example' + str(i) + '.txt', 'r')
