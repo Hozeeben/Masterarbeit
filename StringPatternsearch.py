@@ -15,7 +15,7 @@ def Patternsearchpreperation(track):
     return patternlist, patternlengthinnumber, positionofpattern
 
 def Patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, position):
-    if position+patternlength > len(track):
+    if position + patternlength > len(track):
         return patternlist
     else:
         write = True
@@ -35,7 +35,6 @@ def Patternsearch(track, patternlength, maxpatternlength, patternlist, positiono
                 z = track[position + 2 + foundpatternlength] - track[k+2]
                 if x == y and x == z:
                     difference = x
-
 
                 verticalaxis = int(abs((track[position + foundpatternlength] - track[k])/2))                           # Check if difference is correct for the next 3 notes (vertical change)
                 verticalaxisnextnote = int(abs((track[position + foundpatternlength + 1] - track[k + 1])/2))
