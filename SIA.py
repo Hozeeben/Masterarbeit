@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mido import MidiFile
 
-def SIATEC(notey, timex):
+def SIA(notey, timex):
     plt.scatter(timex, notey)
     plt.xlabel('Note in Track')
     plt.ylabel('Notepitch')
@@ -15,7 +15,7 @@ def SIATEC(notey, timex):
     zaehler = 0
     vektorinformation = [0]
     vektorinformation.append(0)
-    while len(notearray) < ((tracklen*(tracklen+1)/2)-tracklen):
+    while len(notearray) < ((tracklen*(tracklen+1)/2)-tracklen):                    # Calculation of Vektors
         vektorinformation[0] = int(notey[Gausssum] - notey[zaehler])
         vektorinformation[1] = int(timex[Gausssum] - timex[zaehler])
         notearray.append(', '.join(str(x) for x in vektorinformation))
@@ -123,7 +123,7 @@ if __name__ == '__main__':
             trackstr = str(track)
             if len(timex) > 0:
                 print('===Track ' + str(track-1) + '===\n')
-                notearray, positionsolution = SIATEC(notey, timex)
+                notearray, positionsolution = SIA(notey, timex)
                 difference = []
                 positiontemp = []
                 position = []
