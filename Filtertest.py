@@ -6,6 +6,7 @@ import aubio
 import numpy as np
 import matplotlib.pyplot as plt
 from mido import MidiFile
+from PIL import Image
 
 
 def apply_filter(path, target):
@@ -71,21 +72,22 @@ def bpmdetection(inputfile):
     print(calculatebpm)
     print(total_Frames)
 
+
+def flip_image(image_path, musicpath):
+    """
+    Flip or mirror the image
+    @param image_path: The path to the image to edit
+    @param saved_location: Path to save the cropped image
+    """
+    image_obj = Image.open(musicpath +'\\' + image_path)
+    rotated_image = image_obj.transpose(Image.FLIP_LEFT_RIGHT)
+    rotated_image.save(musicpath +'\\' + image_path)
+    #rotated_image.show()
 if __name__ == '__main__':
-    outputlow = 'Test'
-    #writelowpass = aubio.sink(outputlow, samplerate)
-    input_path='NIVIRO - Flashes.wav'
-    input_path2 = 'KIRA New World.wav'
-    #output_path= 'KIRA New World Filtered.wav'
-    #apply_filter(input_path, output_path)
-    print('NIVIRO - Flashes.wav')
-    #bpmdetection(input_path)
-    #print('KIRA New World.wav')
-    #bpmdetection(input_path2)
-    #teststring='<message note_on channel=0 note=64 velocity=71 time=1624>'
-    #teststring.find('message note_on')
-    N = 50
-
-
-    plt.scatter(x, y)
-    plt.show()
+    musicpath = os.getcwd() + "\\Images"
+    picturelist = os.listdir(musicpath)
+    itterator = 0
+    while itterator < len(picturelist):
+        if picturelist[itterator].find('left') > 0:
+            flip_image(picturelist[itterator], musicpath)
+        itterator += 1
