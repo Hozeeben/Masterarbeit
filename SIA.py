@@ -8,6 +8,7 @@ def SIA(notey, timex):
     plt.scatter(timex, notey)
     plt.xlabel('Note in Track')
     plt.ylabel('Notepitch')
+    plt.show()
     notearray = []
     position = []
     tracklen = len(notey)
@@ -106,7 +107,7 @@ def Quicksort(left, right, notearray, position):
 if __name__ == '__main__':
     normalstdout = sys.stdout
     #filename = 'beethoven_ode_to_joy.mid'                                   # ToDo: Variabel machen
-    f = open('OneRepublic - If I Lose Myself.txt', 'r')
+    f = open('Bild.txt', 'r')
     p = open('Ergebnis Patternsuche SIATEC.txt', 'w')
     sys.stdout = p
     notestring = ''
