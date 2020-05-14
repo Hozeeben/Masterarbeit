@@ -15,83 +15,85 @@ def Patternsearchpreperation(track):
     return patternlist, patternlengthinnumber, positionofpattern
 
 def Patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, position):
-    if position + patternlength > len(track):
-        return patternlist
-    else:
-        write = True
-        difference = 0
-        foundpattern = ''
-        foundpatternlength = 0
-        originalpattern = ''
-        startindex = 0
-        vertical = 0
-        verticalaxis = 0
-        for k in range(position + patternlength, len(track)):
-            if k + patternlength - foundpatternlength > len(track):
-                break
-            if k + 2 < len(track):
-                x = track[position + foundpatternlength] - track[k]                                 #Check if difference is correct for the next 3 notes (Keychange)
-                y = track[position + 1 + foundpatternlength] - track[k+1]
-                z = track[position + 2 + foundpatternlength] - track[k+2]
-                if x == y and x == z:
-                    difference = x
+    while True:
+        if position + patternlength > len(track):
+            return patternlist, positionofpattern, patternlengthinnumber
+        else:
+            write = True
+            difference = 0
+            foundpattern = ''
+            foundpatternlength = 0
+            originalpattern = ''
+            startindex = 0
+            vertical = 0
+            verticalaxis = 0
+            for k in range(position + patternlength, len(track)):
+                if k + patternlength - foundpatternlength > len(track):
+                    break
+                if k + 2 < len(track):
+                    x = track[position + foundpatternlength] - track[k]                                 #Check if difference is correct for the next 3 notes (Keychange)
+                    y = track[position + 1 + foundpatternlength] - track[k+1]
+                    z = track[position + 2 + foundpatternlength] - track[k+2]
+                    if x == y and x == z:
+                        difference = x
 
-                verticalaxis = int(abs((track[position + foundpatternlength] - track[k])/2))                           # Check if difference is correct for the next 3 notes (vertical change)
-                verticalaxisnextnote = int(abs((track[position + foundpatternlength + 1] - track[k + 1])/2))
-                verticalaxisnextnextnote = int(abs((track[position + foundpatternlength + 2] - track[k + 2])/2))
-                if track[position + foundpatternlength] < track[k]:
-                    verticalaxis = track[position + foundpatternlength] + verticalaxis
-                    verticalaxisnextnote = track[position + foundpatternlength + 1] + verticalaxisnextnote
-                    verticalaxisnextnextnote = track[position + foundpatternlength + 2] + verticalaxisnextnextnote
+                    verticalaxis = int(abs((track[position + foundpatternlength] - track[k])/2))                           # Check if difference is correct for the next 3 notes (vertical change)
+                    verticalaxisnextnote = int(abs((track[position + foundpatternlength + 1] - track[k + 1])/2))
+                    verticalaxisnextnextnote = int(abs((track[position + foundpatternlength + 2] - track[k + 2])/2))
+                    if track[position + foundpatternlength] < track[k]:
+                        verticalaxis = track[position + foundpatternlength] + verticalaxis
+                        verticalaxisnextnote = track[position + foundpatternlength + 1] + verticalaxisnextnote
+                        verticalaxisnextnextnote = track[position + foundpatternlength + 2] + verticalaxisnextnextnote
+                    else:
+                        verticalaxis = track[k] + verticalaxis
+                        verticalaxisnextnote = track[k + 1] + verticalaxisnextnote
+                        verticalaxisnextnextnote = track[k + 2] + verticalaxisnextnextnote
+                    if verticalaxis == verticalaxisnextnote and verticalaxis == verticalaxisnextnextnote:
+                        vertical = 3
+                if track[position + foundpatternlength] == track[k]:                                    #Same Pattern
+                    foundpattern = foundpattern + ' ' + str(track[k])
+                    originalpattern = originalpattern + ' ' + str(track[position+foundpatternlength])
+                    foundpatternlength += 1
+                    startindex = k - foundpatternlength
+                elif track[position + foundpatternlength] - track[k] == difference:                     #Keychange
+                    foundpattern = foundpattern + ' ' + str(track[k])
+                    originalpattern = originalpattern + ' ' + str(track[position+foundpatternlength])
+                    foundpatternlength += 1
+                    startindex = k - foundpatternlength
+                elif vertical > 0:                                                                      #verticalChange
+                    foundpattern = foundpattern + ' ' + str(track[k])
+                    originalpattern = originalpattern + ' ' + str(track[position + foundpatternlength])
+                    foundpatternlength += 1
+                    startindex = k - foundpatternlength
+                    vertical -= 1
                 else:
-                    verticalaxis = track[k] + verticalaxis
-                    verticalaxisnextnote = track[k + 1] + verticalaxisnextnote
-                    verticalaxisnextnextnote = track[k + 2] + verticalaxisnextnextnote
-                if verticalaxis == verticalaxisnextnote and verticalaxis == verticalaxisnextnextnote:
-                    vertical = 3
-            if track[position + foundpatternlength] == track[k]:                                    #Same Pattern
-                foundpattern = foundpattern + ' ' + str(track[k])
-                originalpattern = originalpattern + ' ' + str(track[position+foundpatternlength])
-                foundpatternlength += 1
-                startindex = k - foundpatternlength
-            elif track[position + foundpatternlength] - track[k] == difference:                     #Keychange
-                foundpattern = foundpattern + ' ' + str(track[k])
-                originalpattern = originalpattern + ' ' + str(track[position+foundpatternlength])
-                foundpatternlength += 1
-                startindex = k - foundpatternlength
-            elif vertical > 0:                                                                      #verticalChange
-                foundpattern = foundpattern + ' ' + str(track[k])
-                originalpattern = originalpattern + ' ' + str(track[position + foundpatternlength])
-                foundpatternlength += 1
-                startindex = k - foundpatternlength
-                vertical -= 1
-            else:
-                foundpatternlength = 0
-                foundpattern = ''
-                originalpattern = ''
-            if foundpatternlength == patternlength:
-                startindex += 1
-                if len(patternlist) != 0:
-                    for a in range(0, len(patternlist)):
-                        if startindex in range(positionofpattern[a], positionofpattern[a] + patternlengthinnumber[a]-1) or startindex + patternlength - 1 in range(positionofpattern[a], positionofpattern[a] + patternlengthinnumber[a]-1):
-                            write = False
-                            break
-                if write == False:
-                    write = True
-                    continue
-                else:
-                    patternlist.append(originalpattern)
-                    positionofpattern.append(position)
-                    patternlengthinnumber.append(patternlength)
-                    patternlist.append(foundpattern)
-                    positionofpattern.append(k - patternlength + 1)
-                    patternlengthinnumber.append(patternlength)
-                    originalpattern = ''
-                    foundpattern = ''
-                    difference = 0
                     foundpatternlength = 0
-        Patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, position + 1)
-    return patternlist, positionofpattern, patternlengthinnumber
+                    foundpattern = ''
+                    originalpattern = ''
+                if foundpatternlength == patternlength:
+                    startindex += 1
+                    if len(patternlist) != 0:
+                        for a in range(0, len(patternlist)):
+                            if startindex in range(positionofpattern[a], positionofpattern[a] + patternlengthinnumber[a]-1) or startindex + patternlength - 1 in range(positionofpattern[a], positionofpattern[a] + patternlengthinnumber[a]-1):
+                                write = False
+                                break
+                    if write == False:
+                        write = True
+                        continue
+                    else:
+                        patternlist.append(originalpattern)
+                        positionofpattern.append(position)
+                        patternlengthinnumber.append(patternlength)
+                        patternlist.append(foundpattern)
+                        positionofpattern.append(k - patternlength + 1)
+                        patternlengthinnumber.append(patternlength)
+                        originalpattern = ''
+                        foundpattern = ''
+                        difference = 0
+                        foundpatternlength = 0
+            position += 1
+            #Patternsearch(track, patternlength, maxpatternlength, patternlist, positionofpattern, patternlengthinnumber, position + 1)
+    #return patternlist, positionofpattern, patternlengthinnumber
 
 def ChangeNumbersToNotes(patternlist):
     for i in range(0, len(patternlist)):
@@ -155,7 +157,6 @@ if __name__ == '__main__':
     sys.stdout = normalstdout
     f.close()
     f = open('MIDIString.txt', 'r')
-    p = open('MusikstückString.txt', 'w')
     writenote = ''
     track = []
     nroftracks = 1
@@ -183,6 +184,5 @@ if __name__ == '__main__':
                 writenote = writenote+nextline[startnote+stringlength+i]
             track.append(int(writenote))
             writenote = ''
-    p.close()
     f.close()
     e.close()
