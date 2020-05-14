@@ -1,5 +1,5 @@
 import sys
-import os.path
+import timeit
 import numpy as np
 from mido import MidiFile
 
@@ -125,6 +125,7 @@ def ChangeNumbersToNotes(note):
     return noteswrite
 
 if __name__ == '__main__':
+    timestart = timeit.default_timer()
     tempsting = 'note='
     stringlength = len(tempsting)
     normalstdout = sys.stdout
@@ -180,5 +181,8 @@ if __name__ == '__main__':
                 writenote = writenote + nextline[startnote + stringlength + i]
             track.append(int(writenote))
             writenote = ''
+    timeend = timeit.default_timer()
+    totaltime = timeend - timestart
+    e.write(str(totaltime) + ' sec')
     f.close()
     e.close()

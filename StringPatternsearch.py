@@ -1,5 +1,5 @@
 import sys
-import os.path
+import timeit
 from mido import MidiFile
 
 def Patternsearchpreperation(track):
@@ -141,6 +141,7 @@ def ChangeNumbersToNotes(patternlist):
 
 
 if __name__ == '__main__':
+    timestart = timeit.default_timer()
     tempsting = 'note='
     stringlength = len(tempsting)
     normalstdout = sys.stdout
@@ -156,7 +157,9 @@ if __name__ == '__main__':
 
     sys.stdout = normalstdout
     f.close()
-    f = open('MIDIString.txt', 'r')
+    f = open('DarudeSandstormPseudoMIDI.txt', 'r')
+    e = open('Ergebnis Patternsuche String.txt', 'w')
+    sys.stdout = e
     writenote = ''
     track = []
     nroftracks = 1
@@ -167,15 +170,11 @@ if __name__ == '__main__':
         if nextline.find('<meta message end_of_track') != -1:
             if len(track) > 0:
                 pattern, length, noteintrack = Patternsearchpreperation(track)
-                e = open('Ergebnis Patternsuche String.txt', 'w')
-                sys.stdout = e
                 print('===Track Nr. ', nroftracks, '===')
                 for itteration in range(0, len(pattern)):
                     print('Pattern: ', pattern[itteration], '\nLänge des gefundenen Pattern: ',
                           length[itteration], '\nStelle im Musikstück: ', noteintrack[itteration], '\n')
                 nroftracks += 1
-                sys.stdout = normalstdout
-                e.close()
         if nextline.find('<message note_on') != -1:
             startnote = nextline.find('note=')
             for i in range(0, 2):
@@ -184,5 +183,9 @@ if __name__ == '__main__':
                 writenote = writenote+nextline[startnote+stringlength+i]
             track.append(int(writenote))
             writenote = ''
+    timeend = timeit.default_timer()
+    totaltime = timeend - timestart
+    e.write(str(totaltime) + ' sec')
+    sys.stdout = normalstdout
     f.close()
     e.close()

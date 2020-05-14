@@ -1,14 +1,12 @@
 import sys
-import os.path
-import numpy as np
+import timeit
 import matplotlib.pyplot as plt
-from mido import MidiFile
 
 def SIA(notey, timex):
     plt.scatter(timex, notey)
     plt.xlabel('Note in Track')
     plt.ylabel('Notepitch')
-    plt.show()
+    #plt.show()
     notearray = []
     position = []
     tracklen = len(notey)
@@ -27,7 +25,7 @@ def SIA(notey, timex):
         else:
             zaehler += 1
     notearray, position = Quicksort(0, len(notearray)-1, notearray, position)
-    plt.show()
+    #plt.show()
     return notearray, position
 
 def Quicksort(left, right, notearray, position):
@@ -105,9 +103,10 @@ def Quicksort(left, right, notearray, position):
 
 
 if __name__ == '__main__':
+    timestart = timeit.default_timer()
     normalstdout = sys.stdout
     #filename = 'beethoven_ode_to_joy.mid'                                   # ToDo: Variabel machen
-    f = open('Bild.txt', 'r')
+    f = open('Ode an die Freude.txt', 'r')
     p = open('Ergebnis Patternsuche SIATEC.txt', 'w')
     sys.stdout = p
     notestring = ''
@@ -189,6 +188,9 @@ if __name__ == '__main__':
             if tempstring[2] == trackstr:
                 timex.append(int(tempstring[0]))
                 notey.append(int(tempstring[1]))
+    timeend = timeit.default_timer()
+    totaltime = timeend - timestart
+    print(str(totaltime) + ' sec')
     sys.stdout = normalstdout
     f.close()
     p.close()
