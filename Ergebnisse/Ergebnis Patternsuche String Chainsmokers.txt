@@ -1,0 +1,1179 @@
+===Track Nr.  1 ===
+Pattern:  D4 D4 D4 D4 FIS4 A4 A4 A4 D4 B4 B4 B4 D4 A4 A4 G4 D4 FIS4 FIS4 FIS4 FIS4 FIS4 CIS4 FIS4 A4 D4 A4 E4 E4 E4 E4 E4 CIS4 G4 FIS4 D4 FIS4 D4 FIS4 CIS4 A4 A4 A4 D4 B4 B4 B4 D4 A4 A4 G4 D4 FIS4 B3 FIS4 FIS4 CIS4 FIS4 G4  
+Länge des gefundenen Pattern:  59 
+Stelle im Musikstück:  69 
+
+Pattern:  D4 D4 D4 FIS4 A4 A4 A4 A4 D4 B4 B4 B4 D4 A4 A4 G4 D4 FIS4 FIS4 FIS4 FIS4 CIS4 FIS4 FIS4 A4 D4 A4 E4 E4 E4 E4 CIS4 E4 G4 FIS4 D4 FIS4 D4 FIS4 CIS4 A4 A4 A4 D4 B4 B4 B4 D4 A4 A4 G4 D4 FIS4 B3 FIS4 CIS4 FIS4 FIS4 FIS4  
+Länge des gefundenen Pattern:  59 
+Stelle im Musikstück:  375 
+
+Pattern:  D4 G4 B4 D4 G4 CIS5 E4 A4 CIS5 E4 A4 CIS5 E4 A4 CIS5 E4 A4 D5 FIS4 B4 D5 FIS4 B4 D5 FIS4 B4 CIS5 FIS4 B4 D5 FIS4 B4 FIS5 FIS4 B4 CIS5 FIS4 B4 CIS5 FIS4 B4 D5 D4 G4 A4 B4  
+Länge des gefundenen Pattern:  46 
+Stelle im Musikstück:  896 
+
+Pattern:  D4 G4 B4 D4 G4 B4 D4 G4 CIS5 D4 G4 CIS5 D4 G4 CIS5 D4 G4 D5 FIS4 B4 D5 FIS4 B4 D5 FIS4 B4 CIS5 FIS4 B4 D5 FIS4 B4 FIS5 FIS4 B4 CIS5 FIS4 B4 CIS5 FIS4 B4 D5 D4 G4 A4 B4  
+Länge des gefundenen Pattern:  46 
+Stelle im Musikstück:  942 
+
+Pattern:  D4 A3 D4 D4 D4 D4 G3 D4 D4 D4 FIS4 CIS4 D4 E4 FIS4 FIS4 FIS4 G4 B3 G4 E4 E4 FIS4 FIS4 D4 D4 FIS4 FIS4 E4 E4 E4 E4 E4 E4 D4 D4 D4 D4 D4 FIS4  
+Länge des gefundenen Pattern:  40 
+Stelle im Musikstück:  34 
+
+Pattern:  D4 D4 D4 D4 D4 D4 G3 D4 D4 D4 E4 CIS4 D4 A3 CIS4 CIS4 CIS4 D4 G3 D4 D4 D4 FIS4 CIS4 D4 A3 FIS4 FIS4 FIS4 FIS4 FIS4 G4 D4 G4 E4 E4 FIS4 FIS4 A3 FIS4  
+Länge des gefundenen Pattern:  40 
+Stelle im Musikstück:  327 
+
+Pattern:  D5 D4 D4 A4 CIS4 E4 A4 D4 E4 A4 D4 E4 A4 D4 A4 D4 A4 D4 A4 D4 A4 CIS4 D4 A4 D4 A4 D4 A4 B3 A4 D4 D4 A4 CIS4 E4 A4 D4 E4 A4 D4  
+Länge des gefundenen Pattern:  40 
+Stelle im Musikstück:  283 
+
+Pattern:  D5 D4 D4 A4 CIS4 E4 A4 D4 E4 A4 D4 E4 A4 D4 A4 D4 A4 D4 A4 D4 A4 CIS4 D4 A4 D4 A4 D4 A4 B3 A4 D4 D4 A4 CIS4 E4 A4 D4 E4 A4 D4  
+Länge des gefundenen Pattern:  40 
+Stelle im Musikstück:  533 
+
+Pattern:  D4 G4 B4 D4 G4 CIS5 D4 G4 CIS5 D4 G4 CIS5 D4 G4 D5 FIS4 B4 D5 FIS4 B4 D5 FIS4 B4 CIS5 FIS4 B4 D5 FIS4 B4 FIS5 FIS4 B4 CIS5 FIS4 B4 CIS5 FIS4 B4 D5  
+Länge des gefundenen Pattern:  39 
+Stelle im Musikstück:  945 
+
+Pattern:  D4 G4 CIS5 E4 A4 CIS5 E4 A4 CIS5 E4 A4 CIS5 E4 A4 D5 FIS4 B4 D5 FIS4 B4 D5 FIS4 B4 CIS5 FIS4 B4 D5 FIS4 B4 FIS5 FIS4 B4 CIS5 FIS4 B4 CIS5 FIS4 B4 D5  
+Länge des gefundenen Pattern:  39 
+Stelle im Musikstück:  994 
+
+Pattern:  A4 FIS4 A4 FIS4 A4 FIS4 A4 FIS4 A4 FIS4 A4 E4 A4 FIS4 A4 D4 G4 D4 G4 D4 G4 D4 G4 D4 G4 D4 FIS4 D4 FIS4 D4 FIS4 D4 FIS4  
+Länge des gefundenen Pattern:  33 
+Stelle im Musikstück:  769 
+
+Pattern:  A4 FIS4 A4 FIS4 A4 FIS4 A4 FIS4 A4 FIS4 A4 E4 A4 FIS4 A4 D4 G4 D4 G4 D4 G4 D4 G4 D4 G4 D4 FIS4 D4 FIS4 D4 FIS4 D4 FIS4  
+Länge des gefundenen Pattern:  33 
+Stelle im Musikstück:  833 
+
+Pattern:  B4 FIS5 FIS4 B4 E5 E4 A4 B4 E5 E4 A4 B4 E5 E4 A4 B4 E5 D5 G4 A4 B4  
+Länge des gefundenen Pattern:  21 
+Stelle im Musikstück:  512 
+
+Pattern:  A4 FIS5 FIS4 A4 E5 E4 A4 B4 E5 E4 A4 B4 E5 E4 A4 B4 E5 D5 G4 A4 B4  
+Länge des gefundenen Pattern:  21 
+Stelle im Musikstück:  872 
+
+Pattern:  D5 D4 D4 D4 D4 D4 D4 G3 D4 D4 D4 E4 CIS4 D4 A3 D4 D4  
+Länge des gefundenen Pattern:  17 
+Stelle im Musikstück:  21 
+
+Pattern:  D4 FIS4 FIS4 B3 E4 E4 E4 D4 D4 D4 E4 FIS4 D4 E4 FIS4 D4 E4  
+Länge des gefundenen Pattern:  17 
+Stelle im Musikstück:  139 
+
+Pattern:  D4 A4 D4 D4 A4 D4 D4 D5 D4 D4 D4 D4 D4 D4 G3 D4  
+Länge des gefundenen Pattern:  16 
+Stelle im Musikstück:  14 
+
+Pattern:  A4 E5 A4 E5 A4 E5 E5 D5 D4 A4 D4 A4 D4 A4 D4 A4  
+Länge des gefundenen Pattern:  16 
+Stelle im Musikstück:  744 
+
+Pattern:  D4 A4 D4 A4 D4 A4 CIS4 D4 A4 D4 A4 D4 A4 B3 A4 D4  
+Länge des gefundenen Pattern:  16 
+Stelle im Musikstück:  298 
+
+Pattern:  D4 A4 D4 A4 D4 A4 CIS4 D4 A4 D4 A4 D4 A4 B3 A4 D4  
+Länge des gefundenen Pattern:  16 
+Stelle im Musikstück:  480 
+
+Pattern:  D4 A4 D4 A4 D4 A4 D4 A4 E4 A4 E4 A4 E4 A4 E4 A4  
+Länge des gefundenen Pattern:  16 
+Stelle im Musikstück:  752 
+
+Pattern:  D4 A4 D4 A4 D4 A4 D4 A4 E4 A4 E4 A4 E4 A4 E4 A4  
+Länge des gefundenen Pattern:  16 
+Stelle im Musikstück:  816 
+
+Pattern:  B4 E5 E4 G4 A4 E5 E4 G4 A4 E5 E4 G4 A4 E5 D5  
+Länge des gefundenen Pattern:  15 
+Stelle im Musikstück:  265 
+
+Pattern:  B4 E5 E4 G4 A4 E5 E4 G4 A4 E5 E4 G4 A4 E5 D5  
+Länge des gefundenen Pattern:  15 
+Stelle im Musikstück:  584 
+
+Pattern:  FIS5 FIS5 A4 D5 E5 D5 A4 D5 FIS5 G5 A4 D5 E5 FIS5  
+Länge des gefundenen Pattern:  14 
+Stelle im Musikstück:  609 
+
+Pattern:  FIS5 FIS5 A4 D5 E5 D5 A4 D5 FIS5 G5 A4 D5 E5 FIS5  
+Länge des gefundenen Pattern:  14 
+Stelle im Musikstück:  625 
+
+Pattern:  E4 E4 E4 D4 D4 D4 E4 FIS4 D4 E4 FIS4 D4 E4  
+Länge des gefundenen Pattern:  13 
+Stelle im Musikstück:  143 
+
+Pattern:  FIS4 D4 G4 E4 E4 E4 CIS4 E4 G4 FIS4 FIS4 D4 FIS4  
+Länge des gefundenen Pattern:  13 
+Stelle im Musikstück:  433 
+
+Pattern:  D4 G4 D4 G4 CIS4 D4 G4 D4 G4 D4 G4 D4 G4  
+Länge des gefundenen Pattern:  13 
+Stelle im Musikstück:  217 
+
+Pattern:  D4 G4 D4 G4 CIS4 D4 G4 D4 G4 D4 G4 D4 G4  
+Länge des gefundenen Pattern:  13 
+Stelle im Musikstück:  245 
+
+Pattern:  D4 A4 D4 A4 CIS4 D4 A4 D4 A4 D4 A4 D4 A4  
+Länge des gefundenen Pattern:  13 
+Stelle im Musikstück:  467 
+
+Pattern:  D4 A4 D4 A4 CIS4 D4 A4 D4 A4 D4 A4 D4 A4  
+Länge des gefundenen Pattern:  13 
+Stelle im Musikstück:  495 
+
+Pattern:  FIS5 FIS5 A4 D5 E5 D5 A4 D5 FIS5 G5 A4 D5 E5  
+Länge des gefundenen Pattern:  13 
+Stelle im Musikstück:  625 
+
+Pattern:  FIS5 FIS5 A4 D5 E5 D5 A4 D5 FIS5 G5 A4 D5 E5  
+Länge des gefundenen Pattern:  13 
+Stelle im Musikstück:  638 
+
+Pattern:  A4 G4 D4 FIS4 FIS4 FIS4 FIS4 FIS4 CIS4 FIS4 A4  
+Länge des gefundenen Pattern:  11 
+Stelle im Musikstück:  83 
+
+Pattern:  G4 G4 D4 E4 E4 E4 E4 CIS4 G4 FIS4 D4  
+Länge des gefundenen Pattern:  11 
+Stelle im Musikstück:  127 
+
+Pattern:  CIS5 A4 D5 A4 D5 A4 E5 E5 A4 E5 FIS5  
+Länge des gefundenen Pattern:  11 
+Stelle im Musikstück:  661 
+
+Pattern:  CIS5 A4 D5 A4 D5 A4 E5 E5 A4 E5 FIS5  
+Länge des gefundenen Pattern:  11 
+Stelle im Musikstück:  707 
+
+Pattern:  G4 D4 G4 CIS4 D4 G4 D4 G4 D4 G4  
+Länge des gefundenen Pattern:  10 
+Stelle im Musikstück:  218 
+
+Pattern:  G4 D4 G4 CIS4 D4 G4 D4 G4 D4 G4  
+Länge des gefundenen Pattern:  10 
+Stelle im Musikstück:  233 
+
+Pattern:  A4 D4 A4 D4 A4 FIS4 B4 FIS4 B4 D5  
+Länge des gefundenen Pattern:  10 
+Stelle im Musikstück:  571 
+
+Pattern:  CIS4 E4 CIS4 E4 D4 FIS4 D4 FIS4 CIS4 E4  
+Länge des gefundenen Pattern:  10 
+Stelle im Musikstück:  802 
+
+Pattern:  D4 A4 D4 D4 D4 A4 D4 D4 D4  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  5 
+
+Pattern:  A4 E5 A4 E5 E5 A4 E5 D5 A4  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  724 
+
+Pattern:  E4 FIS4 FIS4 D4 D4 FIS4 FIS4 E4 E4  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  55 
+
+Pattern:  E4 FIS4 E4 D4 D4 E4 FIS4 D4 E4  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  155 
+
+Pattern:  FIS4 E4 E4 E4 E4 E4 E4 D4 D4  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  61 
+
+Pattern:  FIS4 FIS4 E4 E4 E4 E4 E4 E4 D4  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  366 
+
+Pattern:  D4 G4 D4 G4 D4 G4 D4 G4 CIS4  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  228 
+
+Pattern:  D5 A4 D5 D5 A4 D5 D5 A4 E5  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  684 
+
+Pattern:  D4 D4 D4 A4 D4 D4 D4 D4  
+Länge des gefundenen Pattern:  8 
+Stelle im Musikstück:  7 
+
+Pattern:  E4 E4 B3 E4 E4 D4 D4 D5  
+Länge des gefundenen Pattern:  8 
+Stelle im Musikstück:  168 
+
+Pattern:  D4 A4 D4 A4 FIS4 B4 FIS4 B4  
+Länge des gefundenen Pattern:  8 
+Stelle im Musikstück:  572 
+
+Pattern:  E5 A4 E5 D5 A4 D5 A4 D5  
+Länge des gefundenen Pattern:  8 
+Stelle im Musikstück:  736 
+
+Pattern:  B4 D4 A4 A4 G4 D4 FIS4  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  80 
+
+Pattern:  E5 G4 D5 D5 E5 B4 FIS5  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  188 
+
+Pattern:  FIS4 D4 FIS4 D4 FIS4 CIS4 A4  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  103 
+
+Pattern:  A4 CIS5 A4 CIS5 A4 CIS5 A4  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  699 
+
+Pattern:  E4 D4 D4 E4 FIS4 D4 E4  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  157 
+
+Pattern:  E5 FIS5 FIS5 E5 FIS5 A4 E5  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  675 
+
+Pattern:  CIS5 E4 A4 CIS5 E4 A4 CIS5  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  901 
+
+Pattern:  B4 D4 G4 B4 D4 G4 B4  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  987 
+
+Pattern:  D4 D4 A4 D4 D4 A4  
+Länge des gefundenen Pattern:  6 
+Stelle im Musikstück:  1 
+
+Pattern:  E5 E5 A4 E5 FIS5 A4  
+Länge des gefundenen Pattern:  6 
+Stelle im Musikstück:  692 
+
+Pattern:  D4 A4 D4 D4 A4 D4  
+Länge des gefundenen Pattern:  6 
+Stelle im Musikstück:  2 
+
+Pattern:  E5 A4 E5 A4 E5 D5  
+Länge des gefundenen Pattern:  6 
+Stelle im Musikstück:  207 
+
+Pattern:  D4 FIS4 FIS4 E4 E4 E4  
+Länge des gefundenen Pattern:  6 
+Stelle im Musikstück:  59 
+
+Pattern:  A4 CIS5 CIS5 D5 CIS5 E5  
+Länge des gefundenen Pattern:  6 
+Stelle im Musikstück:  654 
+
+Pattern:  A4 E5 D5 F4 G4 A4  
+Länge des gefundenen Pattern:  6 
+Stelle im Musikstück:  210 
+
+Pattern:  A4 E5 D5 G4 A4 B4  
+Länge des gefundenen Pattern:  6 
+Stelle im Musikstück:  461 
+
+Pattern:  FIS4 CIS4 D4 E4 FIS4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  44 
+
+Pattern:  FIS5 CIS5 D5 E5 FIS5  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  181 
+
+Pattern:  FIS4 FIS4 D4 D4 FIS4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  56 
+
+Pattern:  G4 FIS4 B4 D5 FIS4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  257 
+
+Pattern:  B4 B4 D4 A4 A4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  79 
+
+Pattern:  B4 FIS5 A4 E5 A4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  201 
+
+Pattern:  E4 FIS4 D4 E4 FIS4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  149 
+
+Pattern:  A4 FIS4 B4 D5 FIS4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  507 
+
+Pattern:  FIS5 D5 E5 FIS5 CIS5  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  178 
+
+Pattern:  FIS5 D5 E5 FIS5 CIS5  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  194 
+
+Pattern:  D5 F4 G4 A4 D5  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  212 
+
+Pattern:  FIS5 A4 B4 A4 FIS5  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  719 
+
+Pattern:  B4 FIS5 FIS4 B4 E5  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  262 
+
+Pattern:  A4 FIS5 FIS4 A4 E5  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  449 
+
+Pattern:  E4 A4 D4 A4 D4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  294 
+
+Pattern:  E4 CIS4 E4 CIS4 E4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  811 
+
+Pattern:  D5 G4 A4 B4 D4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  463 
+
+Pattern:  A4 D5 E5 FIS5 A4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  603 
+
+Pattern:  E4 D4 A4 D4 A4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  815 
+
+Pattern:  FIS4 E4 B4 E4 A4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  865 
+
+Pattern:  D4 G3 D4 D4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  39 
+
+Pattern:  FIS4 B3 D4 FIS4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  164 
+
+Pattern:  D4 E4 FIS4 FIS4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  46 
+
+Pattern:  D5 A4 G4 F4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  279 
+
+Pattern:  FIS4 D4 FIS4 D4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  103 
+
+Pattern:  B4 G4 B4 D5  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  892 
+
+Pattern:  D5 D4 G4 D4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  216 
+
+Pattern:  D5 FIS4 B4 FIS4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  580 
+
+Pattern:  B4 FIS5 FIS4 B4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  262 
+
+Pattern:  A4 E5 FIS4 A4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  455 
+
+Pattern:  E4 A4 D4 A4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  294 
+
+Pattern:  E4 A4 D4 A4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  323 
+
+Pattern:  E4 FIS4 FIS4 A3  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  362 
+
+Pattern:  E5 FIS5 A4 FIS5  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  650 
+
+Pattern:  FIS4 A3 FIS4 FIS4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  364 
+
+Pattern:  A4 FIS5 A4 FIS5  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  732 
+
+Pattern:  D4 E4 CIS4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  31 
+
+Pattern:  CIS5 B4 D5  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  198 
+
+Pattern:  G4 B3 G4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  51 
+
+Pattern:  G4 B3 G4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  242 
+
+Pattern:  B4 B4 B4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  78 
+
+Pattern:  D5 D5 A4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  598 
+
+Pattern:  D4 A4 A4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  81 
+
+Pattern:  FIS5 G4 G4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  185 
+
+Pattern:  FIS4 D4 E4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  150 
+
+Pattern:  FIS5 D5 E5  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  622 
+
+Pattern:  E5 B4 FIS5  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  176 
+
+Pattern:  E5 A4 E5  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  681 
+
+Pattern:  D4 G4 B3  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  241 
+
+Pattern:  A4 D5 FIS4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  446 
+
+Pattern:  D4 G4 B3  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  241 
+
+Pattern:  A4 D5 FIS4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  869 
+
+Pattern:  D4 A4 B3  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  309 
+
+Pattern:  A4 E5 FIS4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  458 
+
+Pattern:  A4 FIS4 B4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  507 
+
+Pattern:  E5 FIS5 A4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  672 
+
+===Track Nr.  2 ===
+Pattern:  A3 A3 A3 B2 FIS3 A3 A3 A3 A3 A2 E3 A3 A3 A3 G2 D3 A3 A3 A3 A3 A2 E3 A3 A3 A3 B2 FIS3 A3 A3 A3 A3 A3 A2 E3 A3 A3 A3 G2 D3 A3 A3 A3 A3 A2 E3 A3 A3 A3 B2 FIS3 A3 A3 A3 A3 A3 A2 E3 A3 A3 A3 G2 D3 A3 A3 A3 A3 A2 E3 A3 A3 A3 B2 FIS3 A3 A3 A3 A3 A3 A2 E3 A3 A3 A3 G2 D3 A3 A3 A3 A3 A2 E3 A3 A3 A3 B2 FIS3 A3 A3  
+Länge des gefundenen Pattern:  98 
+Stelle im Musikstück:  1065 
+
+Pattern:  A3 A3 A3 A2 E3 A3 A3 A3 G2 D3 A3 A3 A3 A3 A2 E3 A3 A3 A3 B2 FIS3 A3 A3 A3 A3 A3 A2 E3 A3 A3 A3 G2 D3 A3 A3 A3 A3 A2 E3 A3 A3 A3 B2 FIS3 A3 A3 A3 A3 A3 A2 E3 A3 A3 A3 G2 D3 A3 A3 A3 A3 A2 E3 A3 A3 A3 B2 FIS3 A3 A3 A3 A3 A3 A2 E3 A3 A3 A3 G2 D3 A3 A3 A3 A3 A2 E3 A3 A3 A3 B2 FIS3 A3 A3 A3 A3 A3 A2 E3 A3  
+Länge des gefundenen Pattern:  98 
+Stelle im Musikstück:  1163 
+
+Pattern:  A3 G2 D3 A3 D3 A3 G2 D3 A3 D3 A3 D3 A3 A2 E3 A3 E3 A3 E3 A3 B2 FIS2 A3 FIS2 A3 B2 FIS2 A3 FIS2 A3 FIS2 A3 G2 E3 A3 E3 A3 E3 A3 G2 D3 A3 D3 A3 G2 D3 A3 D3 A3 D3 A3 A2 E3 A3 E3 A3 E3 A3 B2 FIS2 A3 FIS2 A3 B2 FIS2 A3 FIS2 A3 FIS2 A3 G2 E3 A3 E3 A3 E3  
+Länge des gefundenen Pattern:  76 
+Stelle im Musikstück:  1626 
+
+Pattern:  A3 G2 D3 A3 D3 A3 G2 D3 A3 D3 A3 D3 A3 A2 E3 A3 E3 A3 E3 A3 B2 FIS2 A3 FIS2 A3 B2 FIS2 A3 FIS2 A3 FIS2 A3 G2 E3 A3 E3 A3 E3 A3 G2 D3 A3 D3 A3 G2 D3 A3 D3 A3 D3 A3 A2 E3 A3 E3 A3 E3 A3 B2 FIS2 A3 FIS2 A3 B2 FIS2 A3 FIS2 A3 FIS2 A3 G2 E3 A3 E3 A3 E3  
+Länge des gefundenen Pattern:  76 
+Stelle im Musikstück:  1702 
+
+Pattern:  A3 G2 D3 A3 D3 A3 D3 A3 D3 A3 D3 A3 A2 E3 A3 E3 A3 E3 A3 B2 FIS3 A3 FIS3 A3 FIS3 A3 FIS3 A3 FIS3 A3 A2 E3 A3 E3 A3 E3 A3 G2 D3 A3 D3 A3 D3 A3 D3 A3 D3 A3 A2 E3 A3 E3 A3 E3 A3 B2 FIS3 A3 FIS3 A3 FIS3 A3 FIS3 A3 FIS3 A3 A2 E3 A3 E3 A3 E3  
+Länge des gefundenen Pattern:  72 
+Stelle im Musikstück:  1262 
+
+Pattern:  A3 G2 D3 A3 D3 A3 D3 A3 D3 A3 D3 A3 A2 E3 A3 E3 A3 E3 A3 B2 FIS3 A3 FIS3 A3 FIS3 A3 FIS3 A3 FIS3 A3 A2 E3 A3 E3 A3 E3 A3 G2 D3 A3 D3 A3 D3 A3 D3 A3 D3 A3 A2 E3 A3 E3 A3 E3 A3 B2 FIS3 A3 FIS3 A3 FIS3 A3 FIS3 A3 FIS3 A3 A2 E3 A3 E3 A3 E3  
+Länge des gefundenen Pattern:  72 
+Stelle im Musikstück:  1334 
+
+Pattern:  D4 D4 D4 D4 FIS4 A4 A4 A4 D4 B4 B4 B4 D4 A4 A4 G4 D4 FIS4 FIS4 FIS4 FIS4 FIS4 CIS4 FIS4 A4 D4 A4 E4 E4 E4 E4 E4 CIS4 G4 FIS4 D4 FIS4 D4 FIS4 CIS4 A4 A4 A4 D4 B4 B4 B4 D4 A4 A4 G4 D4 FIS4 B3 FIS4 FIS4 CIS4 FIS4 G4  
+Länge des gefundenen Pattern:  59 
+Stelle im Musikstück:  69 
+
+Pattern:  D4 D4 D4 FIS4 A4 A4 A4 A4 D4 B4 B4 B4 D4 A4 A4 G4 D4 FIS4 FIS4 FIS4 FIS4 CIS4 FIS4 FIS4 A4 D4 A4 E4 E4 E4 E4 CIS4 E4 G4 FIS4 D4 FIS4 D4 FIS4 CIS4 A4 A4 A4 D4 B4 B4 B4 D4 A4 A4 G4 D4 FIS4 B3 FIS4 CIS4 FIS4 FIS4 FIS4  
+Länge des gefundenen Pattern:  59 
+Stelle im Musikstück:  375 
+
+Pattern:  G2 G3 D3 G3 B3 G3 B3 A2 A3 E3 A3 CIS4 A3 CIS4 A2 B3 FIS3 B3 B3 B3 A2 A3 A3 CIS4 A3 CIS4 G2 G3 D3 G3 B3 G3 B3 A2 A3 E3 A3 CIS4 A3 CIS4 A2 B3 FIS3 B3 B3 B3 A2 A3 A3 CIS4 A3 CIS4  
+Länge des gefundenen Pattern:  52 
+Stelle im Musikstück:  1779 
+
+Pattern:  G2 G3 D3 G3 B3 G3 B3 A2 A3 E3 A3 CIS4 A3 CIS4 A2 B3 FIS3 B3 B3 B3 A2 A3 A3 CIS4 A3 CIS4 G2 G3 D3 G3 B3 G3 B3 A2 A3 E3 A3 CIS4 A3 CIS4 A2 B3 FIS3 B3 B3 B3 A2 A3 A3 CIS4 A3 CIS4  
+Länge des gefundenen Pattern:  52 
+Stelle im Musikstück:  1831 
+
+Pattern:  G2 G3 D3 A3 CIS4 A3 CIS4 A2 B3 E3 B3 B3 B2 B3 FIS3 B3 B3 B3 G2 A3 A3 A3 G2 G3 D3 G3 B3 G3 B3 A2 A3 E3 A3 CIS4 A3 CIS4 B2 B3 FIS3 B3 D4 B3 D4 B3 D4 A2 A3 A3 CIS4 A3 CIS4  
+Länge des gefundenen Pattern:  51 
+Stelle im Musikstück:  1407 
+
+Pattern:  G2 G3 D3 A3 CIS4 A3 CIS4 A2 B3 E3 B3 B3 B2 B3 FIS3 B3 B3 B3 G2 A3 A3 A3 G2 G3 D3 G3 B3 G3 B3 A2 A3 E3 A3 CIS4 A3 CIS4 B2 B3 FIS3 B3 D4 B3 D4 B3 D4 A2 A3 A3 CIS4 A3 CIS4  
+Länge des gefundenen Pattern:  51 
+Stelle im Musikstück:  1458 
+
+Pattern:  A3 A3 A3 G2 D3 A3 G2 A3 A3 A3 A2 E3 A3 A3 A3 B2 FIS3 A3 A3 B2 A3 A3 A2 E3 A3 A3 A3 G2 D3 A3 G2 A3 A3 A3 A2 E3 A3 A3 A3 B2 FIS3 A3 A3 B2 A3 A3 A2 E3  
+Länge des gefundenen Pattern:  48 
+Stelle im Musikstück:  1516 
+
+Pattern:  A3 A3 A3 G2 D3 A3 G2 A3 A3 A3 A2 E3 A3 A3 A3 B2 FIS3 A3 A3 B2 A3 A3 A2 E3 A3 A3 A3 G2 D3 A3 G2 A3 A3 A3 A2 E3 A3 A3 A3 B2 FIS3 A3 A3 B2 A3 A3 A2 E3  
+Länge des gefundenen Pattern:  48 
+Stelle im Musikstück:  1564 
+
+Pattern:  G2 G3 G3 G2 G3 G3 G3 A2 A3 E3 A3 A3 B2 B3 B3 B2 B3 B3 B2 B3 B3 B2 B3 B3 G2 G3 G3 G2 G3 G3 G3 D2 D3 A2 D3 D3 D3 A2 A3 A3 D2 D3 D3 A2 A3 A3 A3  
+Länge des gefundenen Pattern:  47 
+Stelle im Musikstück:  2032 
+
+Pattern:  G2 G3 G3 G2 G3 G3 G3 A2 A3 E3 A3 A3 B2 B3 B3 B2 B3 B3 B2 B3 B3 B2 B3 B3 G2 G3 G3 G2 G3 G3 G3 D2 D3 A2 D3 D3 D3 A2 A3 A3 D2 D3 D3 A2 A3 A3 A3  
+Länge des gefundenen Pattern:  47 
+Stelle im Musikstück:  2079 
+
+Pattern:  D4 G4 B4 D4 G4 CIS5 E4 A4 CIS5 E4 A4 CIS5 E4 A4 CIS5 E4 A4 D5 FIS4 B4 D5 FIS4 B4 D5 FIS4 B4 CIS5 FIS4 B4 D5 FIS4 B4 FIS5 FIS4 B4 CIS5 FIS4 B4 CIS5 FIS4 B4 D5 D4 G4 A4 B4  
+Länge des gefundenen Pattern:  46 
+Stelle im Musikstück:  896 
+
+Pattern:  D4 G4 B4 D4 G4 B4 D4 G4 CIS5 D4 G4 CIS5 D4 G4 CIS5 D4 G4 D5 FIS4 B4 D5 FIS4 B4 D5 FIS4 B4 CIS5 FIS4 B4 D5 FIS4 B4 FIS5 FIS4 B4 CIS5 FIS4 B4 CIS5 FIS4 B4 D5 D4 G4 A4 B4  
+Länge des gefundenen Pattern:  46 
+Stelle im Musikstück:  942 
+
+Pattern:  D4 A3 D4 D4 D4 D4 G3 D4 D4 D4 FIS4 CIS4 D4 E4 FIS4 FIS4 FIS4 G4 B3 G4 E4 E4 FIS4 FIS4 D4 D4 FIS4 FIS4 E4 E4 E4 E4 E4 E4 D4 D4 D4 D4 D4 FIS4  
+Länge des gefundenen Pattern:  40 
+Stelle im Musikstück:  34 
+
+Pattern:  D4 D4 D4 D4 D4 D4 G3 D4 D4 D4 E4 CIS4 D4 A3 CIS4 CIS4 CIS4 D4 G3 D4 D4 D4 FIS4 CIS4 D4 A3 FIS4 FIS4 FIS4 FIS4 FIS4 G4 D4 G4 E4 E4 FIS4 FIS4 A3 FIS4  
+Länge des gefundenen Pattern:  40 
+Stelle im Musikstück:  327 
+
+Pattern:  D5 D4 D4 A4 CIS4 E4 A4 D4 E4 A4 D4 E4 A4 D4 A4 D4 A4 D4 A4 D4 A4 CIS4 D4 A4 D4 A4 D4 A4 B3 A4 D4 D4 A4 CIS4 E4 A4 D4 E4 A4 D4  
+Länge des gefundenen Pattern:  40 
+Stelle im Musikstück:  283 
+
+Pattern:  D5 D4 D4 A4 CIS4 E4 A4 D4 E4 A4 D4 E4 A4 D4 A4 D4 A4 D4 A4 D4 A4 CIS4 D4 A4 D4 A4 D4 A4 B3 A4 D4 D4 A4 CIS4 E4 A4 D4 E4 A4 D4  
+Länge des gefundenen Pattern:  40 
+Stelle im Musikstück:  533 
+
+Pattern:  D4 G4 B4 D4 G4 CIS5 D4 G4 CIS5 D4 G4 CIS5 D4 G4 D5 FIS4 B4 D5 FIS4 B4 D5 FIS4 B4 CIS5 FIS4 B4 D5 FIS4 B4 FIS5 FIS4 B4 CIS5 FIS4 B4 CIS5 FIS4 B4 D5  
+Länge des gefundenen Pattern:  39 
+Stelle im Musikstück:  945 
+
+Pattern:  D4 G4 CIS5 E4 A4 CIS5 E4 A4 CIS5 E4 A4 CIS5 E4 A4 D5 FIS4 B4 D5 FIS4 B4 D5 FIS4 B4 CIS5 FIS4 B4 D5 FIS4 B4 FIS5 FIS4 B4 CIS5 FIS4 B4 CIS5 FIS4 B4 D5  
+Länge des gefundenen Pattern:  39 
+Stelle im Musikstück:  994 
+
+Pattern:  A4 FIS4 A4 FIS4 A4 FIS4 A4 FIS4 A4 FIS4 A4 E4 A4 FIS4 A4 D4 G4 D4 G4 D4 G4 D4 G4 D4 G4 D4 FIS4 D4 FIS4 D4 FIS4 D4 FIS4  
+Länge des gefundenen Pattern:  33 
+Stelle im Musikstück:  769 
+
+Pattern:  A4 FIS4 A4 FIS4 A4 FIS4 A4 FIS4 A4 FIS4 A4 E4 A4 FIS4 A4 D4 G4 D4 G4 D4 G4 D4 G4 D4 G4 D4 FIS4 D4 FIS4 D4 FIS4 D4 FIS4  
+Länge des gefundenen Pattern:  33 
+Stelle im Musikstück:  833 
+
+Pattern:  G1 A2 A2 D3 G3 B3 G3 B3 A1 A2 A2 D3 A3 CIS4 A3 CIS4 B1 B2 B2 FIS3 B3 D4 B3 D4 B3 D4 A1 A2 A3 CIS4 A3 CIS4  
+Länge des gefundenen Pattern:  32 
+Stelle im Musikstück:  2126 
+
+Pattern:  G1 A2 A2 D3 G3 B3 G3 B3 A1 A2 A2 D3 A3 CIS4 A3 CIS4 B1 B2 B2 FIS3 B3 D4 B3 D4 B3 D4 A1 A2 A3 CIS4 A3 CIS4  
+Länge des gefundenen Pattern:  32 
+Stelle im Musikstück:  2158 
+
+Pattern:  G1 A2 A2 D3 G3 B3 G3 B3 A1 A2 A2 D3 A3 CIS4 A3 CIS4 B1 B2 B2 FIS3 B3 D4 B3 D4 B3 D4 A1 A2 A3 CIS4 A3 CIS4  
+Länge des gefundenen Pattern:  32 
+Stelle im Musikstück:  2126 
+
+Pattern:  G1 A2 A2 D3 G3 B3 G3 B3 A1 A2 A2 D3 A3 CIS4 A3 CIS4 B1 B2 B2 FIS3 B3 D4 B3 D4 B3 D4 A1 A2 A3 CIS4 A3 CIS4  
+Länge des gefundenen Pattern:  32 
+Stelle im Musikstück:  2190 
+
+Pattern:  D4 E4 FIS4 A3 D4 E4 FIS4 B3 D4 E4 FIS4 A3 E4 E4 D4 G3 D4 E4 FIS4 A3 D4 E4 FIS4 G4 FIS4  
+Länge des gefundenen Pattern:  25 
+Stelle im Musikstück:  1900 
+
+Pattern:  D4 E4 FIS4 A3 D4 E4 FIS4 B3 D4 E4 FIS4 A3 E4 E4 D4 G3 D4 E4 FIS4 A3 D4 E4 FIS4 G4 FIS4  
+Länge des gefundenen Pattern:  25 
+Stelle im Musikstück:  1938 
+
+Pattern:  B2 FIS3 D4 B3 FIS3 FIS2 CIS3 FIS3 G2 D3 B3 G3 G2 E3 CIS4 A3 B2 FIS3 D4 B3 FIS3 FIS2 CIS3 FIS3  
+Länge des gefundenen Pattern:  24 
+Stelle im Musikstück:  1976 
+
+Pattern:  B2 FIS3 D4 B3 FIS3 FIS2 CIS3 FIS3 G2 D3 B3 G3 G2 E3 CIS4 A3 B2 FIS3 D4 B3 FIS3 FIS2 CIS3 FIS3  
+Länge des gefundenen Pattern:  24 
+Stelle im Musikstück:  2008 
+
+Pattern:  B4 FIS5 FIS4 B4 E5 E4 A4 B4 E5 E4 A4 B4 E5 E4 A4 B4 E5 D5 G4 A4 B4  
+Länge des gefundenen Pattern:  21 
+Stelle im Musikstück:  512 
+
+Pattern:  A4 FIS5 FIS4 A4 E5 E4 A4 B4 E5 E4 A4 B4 E5 E4 A4 B4 E5 D5 G4 A4 B4  
+Länge des gefundenen Pattern:  21 
+Stelle im Musikstück:  872 
+
+Pattern:  CIS4 B2 B3 FIS3 B3 D4 B3 D4 B3 D4 A2 A3 A3 CIS4 A3 CIS4 G2 G3  
+Länge des gefundenen Pattern:  18 
+Stelle im Musikstück:  1442 
+
+Pattern:  CIS4 B2 B3 FIS3 B3 D4 B3 D4 B3 D4 A2 A3 A3 CIS4 A3 CIS4 G2 G3  
+Länge des gefundenen Pattern:  18 
+Stelle im Musikstück:  1882 
+
+Pattern:  D5 D4 D4 D4 D4 D4 D4 G3 D4 D4 D4 E4 CIS4 D4 A3 D4 D4  
+Länge des gefundenen Pattern:  17 
+Stelle im Musikstück:  21 
+
+Pattern:  D4 FIS4 FIS4 B3 E4 E4 E4 D4 D4 D4 E4 FIS4 D4 E4 FIS4 D4 E4  
+Länge des gefundenen Pattern:  17 
+Stelle im Musikstück:  139 
+
+Pattern:  D4 A4 D4 D4 A4 D4 D4 D5 D4 D4 D4 D4 D4 D4 G3 D4  
+Länge des gefundenen Pattern:  16 
+Stelle im Musikstück:  14 
+
+Pattern:  A4 E5 A4 E5 A4 E5 E5 D5 D4 A4 D4 A4 D4 A4 D4 A4  
+Länge des gefundenen Pattern:  16 
+Stelle im Musikstück:  744 
+
+Pattern:  D4 A4 D4 A4 D4 A4 CIS4 D4 A4 D4 A4 D4 A4 B3 A4 D4  
+Länge des gefundenen Pattern:  16 
+Stelle im Musikstück:  298 
+
+Pattern:  D4 A4 D4 A4 D4 A4 CIS4 D4 A4 D4 A4 D4 A4 B3 A4 D4  
+Länge des gefundenen Pattern:  16 
+Stelle im Musikstück:  480 
+
+Pattern:  D4 A4 D4 A4 D4 A4 D4 A4 E4 A4 E4 A4 E4 A4 E4 A4  
+Länge des gefundenen Pattern:  16 
+Stelle im Musikstück:  752 
+
+Pattern:  D4 A4 D4 A4 D4 A4 D4 A4 E4 A4 E4 A4 E4 A4 E4 A4  
+Länge des gefundenen Pattern:  16 
+Stelle im Musikstück:  816 
+
+Pattern:  B4 E5 E4 G4 A4 E5 E4 G4 A4 E5 E4 G4 A4 E5 D5  
+Länge des gefundenen Pattern:  15 
+Stelle im Musikstück:  265 
+
+Pattern:  B4 E5 E4 G4 A4 E5 E4 G4 A4 E5 E4 G4 A4 E5 D5  
+Länge des gefundenen Pattern:  15 
+Stelle im Musikstück:  584 
+
+Pattern:  E3 A3 A3 A3 B2 FIS3 A3 A3 A3 A3 A3 A2 E3 A3 A3  
+Länge des gefundenen Pattern:  15 
+Stelle im Musikstück:  1086 
+
+Pattern:  E3 A3 A3 A3 G2 D3 A3 G2 A3 A3 A3 A2 E3 A3 A3  
+Länge des gefundenen Pattern:  15 
+Stelle im Musikstück:  1611 
+
+Pattern:  FIS5 FIS5 A4 D5 E5 D5 A4 D5 FIS5 G5 A4 D5 E5 FIS5  
+Länge des gefundenen Pattern:  14 
+Stelle im Musikstück:  609 
+
+Pattern:  FIS5 FIS5 A4 D5 E5 D5 A4 D5 FIS5 G5 A4 D5 E5 FIS5  
+Länge des gefundenen Pattern:  14 
+Stelle im Musikstück:  625 
+
+Pattern:  E4 E4 E4 D4 D4 D4 E4 FIS4 D4 E4 FIS4 D4 E4  
+Länge des gefundenen Pattern:  13 
+Stelle im Musikstück:  143 
+
+Pattern:  FIS4 D4 G4 E4 E4 E4 CIS4 E4 G4 FIS4 FIS4 D4 FIS4  
+Länge des gefundenen Pattern:  13 
+Stelle im Musikstück:  433 
+
+Pattern:  D4 G4 D4 G4 CIS4 D4 G4 D4 G4 D4 G4 D4 G4  
+Länge des gefundenen Pattern:  13 
+Stelle im Musikstück:  217 
+
+Pattern:  D4 G4 D4 G4 CIS4 D4 G4 D4 G4 D4 G4 D4 G4  
+Länge des gefundenen Pattern:  13 
+Stelle im Musikstück:  245 
+
+Pattern:  D4 A4 D4 A4 CIS4 D4 A4 D4 A4 D4 A4 D4 A4  
+Länge des gefundenen Pattern:  13 
+Stelle im Musikstück:  467 
+
+Pattern:  D4 A4 D4 A4 CIS4 D4 A4 D4 A4 D4 A4 D4 A4  
+Länge des gefundenen Pattern:  13 
+Stelle im Musikstück:  495 
+
+Pattern:  FIS5 FIS5 A4 D5 E5 D5 A4 D5 FIS5 G5 A4 D5 E5  
+Länge des gefundenen Pattern:  13 
+Stelle im Musikstück:  625 
+
+Pattern:  FIS5 FIS5 A4 D5 E5 D5 A4 D5 FIS5 G5 A4 D5 E5  
+Länge des gefundenen Pattern:  13 
+Stelle im Musikstück:  638 
+
+Pattern:  G2 D3 A3 A2 E3 A3 B2 FIS3 A3 A2 E3 A3  
+Länge des gefundenen Pattern:  12 
+Stelle im Musikstück:  1033 
+
+Pattern:  G2 D3 A3 A2 E3 A3 B2 FIS3 A3 A2 E3 A3  
+Länge des gefundenen Pattern:  12 
+Stelle im Musikstück:  1045 
+
+Pattern:  D5 D4 D4 D4 D4 D4 D4 G3 D4 D4 D4  
+Länge des gefundenen Pattern:  11 
+Stelle im Musikstück:  21 
+
+Pattern:  D4 FIS4 FIS4 A3 E4 E4 E4 D4 G3 D4 D4  
+Länge des gefundenen Pattern:  11 
+Stelle im Musikstück:  1927 
+
+Pattern:  A4 G4 D4 FIS4 FIS4 FIS4 FIS4 FIS4 CIS4 FIS4 A4  
+Länge des gefundenen Pattern:  11 
+Stelle im Musikstück:  83 
+
+Pattern:  G4 G4 D4 E4 E4 E4 E4 CIS4 G4 FIS4 D4  
+Länge des gefundenen Pattern:  11 
+Stelle im Musikstück:  127 
+
+Pattern:  CIS5 A4 D5 A4 D5 A4 E5 E5 A4 E5 FIS5  
+Länge des gefundenen Pattern:  11 
+Stelle im Musikstück:  661 
+
+Pattern:  CIS5 A4 D5 A4 D5 A4 E5 E5 A4 E5 FIS5  
+Länge des gefundenen Pattern:  11 
+Stelle im Musikstück:  707 
+
+Pattern:  G4 D4 G4 CIS4 D4 G4 D4 G4 D4 G4  
+Länge des gefundenen Pattern:  10 
+Stelle im Musikstück:  218 
+
+Pattern:  G4 D4 G4 CIS4 D4 G4 D4 G4 D4 G4  
+Länge des gefundenen Pattern:  10 
+Stelle im Musikstück:  233 
+
+Pattern:  A4 D4 A4 D4 A4 FIS4 B4 FIS4 B4 D5  
+Länge des gefundenen Pattern:  10 
+Stelle im Musikstück:  571 
+
+Pattern:  CIS4 E4 CIS4 E4 D4 FIS4 D4 FIS4 CIS4 E4  
+Länge des gefundenen Pattern:  10 
+Stelle im Musikstück:  802 
+
+Pattern:  D4 A4 D4 D4 D4 A4 D4 D4 D4  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  5 
+
+Pattern:  A4 E5 A4 E5 E5 A4 E5 D5 A4  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  724 
+
+Pattern:  E4 FIS4 FIS4 D4 D4 FIS4 FIS4 E4 E4  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  55 
+
+Pattern:  E4 FIS4 E4 D4 D4 E4 FIS4 D4 E4  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  155 
+
+Pattern:  FIS4 E4 E4 E4 E4 E4 E4 D4 D4  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  61 
+
+Pattern:  FIS4 FIS4 E4 E4 E4 E4 E4 E4 D4  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  366 
+
+Pattern:  D4 G4 D4 G4 D4 G4 D4 G4 CIS4  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  228 
+
+Pattern:  D5 A4 D5 D5 A4 D5 D5 A4 E5  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  684 
+
+Pattern:  B3 B3 B3 G2 A3 A3 A3 G2 G3  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  1422 
+
+Pattern:  CIS4 CIS4 CIS4 G2 D3 B3 G3 A2 E3  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  1965 
+
+Pattern:  FIS3 G2 D3 B3 G3 G2 E3 CIS4 A3  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  1983 
+
+Pattern:  FIS3 G2 D3 B3 G3 G2 E3 CIS4 A3  
+Länge des gefundenen Pattern:  9 
+Stelle im Musikstück:  1999 
+
+Pattern:  D4 D4 D4 A4 D4 D4 D4 D4  
+Länge des gefundenen Pattern:  8 
+Stelle im Musikstück:  7 
+
+Pattern:  E4 E4 B3 E4 E4 D4 D4 D5  
+Länge des gefundenen Pattern:  8 
+Stelle im Musikstück:  168 
+
+Pattern:  D4 A4 D4 A4 FIS4 B4 FIS4 B4  
+Länge des gefundenen Pattern:  8 
+Stelle im Musikstück:  572 
+
+Pattern:  E5 A4 E5 D5 A4 D5 A4 D5  
+Länge des gefundenen Pattern:  8 
+Stelle im Musikstück:  736 
+
+Pattern:  A4 D4 D4 D4 A4 D4 D4  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  6 
+
+Pattern:  D3 A3 A3 A3 A3 A2 E3  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  1058 
+
+Pattern:  B4 D4 A4 A4 G4 D4 FIS4  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  80 
+
+Pattern:  E5 G4 D5 D5 E5 B4 FIS5  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  188 
+
+Pattern:  FIS4 D4 FIS4 D4 FIS4 CIS4 A4  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  103 
+
+Pattern:  A4 CIS5 A4 CIS5 A4 CIS5 A4  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  699 
+
+Pattern:  E4 D4 D4 E4 FIS4 D4 E4  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  157 
+
+Pattern:  E5 FIS5 FIS5 E5 FIS5 A4 E5  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  675 
+
+Pattern:  CIS5 E4 A4 CIS5 E4 A4 CIS5  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  901 
+
+Pattern:  B4 D4 G4 B4 D4 G4 B4  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  987 
+
+Pattern:  B2 B3 FIS3 B3 B3 B3 G2  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  1470 
+
+Pattern:  B2 B3 FIS3 B3 B3 B3 A2  
+Länge des gefundenen Pattern:  7 
+Stelle im Musikstück:  1509 
+
+Pattern:  D4 D4 A4 D4 D4 A4  
+Länge des gefundenen Pattern:  6 
+Stelle im Musikstück:  1 
+
+Pattern:  E5 E5 A4 E5 FIS5 A4  
+Länge des gefundenen Pattern:  6 
+Stelle im Musikstück:  692 
+
+Pattern:  D4 A4 D4 D4 A4 D4  
+Länge des gefundenen Pattern:  6 
+Stelle im Musikstück:  2 
+
+Pattern:  E5 A4 E5 A4 E5 D5  
+Länge des gefundenen Pattern:  6 
+Stelle im Musikstück:  207 
+
+Pattern:  D4 FIS4 FIS4 E4 E4 E4  
+Länge des gefundenen Pattern:  6 
+Stelle im Musikstück:  59 
+
+Pattern:  A4 CIS5 CIS5 D5 CIS5 E5  
+Länge des gefundenen Pattern:  6 
+Stelle im Musikstück:  654 
+
+Pattern:  A4 E5 D5 F4 G4 A4  
+Länge des gefundenen Pattern:  6 
+Stelle im Musikstück:  210 
+
+Pattern:  A4 E5 D5 G4 A4 B4  
+Länge des gefundenen Pattern:  6 
+Stelle im Musikstück:  461 
+
+Pattern:  FIS4 CIS4 D4 E4 FIS4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  44 
+
+Pattern:  FIS5 CIS5 D5 E5 FIS5  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  181 
+
+Pattern:  FIS4 FIS4 D4 D4 FIS4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  56 
+
+Pattern:  G4 FIS4 B4 D5 FIS4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  257 
+
+Pattern:  B4 B4 D4 A4 A4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  79 
+
+Pattern:  B4 FIS5 A4 E5 A4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  201 
+
+Pattern:  E4 FIS4 D4 E4 FIS4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  149 
+
+Pattern:  A4 FIS4 B4 D5 FIS4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  507 
+
+Pattern:  FIS5 D5 E5 FIS5 CIS5  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  178 
+
+Pattern:  FIS5 D5 E5 FIS5 CIS5  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  194 
+
+Pattern:  D5 F4 G4 A4 D5  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  212 
+
+Pattern:  FIS5 A4 B4 A4 FIS5  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  719 
+
+Pattern:  B4 FIS5 FIS4 B4 E5  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  262 
+
+Pattern:  A4 FIS5 FIS4 A4 E5  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  449 
+
+Pattern:  E4 A4 D4 A4 D4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  294 
+
+Pattern:  E4 CIS4 E4 CIS4 E4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  811 
+
+Pattern:  D5 G4 A4 B4 D4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  463 
+
+Pattern:  A4 D5 E5 FIS5 A4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  603 
+
+Pattern:  E4 D4 A4 D4 A4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  815 
+
+Pattern:  FIS4 E4 B4 E4 A4  
+Länge des gefundenen Pattern:  5 
+Stelle im Musikstück:  865 
+
+Pattern:  D4 G3 D4 D4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  39 
+
+Pattern:  FIS4 B3 D4 FIS4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  164 
+
+Pattern:  D4 E4 FIS4 FIS4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  46 
+
+Pattern:  D5 A4 G4 F4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  279 
+
+Pattern:  FIS4 D4 FIS4 D4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  103 
+
+Pattern:  B4 G4 B4 D5  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  892 
+
+Pattern:  D5 D4 G4 D4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  216 
+
+Pattern:  D5 FIS4 B4 FIS4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  580 
+
+Pattern:  B4 FIS5 FIS4 B4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  262 
+
+Pattern:  A4 E5 FIS4 A4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  455 
+
+Pattern:  E4 A4 D4 A4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  294 
+
+Pattern:  E4 A4 D4 A4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  323 
+
+Pattern:  E4 FIS4 FIS4 A3  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  362 
+
+Pattern:  E5 FIS5 A4 FIS5  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  650 
+
+Pattern:  FIS4 A3 FIS4 FIS4  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  364 
+
+Pattern:  A4 FIS5 A4 FIS5  
+Länge des gefundenen Pattern:  4 
+Stelle im Musikstück:  732 
+
+Pattern:  D4 E4 CIS4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  31 
+
+Pattern:  CIS5 B4 D5  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  198 
+
+Pattern:  FIS4 FIS4 G4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  49 
+
+Pattern:  FIS4 B3 A3  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  1962 
+
+Pattern:  G4 B3 G4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  51 
+
+Pattern:  G4 B3 G4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  242 
+
+Pattern:  B4 B4 B4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  78 
+
+Pattern:  D5 D5 A4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  598 
+
+Pattern:  D4 A4 A4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  81 
+
+Pattern:  FIS5 G4 G4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  185 
+
+Pattern:  FIS4 D4 E4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  150 
+
+Pattern:  FIS5 D5 E5  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  622 
+
+Pattern:  E5 B4 FIS5  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  176 
+
+Pattern:  E5 A4 E5  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  681 
+
+Pattern:  E5 G4 D5  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  188 
+
+Pattern:  E3 CIS4 G3  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  1973 
+
+Pattern:  D4 G4 B3  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  241 
+
+Pattern:  A4 D5 FIS4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  446 
+
+Pattern:  D4 G4 B3  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  241 
+
+Pattern:  A4 D5 FIS4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  869 
+
+Pattern:  D4 A4 B3  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  309 
+
+Pattern:  A4 E5 FIS4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  458 
+
+Pattern:  A4 FIS4 B4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  507 
+
+Pattern:  E5 FIS5 A4  
+Länge des gefundenen Pattern:  3 
+Stelle im Musikstück:  672 
+
+2344.5353489 sec
