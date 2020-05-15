@@ -196,6 +196,3 @@ if __name__ == '__main__':
     p.close()
     # LittleTranscriptor nehmen
     # https://www.youtube.com/watch?v=7K4hBdokhbE
-    # nochmal mit 2ten monitor
-    # jeder strich sind 2 sek keine 4
-    # jede Hand neue Nummerierung

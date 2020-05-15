@@ -14,8 +14,8 @@ def PatternSearch(track):
         differencematrix[itteration, 0] = track[itteration - 1]
 
     foundpatternlength = []
-    foundpatternindize = []                                                         # ToDo: Unterteilung der Algorithmen mit Switch Case
-    xindize = 1                                                                     # ToDo: Maybe for each Pattern one Matrix (maybe for each one Function)
+    foundpatternindize = []
+    xindize = 1
     yindize = 1
     difference = []
     for i in range(0, len(track)-1):
@@ -38,6 +38,8 @@ def PatternSearch(track):
 
         if notematrix[yindize, xindize] == -1:                                              #Patternclass-Keychange (Keychange in previous note found)
             notematrix[yindize, xindize] = notematrix[yindize - 1, xindize - 1] + 1
+            xindize += 1
+            continue
         if notematrix[0, xindize] == notematrix[yindize, 0]:                                #Patternclass=same
             if yindize != 1:
                 notematrix[yindize, xindize] = notematrix[yindize-1, xindize-1] + 1
@@ -46,13 +48,14 @@ def PatternSearch(track):
             xindize += 1
             continue
 
-        if xindize + 1 < dimension:                                            #Patternclass=Keychange
-            if difference[yindize-1] == notematrix[0, xindize] - notematrix[0, xindize + 1]:
+        if xindize + 2 < dimension:                                            #Patternclass=Keychange
+            if difference[yindize-1] == notematrix[0, xindize] - notematrix[0, xindize + 1] and difference[yindize] == notematrix[0, xindize + 1] - notematrix[0, xindize +2]:
                 if yindize != 1:
                     notematrix[yindize, xindize] = notematrix[yindize - 1, xindize - 1] + 1
                 else:
                     notematrix[yindize, xindize] = 1
                 notematrix[yindize + 1, xindize + 1] = -1
+                notematrix[yindize + 2, xindize + 2] = -1
                 xindize += 1
                 continue
 
@@ -141,7 +144,7 @@ if __name__ == '__main__':
 
     sys.stdout = normalstdout
     f.close()
-    f = open('MIDIMatrix.txt', 'r')
+    f = open('ChainsmokersPseudoMIDI.txt', 'r')
     e = open('Ergebnis Patternsuche Matrix.txt', 'w')
     writenote = ''
     track = []
