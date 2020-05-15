@@ -157,7 +157,7 @@ if __name__ == '__main__':
 
     sys.stdout = normalstdout
     f.close()
-    f = open('DarudeSandstormPseudoMIDI.txt', 'r')
+    f = open('DarudeSandstormPseudoMIDITest.txt', 'r')
     e = open('Ergebnis Patternsuche String.txt', 'w')
     sys.stdout = e
     writenote = ''

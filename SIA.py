@@ -106,7 +106,7 @@ if __name__ == '__main__':
     timestart = timeit.default_timer()
     normalstdout = sys.stdout
     #filename = 'beethoven_ode_to_joy.mid'                                   # ToDo: Variabel machen
-    f = open('Ode an die Freude.txt', 'r')
+    f = open('Darude SandstormTest.txt', 'r')
     p = open('Ergebnis Patternsuche SIATEC.txt', 'w')
     sys.stdout = p
     notestring = ''

@@ -144,7 +144,7 @@ if __name__ == '__main__':
 
     sys.stdout = normalstdout
     f.close()
-    f = open('ChainsmokersPseudoMIDI.txt', 'r')
+    f = open('DarudeSandstormPseudoMIDITest.txt', 'r')
     e = open('Ergebnis Patternsuche Matrix.txt', 'w')
     writenote = ''
     track = []

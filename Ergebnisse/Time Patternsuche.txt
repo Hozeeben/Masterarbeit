@@ -1,0 +1,20 @@
+Songlänge: 1900
+String:	1480.1681371000002 sec
+Matrix:	27.9229689 sec
+SIA:	2595.6744036 sec
+Songlänge: 1520
+String:	748.6620998000001 sec
+Matrix:	13.4572865 sec
+SIA:	1133.4961463 sec
+Songlänge: 1160
+String:	312.25995109999997 sec
+Matrix:	7.5723808 sec
+SIA:	305.8797853 sec
+Songlänge: 760
+String:	92.56547090000001 sec
+Matrix:	3.8937486 sec
+SIA:	69.3693904 sec
+Songlänge: 380
+String:	16.711415799999997 sec
+Matrix:	2.1378364 sec
+SIA:	5.1041857 sec
