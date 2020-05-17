@@ -1,0 +1,26 @@
+String Patternsearch:
+Beethoven 	Track1: 59
+		Track2: 125
+Chainsmokers	Track1: 63
+		Track2: 84
+Sandstorm	Track1: 15
+		Track2: 52
+		Track3: 71
+
+Matrix Patternsearch:
+Beethoven 	Track1: 4133
+		Track2: 3969
+Chainsmokers	Track1: 5651
+		Track2: 8635
+Sandstorm	Track1: 9335
+		Track2: 5214
+		Track3: 27025
+
+SIA Patternsearch:
+Beethoven 	Track1: 23624
+		Track2: 19810
+Chainsmokers	Track1: 17114
+		Track2: 24236
+Sandstorm	Track1: 8806
+		Track2: 27357
+		Track3: 40017

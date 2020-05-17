@@ -32408,4 +32408,4 @@ Länge des Patterns: 3
 Gefundene Pattern:  CIS3 A3 D3,  FIS4 D5 G4
 Noten im Lied: 1, 180
 Länge des Patterns: 3
-3.8542564 sec
+3.9585009999999996 sec

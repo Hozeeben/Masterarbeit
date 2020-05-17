@@ -57144,4 +57144,4 @@ Länge des Patterns: 3
 Gefundene Pattern:  G2 D3 A3,  G2 D3 A3
 Noten im Lied: 1, 25
 Länge des Patterns: 3
-6.3323755 sec
+6.199743 sec

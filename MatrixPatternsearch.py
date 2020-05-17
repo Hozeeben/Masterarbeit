@@ -144,7 +144,7 @@ if __name__ == '__main__':
 
     sys.stdout = normalstdout
     f.close()
-    f = open('DarudeSandstormPseudoMIDITest.txt', 'r')
+    f = open('ChainsmokersPseudoMIDI.txt', 'r')
     e = open('Ergebnis Patternsuche Matrix.txt', 'w')
     writenote = ''
     track = []
@@ -173,7 +173,6 @@ if __name__ == '__main__':
                         patternstring2 = patternstring2 + ' ' + ChangeNumbersToNotes(notematrix[xtemp + j, 0])
                     print('\nGefundene Pattern: ' + patternstring1 + ', ' + patternstring2 + '\nNoten im Lied: ' + str(ytemp) + ', ' + str(xtemp)
                           + '\nLänge des Patterns: ' + str(patternlengthtmp))
-                sys.stdout = normalstdout
                 nroftracks += 1
                 track = []
         if nextline.find('<message note_on') != -1:
@@ -184,6 +183,7 @@ if __name__ == '__main__':
                 writenote = writenote + nextline[startnote + stringlength + i]
             track.append(int(writenote))
             writenote = ''
+    sys.stdout = normalstdout
     timeend = timeit.default_timer()
     totaltime = timeend - timestart
     e.write(str(totaltime) + ' sec')
