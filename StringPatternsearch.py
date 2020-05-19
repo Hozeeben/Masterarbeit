@@ -157,7 +157,7 @@ if __name__ == '__main__':
 
     sys.stdout = normalstdout
     f.close()
-    f = open('DarudeSandstormPseudoMIDITest.txt', 'r')
+    f = open('ChainsmokersPseudoMIDI.txt', 'r')
     e = open('Ergebnis Patternsuche String.txt', 'w')
     sys.stdout = e
     writenote = ''
@@ -175,6 +175,7 @@ if __name__ == '__main__':
                     print('Pattern: ', pattern[itteration], '\nLänge des gefundenen Pattern: ',
                           length[itteration], '\nStelle im Musikstück: ', noteintrack[itteration], '\n')
                 nroftracks += 1
+                track = []
         if nextline.find('<message note_on') != -1:
             startnote = nextline.find('note=')
             for i in range(0, 2):
